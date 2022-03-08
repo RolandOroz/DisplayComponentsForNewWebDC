@@ -15,6 +15,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from "@angular/router";
 import {MatListModule} from "@angular/material/list";
+import { HomeComponent } from './view/pages/home/home.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatListModule} from "@angular/material/list";
     FilterTreeComponent,
     SearchComponent,
     UserDetailsComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
