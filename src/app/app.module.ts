@@ -3,24 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { ArticleDetailsComponentPage } from './article-details/article-details.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleListItemComponent } from './article-list/article-list-item/article-list-item.component';
 import { FiltersComponent } from './filters/filters.component';
-import { DatetimePickerComponent } from './filters/datetime-picker/datetime-picker.component';
+import { DatetimePickerComponentPage } from './filters/datetime-picker/datetime-picker.component';
 import { FilterTreeComponent } from './filters/filter-tree/filter-tree.component';
 import { SearchComponent } from './search/search.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from "@angular/router";
+import {MatListModule} from "@angular/material/list";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleDetailsComponent,
+    ArticleDetailsComponentPage,
     ArticleListComponent,
     ArticleListItemComponent,
     FiltersComponent,
-    DatetimePickerComponent,
+    DatetimePickerComponentPage,
     FilterTreeComponent,
     SearchComponent,
     UserDetailsComponent,
@@ -28,7 +32,12 @@ import { LoginFormComponent } from './login-form/login-form.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'article-details', component: ArticleDetailsComponentPage},
+    ]),
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

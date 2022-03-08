@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './datetime-picker.component.html',
   styleUrls: ['./datetime-picker.component.css']
 })
-export class DatetimePickerComponent implements OnInit {
+export class DatetimePickerComponentPage implements OnInit {
 
   constructor() { }
 
