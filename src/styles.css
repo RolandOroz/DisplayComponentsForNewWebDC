@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'glyphicons-basic-regular';
+  src: url(src/assets/fonts/glyphicons-pro/glyphicons-basic-2-3/desktop-font/glyphicons-basic-regular.otf) format('opentype');
+}
 
-html, body { height: 100%; }
-body { margin: 1px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  font-family: glyphicons-basic-regular !important;
+}
 
-html, body { height: 100%; }
-body { margin: 1px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 1px;
+
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 1px;
+
+}
