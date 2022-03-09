@@ -42,7 +42,7 @@ import {MatMenuModule} from "@angular/material/menu";
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'article-details', component: ArticleDetailsComponentPage},
+      {path: 'app-home', component: HomeComponent},
     ]),
     MatListModule,
     MatToolbarModule,
