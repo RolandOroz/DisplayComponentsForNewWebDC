@@ -4,8 +4,8 @@
 .toolbar-title {
   margin: 5px;
 }
-.toolbar-icon:hover, .toolbar-menu:hover {
-  color: #666;
+.toolbar-icon:hover, .toolbar-menu:hover, .toolbar-menu-button:hover {
+  color: #bc5123;
   background-color: #e6ebf1;
 }
 body {
