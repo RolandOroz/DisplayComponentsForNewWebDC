@@ -1,3 +1,18 @@
-<p>home works!</p>
-<!--TODO make viewport with links to pages, each component is in separate page.-->
-<!--TODO except filter and datepicker-->
+<h1>{{ this.homeTitle }}</h1>
+
+<nav>
+  <a routerLink="/article-details">Article Details</a>
+  <br />
+  <a routerLink="/app-article-list-item">Article list</a>
+  <br />
+  <a routerLink="/app-datetime-picker">Datetime picker</a>
+  <br />
+  <a routerLink="/app-filter-tree">Filter Tree</a>
+  <br />
+  <a routerLink="/app-search">Search</a>
+  <br />
+  <a routerLink="/app-user-details">User Details</a>
+  <br />
+  <a routerLink="/app-login-form">Login form</a>
+</nav>
+<router-outlet></router-outlet>
