@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleDetailsComponentPage } from './model/article-details/article-details.component';
 import { ArticleListComponent } from './model/article-list/article-list.component';
@@ -14,8 +14,12 @@ import { UserDetailsComponent } from './model/user-details/user-details.componen
 import { LoginFormComponent } from './model/login-form/login-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from "@angular/router";
-import {MatListModule} from "@angular/material/list";
-import { HomeComponent } from './view/pages/home/home.component';
+import { MatListModule } from "@angular/material/list";
+import { HomeComponent } from './model/home/home.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+
 
 
 @NgModule({
@@ -39,7 +43,10 @@ import { HomeComponent } from './view/pages/home/home.component';
     RouterModule.forRoot([
       {path: 'article-details', component: ArticleDetailsComponentPage},
     ]),
-    MatListModule
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  homeTitle = 'Home';
+  homeTitle = 'Display Components For New WebDC';
   constructor() { }
 
   ngOnInit(): void {

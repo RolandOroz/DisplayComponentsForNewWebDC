@@ -1,4 +1,12 @@
-<h1>{{ this.homeTitle }}</h1>
+<mat-toolbar class="toolbar-spacer">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="toolbar-spacer"></span>
+  <span class="toolbar-title">My App</span>
+  <span class="toolbar-spacer"></span>
+
+</mat-toolbar>
 
 <nav>
   <a routerLink="/article-details">Article Details</a>
@@ -14,5 +22,7 @@
   <a routerLink="/app-user-details">User Details</a>
   <br />
   <a routerLink="/app-login-form">Login form</a>
+
 </nav>
+
 <router-outlet></router-outlet>
