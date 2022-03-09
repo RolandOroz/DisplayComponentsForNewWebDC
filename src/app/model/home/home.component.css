@@ -4,3 +4,7 @@
 .toolbar-title {
   margin: 5px;
 }
+.toolbar-icon:hover {
+  color: #666;
+  background-color: #e6ebf1;
+}
