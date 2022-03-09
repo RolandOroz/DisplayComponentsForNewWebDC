@@ -15,7 +15,7 @@ import { LoginFormComponent } from './model/login-form/login-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from "@angular/router";
 import { MatListModule } from "@angular/material/list";
-import { HomeComponent } from './model/home/home.component';
+import { HomeComponent } from './view/pages/home/home.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
