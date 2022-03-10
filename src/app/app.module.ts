@@ -20,6 +20,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
+import { Article } from "./components/article/article";
+import { FormsModule } from "@angular/forms";
 
 
 
@@ -35,10 +37,11 @@ import {MatMenuModule} from "@angular/material/menu";
     SearchComponent,
     UserDetailsComponent,
     LoginFormComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
@@ -48,7 +51,8 @@ import {MatMenuModule} from "@angular/material/menu";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
