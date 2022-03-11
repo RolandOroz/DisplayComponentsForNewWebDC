@@ -1,16 +1,11 @@
-<p>Article Details works!</p>
+
 <mat-list>
   <h3>{{article.articleTitle}} Details</h3>
-  <mat-list-item><span>Uuid: </span> {{article.articleUuid}}</mat-list-item>
-  <mat-list-item><span>Title: </span> {{article.articleTitle}}</mat-list-item>
-  <mat-list-item><span>Date: </span>{{article.articleDate}}</mat-list-item>
-  <mat-list-item><span>Topic: </span>{{article.articleTopic}}</mat-list-item>
-  <mat-list-item><span>Media Type: </span>{{article.articleMediaType}}</mat-list-item>
-  <mat-list-item><span>Sub Media: </span>{{article.articleSubMedia}}</mat-list-item>
-  <mat-list-item><span>Country: </span>{{article.articleCountry}}</mat-list-item>
   <mat-list-item><span>Media: </span>{{article.articleMedia}}</mat-list-item>
-  <mat-list-item><span>Rubric: </span>{{article.articleRubric}}</mat-list-item>
-  <mat-list-item><span>Author: </span>{{article.articleAuthor}}</mat-list-item>
-  <mat-list-item><span>Sentiment: </span>{{article.articleSentiment}}</mat-list-item>
-  <mat-list-item><span>Genre: </span>{{article.articleGenre}}</mat-list-item>
+  <mat-list-item><span>Authors: </span>{{article.articleAuthor}}</mat-list-item>
+  <mat-list-item><span>Topics: </span>{{article.articleTopic}}</mat-list-item>
+  <br />
+  <mat-list-item><span>Tag: </span>{{article.articleTopic}}</mat-list-item>
+  <mat-list-item><span>Date: </span>{{ "2016-01-05T09:05:05.035Z" | date : "EEE.dd.MMM.y,' Time:' H:mm"}}</mat-list-item>
+  <mat-list-item><span>Link: </span><a target="_blank" href="file://{{article.articleLink}}/index.html">{{article.articleLink}}</a></mat-list-item>
 </mat-list>

@@ -8,6 +8,12 @@
   color: #bc5123;
   background-color: #e6ebf1;
 }
-body {
+header, main, mat-toolbar, mat-menu, button {
   font-family: glyphicons-basic-regular, serif !important;
+}
+
+span {
+  font-family: glyphicons-basic-regular, serif !important;
+  font-weight: bold;
+  color: #bc5123;
 }

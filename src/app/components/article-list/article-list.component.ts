@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from "../article/article";
+
+
 
 @Component({
   selector: 'app-article-list',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-list.component.css'],
 })
 export class ArticleListComponent implements OnInit {
+
+
 
   constructor() { }
 

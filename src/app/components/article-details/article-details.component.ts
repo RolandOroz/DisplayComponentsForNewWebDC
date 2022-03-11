@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from "../article/article";
+import { ArticleListItemComponent} from "../article-list/article-list-item/article-list-item.component";
+
 
 
 @Component({
@@ -12,17 +14,20 @@ export class ArticleDetailsComponentPage implements OnInit {
   article: Article =   {
     articleUuid: 1,
     articleTitle: 'Some Article Title',
-    articleDate: '20-10-2020',
+    articleMedia: 'Media',
+    articleAuthor: 'Author',
     articleTopic: 'Topic',
+    articleTag: 'Tag',
+    articleDate: '20-10-2020',
     articleCustomTopic: 'Custom Topic',
     articleMediaType: 'Media Type',
     articleSubMedia: 'Sub Media',
     articleCountry: 'Country',
-    articleMedia: 'Media',
     articleRubric: 'Rubric',
-    articleAuthor: 'Author',
     articleSentiment: 'Sentiment',
-    articleGenre: 'Genre'}
+    articleGenre: 'Genre',
+    articleLink: 'https://link@some.com',
+    }
 
   constructor() { }
 

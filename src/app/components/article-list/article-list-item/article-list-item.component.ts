@@ -8,11 +8,12 @@ import { Article } from "../../article/article";
 })
 export class ArticleListItemComponent implements OnInit {
 
-  article: Article =   {
+  article: Article = {
     articleUuid: 1,
     articleTitle: 'Test Title of Article',
-    articleDate: '20-10-2020',
+    articleDate: "06-10-2022",
     articleTopic: 'Topic',
+    articleTag: 'Tag',
     articleCustomTopic: 'Custom Topic',
     articleMediaType: 'Media Type',
     articleSubMedia: 'Sub Media',
@@ -21,7 +22,9 @@ export class ArticleListItemComponent implements OnInit {
     articleRubric: 'Rubric',
     articleAuthor: 'Author',
     articleSentiment: 'Sentiment',
-    articleGenre: 'Genre'}
+    articleGenre: 'Genre',
+    articleLink: 'https://link@some.com',
+  }
 
   constructor() { }
 

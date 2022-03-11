@@ -1,3 +1,5 @@
+
+
 export interface Article {
 
 
@@ -5,6 +7,7 @@ export interface Article {
   articleTitle: string;
   articleDate: string;
   articleTopic: string;
+  articleTag: string,
   articleCustomTopic: string;
   articleMediaType: string;
   articleSubMedia: string;
@@ -14,6 +17,8 @@ export interface Article {
   articleAuthor: string;
   articleSentiment: string;
   articleGenre: string;
+  articleLink: string;
+
 }
 
 // <!--<div wicket:id="sourceFilter"></div>
