@@ -21,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import { FormsModule } from "@angular/forms";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 
@@ -51,6 +52,7 @@ import { FormsModule } from "@angular/forms";
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
+    MatExpansionModule,
 
   ],
   providers: [],

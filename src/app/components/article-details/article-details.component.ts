@@ -26,7 +26,7 @@ export class ArticleDetailsComponentPage implements OnInit {
     articleRubric: 'Rubric',
     articleSentiment: 'Sentiment',
     articleGenre: 'Genre',
-    articleLink: 'https://link@some.com',
+    articleLink: 'https://jasonwatmore.com/post/2020/09/01/angular-master-details-crud-example',
     }
 
   constructor() { }

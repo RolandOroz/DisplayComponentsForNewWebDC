@@ -1,11 +1,16 @@
-
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{article.articleTitle}}</mat-panel-title>
+    </mat-expansion-panel-header>
 <mat-list>
-  <h3>{{article.articleTitle}} Details</h3>
   <mat-list-item><span>Media: </span>{{article.articleMedia}}</mat-list-item>
   <mat-list-item><span>Authors: </span>{{article.articleAuthor}}</mat-list-item>
   <mat-list-item><span>Topics: </span>{{article.articleTopic}}</mat-list-item>
   <br />
   <mat-list-item><span>Tag: </span>{{article.articleTopic}}</mat-list-item>
   <mat-list-item><span>Date: </span>{{ "2016-01-05T09:05:05.035Z" | date : "EEE.dd.MMM.y,' Time:' H:mm"}}</mat-list-item>
-  <mat-list-item><span>Link: </span><a target="_blank" href="file://{{article.articleLink}}/index.html">{{article.articleLink}}</a></mat-list-item>
+  <mat-list-item><span>Link: </span><a target="_blank" href="{{article.articleLink}}">{{article.articleLink}}</a></mat-list-item>
 </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

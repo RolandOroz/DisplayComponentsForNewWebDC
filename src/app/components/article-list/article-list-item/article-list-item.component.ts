@@ -23,7 +23,7 @@ export class ArticleListItemComponent implements OnInit {
     articleAuthor: 'Author',
     articleSentiment: 'Sentiment',
     articleGenre: 'Genre',
-    articleLink: 'https://link@some.com',
+    articleLink: 'https://v2.angular.io/docs/ts/latest/tutorial/toh-pt2.html',
   }
 
   constructor() { }
