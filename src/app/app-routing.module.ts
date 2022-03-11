@@ -7,7 +7,6 @@ import { FilterTreeComponent } from "./components/filters/filter-tree/filter-tre
 import { SearchComponent } from "./components/search/search.component";
 import { UserDetailsComponent } from "./components/user-details/user-details.component";
 import { LoginFormComponent } from "./components/login-form/login-form.component";
-import { Article } from "./components/article/article";
 import { ArticleListItemComponent } from "./components/article-list/article-list-item/article-list-item.component";
 
 const routes: Routes = [
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path: 'app-search', component: SearchComponent},
   { path: 'app-user-details', component: UserDetailsComponent},
   { path: 'app-login-form', component: LoginFormComponent},
-  { path: 'article', component: ArticleListComponent },
   { path: 'app-article-list', component: ArticleListComponent}
 ];
 

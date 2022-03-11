@@ -6,7 +6,7 @@
 
 html, body {
   height: 100%;
-  font-family: glyphicons-basic-regular !important;
+  font-family: glyphicons-basic-regular, serif !important;
 }
 
 body {

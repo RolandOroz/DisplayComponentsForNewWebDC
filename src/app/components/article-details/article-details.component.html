@@ -1,6 +1,16 @@
 <p>Article Details works!</p>
 <mat-list>
-  <mat-list-item> A....... </mat-list-item>
-  <mat-list-item> B....... </mat-list-item>
-  <mat-list-item> C....... </mat-list-item>
+  <h3>{{article.articleTitle}} Details</h3>
+  <mat-list-item><span>Uuid: </span> {{article.articleUuid}}</mat-list-item>
+  <mat-list-item><span>Title: </span> {{article.articleTitle}}</mat-list-item>
+  <mat-list-item><span>Date: </span>{{article.articleDate}}</mat-list-item>
+  <mat-list-item><span>Topic: </span>{{article.articleTopic}}</mat-list-item>
+  <mat-list-item><span>Media Type: </span>{{article.articleMediaType}}</mat-list-item>
+  <mat-list-item><span>Sub Media: </span>{{article.articleSubMedia}}</mat-list-item>
+  <mat-list-item><span>Country: </span>{{article.articleCountry}}</mat-list-item>
+  <mat-list-item><span>Media: </span>{{article.articleMedia}}</mat-list-item>
+  <mat-list-item><span>Rubric: </span>{{article.articleRubric}}</mat-list-item>
+  <mat-list-item><span>Author: </span>{{article.articleAuthor}}</mat-list-item>
+  <mat-list-item><span>Sentiment: </span>{{article.articleSentiment}}</mat-list-item>
+  <mat-list-item><span>Genre: </span>{{article.articleGenre}}</mat-list-item>
 </mat-list>

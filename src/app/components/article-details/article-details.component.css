@@ -1,4 +1,8 @@
 
-*, mat-list {
-  font-family: glyphicons-basic-regular !important;
+p, mat-list, mat-list-item, span, h3 {
+   font-family: glyphicons-basic-regular, serif !important;
+}
+span {
+  font-weight: bold;
+  font-family: glyphicons-basic-regular, serif !important;
 }
