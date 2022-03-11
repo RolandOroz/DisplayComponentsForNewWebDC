@@ -1,14 +1,21 @@
 .toolbar-spacer {
   position: center;
-  padding-right: 10px;
+  padding-right: 20px;
 }
+
 mat-expansion-panel-header {
   margin: 5px;
 }
-p, mat-list, mat-list-item, span, h3 {
-   font-family: glyphicons-basic-regular, serif !important;
+p, mat-list, mat-list-item {
+  font-family: glyphicons-basic-regular, serif !important;
+  font-size: 12px;
+  line-height: 0.9em;
+  text-align: left;
 }
 span {
+  text-align: left;
   font-weight: bold;
   font-family: glyphicons-basic-regular, serif !important;
+  margin: 5px;
+  color: #999999;
 }
