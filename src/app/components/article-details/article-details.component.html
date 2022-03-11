@@ -1,6 +1,6 @@
 <mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header><span class="toolbar-spacer"><mat-icon>thumb_up</mat-icon></span><span class="toolbar-spacer"><mat-icon>remove</mat-icon></span><span class="toolbar-spacer"><mat-icon>thumb_down</mat-icon></span>
       <mat-panel-title>{{article.articleTitle}}</mat-panel-title>
     </mat-expansion-panel-header>
 <mat-list>
@@ -8,7 +8,8 @@
   <mat-list-item><span>Authors: </span>{{article.articleAuthor}}</mat-list-item>
   <mat-list-item><span>Topics: </span>{{article.articleTopic}}</mat-list-item>
   <br />
-  <mat-list-item><span>Tag: </span>{{article.articleTopic}}</mat-list-item>
+  <!--TODO add CHIP to Tag-->
+  <mat-list-item><span>Tag: </span>{{article.articleTag}}  (adding some Chips here later)</mat-list-item>
   <mat-list-item><span>Date: </span>{{ "2016-01-05T09:05:05.035Z" | date : "EEE.dd.MMM.y,' Time:' H:mm"}}</mat-list-item>
   <mat-list-item><span>Link: </span><a target="_blank" href="{{article.articleLink}}">{{article.articleLink}}</a></mat-list-item>
 </mat-list>

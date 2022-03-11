@@ -1,4 +1,10 @@
-
+.toolbar-spacer {
+  position: center;
+  padding-right: 10px;
+}
+mat-expansion-panel-header {
+  margin: 5px;
+}
 p, mat-list, mat-list-item, span, h3 {
    font-family: glyphicons-basic-regular, serif !important;
 }
