@@ -25,6 +25,9 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatDividerModule } from "@angular/material/divider";
 import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import { HttpClientModule } from "@angular/common/http";
+import { SearchDataService} from "./services/search-data.service";
 
 
 @NgModule({
@@ -57,10 +60,12 @@ import {MatCardModule} from "@angular/material/card";
     MatExpansionModule,
     MatSidenavModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [SearchDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
