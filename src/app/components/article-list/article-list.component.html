@@ -1,2 +1,21 @@
 <h3>Article list works!</h3>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>make tab 'Articles:'</p>
+    <p>Make toolbar 'DateSort' and 'MediaSort'</p>
+    <p>left 'Check all | none '    right 'Selected articles: #' 'Clear'</p>
+    <mat-card>
+      <mat-card-title>Card Title</mat-card-title>
+    </mat-card>
 
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Make icon for toggle
+    </button>
+  </div>
+
+
+
+</mat-drawer-container>

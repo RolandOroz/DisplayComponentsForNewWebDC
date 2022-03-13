@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Article } from "../article/article";
-
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 
 @Component({
@@ -8,13 +8,9 @@ import { Article } from "../article/article";
   templateUrl: './article-list.component.html',
   styleUrls: ['./article-list.component.css'],
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleListComponent {
 
 
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

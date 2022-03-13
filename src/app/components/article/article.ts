@@ -2,7 +2,6 @@
 
 export interface Article {
 
-
   articleUuid: number;
   articleTitle: string;
   articleDate: string;

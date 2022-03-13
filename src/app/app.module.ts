@@ -16,13 +16,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from "@angular/router";
 import { MatListModule } from "@angular/material/list";
 import { HomeComponent } from './pages/home/home.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule} from "@angular/material/button";
-import {MatMenuModule} from "@angular/material/menu";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatMenuModule } from "@angular/material/menu";
 import { FormsModule } from "@angular/forms";
-import {MatExpansionModule} from "@angular/material/expansion";
-
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatDividerModule } from "@angular/material/divider";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -53,6 +55,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatButtonModule,
     MatMenuModule,
     MatExpansionModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatCardModule
 
   ],
   providers: [],

@@ -8,23 +8,32 @@ import { Article } from "../../article/article";
 })
 export class ArticleListItemComponent implements OnInit {
 
-  article: Article = {
+
+  articleList: ({
+    articleTitle: string;
+    articleUuid: number;
+    articleMedia: string;
+    articleDate: string;
+ })[] = [
+   {
+    articleTitle: 'Title1',
     articleUuid: 1,
-    articleTitle: 'Test Title of Article',
-    articleDate: "06-10-2022",
-    articleTopic: 'Topic',
-    articleTag: 'Tag',
-    articleCustomTopic: 'Custom Topic',
-    articleMediaType: 'Media Type',
-    articleSubMedia: 'Sub Media',
-    articleCountry: 'Country',
-    articleMedia: 'Media',
-    articleRubric: 'Rubric',
-    articleAuthor: 'Author',
-    articleSentiment: 'Sentiment',
-    articleGenre: 'Genre',
-    articleLink: 'https://v2.angular.io/docs/ts/latest/tutorial/toh-pt2.html',
-  }
+    articleMedia: 'MediaType1',
+    articleDate: '2010-01-05T11:08:05.035Z'
+   },
+    {
+      articleTitle: 'Title2',
+      articleUuid: 2,
+      articleMedia: 'MediaType2',
+      articleDate: '2017-08-15T13:16:05.035Z'
+    },
+    {
+      articleTitle: 'Title3',
+      articleUuid: 3,
+      articleMedia: 'MediaType3',
+      articleDate: '2020-03-21T19:02:05.035Z'
+    },
+  ];
 
   constructor() { }
 
