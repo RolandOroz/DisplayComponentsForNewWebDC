@@ -20,7 +20,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatDividerModule } from "@angular/material/divider";
@@ -28,8 +28,10 @@ import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
 import { SearchDataService} from "./services/search-data.service";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     UserDetailsComponent,
     LoginFormComponent,
     HomeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -67,8 +70,13 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     HttpClientModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatRadioModule
 
+  ],
+  exports: [
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [SearchDataService],
   bootstrap: [AppComponent]
