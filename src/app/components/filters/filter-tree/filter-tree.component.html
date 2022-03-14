@@ -1,7 +1,8 @@
-<mat-radio-group labelPosition="before" [(ngModel)]="filterColl">
-  <mat-radio-button class="radio-button" *ngFor="let filterCollection of filterCollections" [value]="filterColl">
-    {{ filterColl }}
-  </mat-radio-button>
+<mat-radio-group labelPosition="before" >
+
+  <mat-radio-button class="radio-button" ngModel value="media" checked="true">Media</mat-radio-button>
+  <mat-radio-button class="radio-button" ngModel value="both">Both</mat-radio-button>
+  <mat-radio-button class="radio-button" ngModel value="Engagement">Engagement</mat-radio-button>
 </mat-radio-group>
 <mat-action-list>
   <mat-expansion-panel>

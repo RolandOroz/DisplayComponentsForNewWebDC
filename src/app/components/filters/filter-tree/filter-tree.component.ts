@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 
-
 @Component({
   selector: 'app-filter-tree',
   templateUrl: './filter-tree.component.html',
@@ -8,9 +7,5 @@ import { Component} from '@angular/core';
 })
 
 export class FilterTreeComponent {
-
-  filterColl: string | undefined;
-  filterCollections : string[] = ['Media', 'Both', 'Engagement'];
-
 
 }
