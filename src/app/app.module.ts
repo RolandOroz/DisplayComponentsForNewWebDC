@@ -28,6 +28,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
 import { SearchDataService} from "./services/search-data.service";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { SearchDataService} from "./services/search-data.service";
     MatDividerModule,
     MatCardModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule
 
   ],
   providers: [SearchDataService],
