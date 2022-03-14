@@ -1,6 +1,12 @@
-<p>filter-tree works!</p>
+<section [formGroup]="filterCollection">
+  <h4>Select your toppings:</h4>
+  <p><mat-checkbox formControlName="media">Media</mat-checkbox></p>
+  <p><mat-checkbox formControlName="both">Both</mat-checkbox></p>
+  <p><mat-checkbox formControlName="engagement">Engagement</mat-checkbox></p>
+</section>
 <mat-action-list>
   <mat-expansion-panel>
+
     <mat-expansion-panel-header>Date filter</mat-expansion-panel-header>
 
   </mat-expansion-panel>

@@ -20,7 +20,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatDividerModule } from "@angular/material/divider";
@@ -29,6 +29,7 @@ import { MatInputModule } from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
 import { SearchDataService} from "./services/search-data.service";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
     MatCardModule,
     MatInputModule,
     HttpClientModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
 
   ],
   providers: [SearchDataService],
