@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from "../article/article";
-import { ArticleListItemComponent} from "../article-list/article-list-item/article-list-item.component";
-
-
+import { ArticleInterface } from "../../model/article/articleInterface";
 
 @Component({
   selector: 'app-article-details',
@@ -11,9 +8,9 @@ import { ArticleListItemComponent} from "../article-list/article-list-item/artic
 })
 export class ArticleDetailsComponentPage implements OnInit {
 
-  article: Article =   {
+  article: ArticleInterface =   {
     articleUuid: 1,
-    articleTitle: 'Some Article Title',
+    articleTitle: 'Some ArticleInterface Title',
     articleMedia: 'Media',
     articleAuthor: 'Author',
     articleTopic: 'Topic',

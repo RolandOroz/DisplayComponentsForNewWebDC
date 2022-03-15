@@ -31,6 +31,12 @@ import { SearchDataService} from "./services/search-data.service";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { Page1Component } from './pages/page1/page1.component';
+import { Page2Component } from './pages/page2/page2.component';
+import { Page3Component } from './pages/page3/page3.component';
+import { Page4Component } from './pages/page4/page4.component';
+import { Page5Component } from './pages/page5/page5.component';
+
 
 
 
@@ -48,6 +54,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     UserDetailsComponent,
     LoginFormComponent,
     HomeComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component,
+    Page4Component,
+    Page5Component,
 
   ],
   imports: [
@@ -56,7 +67,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'app-home', component: HomeComponent},
+      { path: 'app-home', component: HomeComponent },
+      // { path: 'app-page1', component: Page1Component },
+      // { path: 'app-page2', component: Page2Component },
+      // { path: 'app-page3', component: Page3Component }
     ]),
     MatListModule,
     MatToolbarModule,

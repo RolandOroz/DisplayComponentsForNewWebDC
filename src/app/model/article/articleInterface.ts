@@ -1,6 +1,6 @@
 
 
-export interface Article {
+export interface ArticleInterface {
 
   articleUuid: number;
   articleTitle: string;

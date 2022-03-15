@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from "../components/article/article";
+import { ArticleInterface } from "../model/article/articleInterface";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -9,10 +9,10 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class SearchDataService {
 
   searchOption=[]
-  //public articlesData: Article[]
+  //public articlesData: ArticleInterface[]
   postUrl : string = "https://jsonplaceholder.typicode.com/posts";
   constructor(private http: HttpClient) { }
-  getArticles(): Observable<Article[]>{
-    return this.http.get<Article[]>(this.postUrl);
+  getArticles(): Observable<ArticleInterface[]>{
+    return this.http.get<ArticleInterface[]>(this.postUrl);
   }
 }

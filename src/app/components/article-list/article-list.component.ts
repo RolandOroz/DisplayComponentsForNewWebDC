@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from "../article/article";
+import { ArticleInterface } from "../../model/article/articleInterface";
 import { MatSidenavModule } from "@angular/material/sidenav";
 
 
@@ -9,8 +9,5 @@ import { MatSidenavModule } from "@angular/material/sidenav";
   styleUrls: ['./article-list.component.css'],
 })
 export class ArticleListComponent {
-
-
-
 
 }
