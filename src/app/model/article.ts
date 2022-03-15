@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { ArticleInterface } from "./article/articleInterface";
 
-
 export class Article implements ArticleInterface {
 
   private _articleAuthor: string;
