@@ -1,6 +1,6 @@
 import { Article } from './article';
 
-describe('ArticleItem', () => {
+describe('Article', () => {
   it('should create an instance', () => {
     expect(new Article()).toBeTruthy();
   });
