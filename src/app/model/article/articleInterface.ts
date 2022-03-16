@@ -17,6 +17,7 @@ export interface ArticleInterface {
   articleSentiment: string;
   articleGenre: string;
   articleLink: string;
+  articleContent: string;
 
 }
 
