@@ -9,6 +9,7 @@ import { Article } from "../model/article";
 export class ArticleDataService {
 
   constructor() { }
+
   getArticle(): Article {
     return ARTICLE;
   }

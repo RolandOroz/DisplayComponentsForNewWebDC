@@ -10,7 +10,6 @@ import {ArticleDataService} from "../../mock/article-data.service";
 })
 export class ArticleDetailsComponentPage implements OnInit{
 
-
   article!: Article;
 
   constructor(private dataService: ArticleDataService) { }
@@ -18,6 +17,5 @@ export class ArticleDetailsComponentPage implements OnInit{
   ngOnInit(): void {
      this.article = this.dataService.getArticle()
   }
-
 }
 
