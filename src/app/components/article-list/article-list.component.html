@@ -1,15 +1,13 @@
 
-<mat-card *ngFor="let article of articles">
+<mat-card  *ngFor="let article of articles">
   <mat-card-header >
-    <mat-card-title>{{article.articleTitle}}</mat-card-title>
+    <mat-card-subtitle class="clicker">{{article.articleTitle}}</mat-card-subtitle>
     <mat-card-subtitle ><a href="{{article.articleLink}}">{{article.articleLink}}</a> </mat-card-subtitle>
-    <mat-card-subtitle >{{article.articleDate | date }}</mat-card-subtitle>
+    <mat-card-subtitle class="date">{{article.articleDate | date }}</mat-card-subtitle>
   </mat-card-header>
     <mat-divider></mat-divider>
 
-      <mat-card-content >{{article.articleContent}}</mat-card-content>
-
-
+<!--  <div class="hiddenContent">{{article.articleContent}}</div>-->
 </mat-card>
 
 
