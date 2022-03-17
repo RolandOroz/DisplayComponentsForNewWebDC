@@ -6,11 +6,12 @@
 mat-expansion-panel-header {
   margin: 5px;
 }
-p, mat-list, mat-list-item {
+p, mat-list, mat-list-item, mat-selection-list {
   font-family: glyphicons-basic-regular, serif !important;
   font-size: 12px;
-  line-height: 0.9em;
+  line-height: 1.9em;
   text-align: left;
+
 }
 span {
   text-align: left;
