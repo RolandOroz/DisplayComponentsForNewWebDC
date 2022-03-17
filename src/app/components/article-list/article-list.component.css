@@ -11,21 +11,9 @@ a {
   text-decoration: none;
   color: deeppink;
 }
-mat-card-content {
-
+mat-card {
+  padding: 15px;
+  margin: 15px;
 }
 
-.clicker {
-  outline:none;
-  cursor:pointer;
-}
 
-.hiddenContent{
-  display:none;
-
-  background-color:green;
-}
-
-.clicker:focus + .hiddenContent{
-  display:block;
-}
