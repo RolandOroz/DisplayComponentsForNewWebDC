@@ -1,15 +1,10 @@
 
 <mat-card  *ngFor="let article of articles">
   <mat-card-header >
-    <mat-card-subtitle>{{article.articleTitle}}</mat-card-subtitle>
-    <mat-card-subtitle><a href="{{article.articleLink}}">{{article.articleLink}}</a> </mat-card-subtitle>
-    <mat-card-subtitle class="date">{{article.articleDate | date }}</mat-card-subtitle>
+    <mat-card-subtitle><mat-checkbox></mat-checkbox>{{article.articleTitle}}</mat-card-subtitle>
+    <mat-card-subtitle><span>{{article.articleMedia}}</span></mat-card-subtitle>
+    <mat-card-subtitle class="date">{{article.articleDate | date : 'EEE.dd.MMM.y' }}</mat-card-subtitle>
   </mat-card-header>
-
-  <mat-card-content >
-    <mat-card-title>{{article.articleTitle}}</mat-card-title>
-    <mat-card-content>{{article.articleContent}}</mat-card-content>
-  </mat-card-content>
 </mat-card>
 
 

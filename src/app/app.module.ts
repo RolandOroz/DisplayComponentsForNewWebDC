@@ -36,6 +36,7 @@ import { Page2Component } from './pages/page2/page2.component';
 import { Page3Component } from './pages/page3/page3.component';
 import { Page4Component } from './pages/page4/page4.component';
 import { Page5Component } from './pages/page5/page5.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -64,7 +65,7 @@ import { Page5Component } from './pages/page5/page5.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      { path: 'app-home', component: HomeComponent },
+      {path: 'app-home', component: HomeComponent},
       // { path: 'app-page1', component: Page1Component },
       // { path: 'app-page2', component: Page2Component },
       // { path: 'app-page3', component: Page3Component }
@@ -82,7 +83,8 @@ import { Page5Component } from './pages/page5/page5.component';
     HttpClientModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
 
   ],
   exports: [

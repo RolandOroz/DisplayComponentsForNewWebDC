@@ -8,7 +8,7 @@ export const ARTICLE: Article =
     articleAuthor: 'Author 1',
     articleTopic: 'Topic 1',
     articleTag: 'Tag 1',
-    articleDate: '10-03-2020',
+    articleDate: '2016-01-05T09:05:05.035Z',
     articleCustomTopic: 'Custom Topic 1',
     articleMediaType: 'Media Type 1',
     articleSubMedia: 'Sub Media 1',
