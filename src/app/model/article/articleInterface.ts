@@ -18,7 +18,6 @@ export interface ArticleInterface {
   articleGenre: string;
   articleLink: string;
   articleContent: string;
-
 }
 
 // <!--<div wicket:id="sourceFilter"></div>

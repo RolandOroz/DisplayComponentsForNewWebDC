@@ -36,7 +36,10 @@ import { Page2Component } from './pages/page2/page2.component';
 import { Page3Component } from './pages/page3/page3.component';
 import { Page4Component } from './pages/page4/page4.component';
 import { Page5Component } from './pages/page5/page5.component';
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatNativeDateModule} from "@angular/material/core";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+
 
 
 @NgModule({
@@ -84,7 +87,10 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatDatepickerModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatButtonToggleModule
+
 
   ],
   exports: [

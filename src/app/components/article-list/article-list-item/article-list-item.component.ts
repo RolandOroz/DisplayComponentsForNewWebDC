@@ -9,8 +9,6 @@ import {DatePipe} from "@angular/common";
 })
 export class ArticleListItemComponent implements OnInit {
 
-
-
   constructor() { }
 
   ngOnInit(): void {

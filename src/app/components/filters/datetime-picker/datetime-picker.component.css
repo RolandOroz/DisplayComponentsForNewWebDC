@@ -1,0 +1,19 @@
+mat-card{
+  width: 220px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card-content {
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  line-height: 1.9em;
+
+}
+.dateFilterHeaderButtons{
+margin: 0;
+  padding: 0;
+  width: 220px;
+}
