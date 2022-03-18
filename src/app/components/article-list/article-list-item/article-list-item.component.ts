@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleInterface } from "../../../model/article/articleInterface";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-article-list-item',
   templateUrl: './article-list-item.component.html',
-  styleUrls: ['./article-list-item.component.css']
+  styleUrls: ['./article-list-item.component.css'],
+  providers: [ DatePipe]
 })
 export class ArticleListItemComponent implements OnInit {
 
