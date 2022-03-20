@@ -13,13 +13,21 @@ mat-card-content {
   line-height: 1.9em;
 }
 
+mat-card-header {
+  width: 244px;
+}
+input {
+  font-size: 12px;
+  text-align: center;
+  height: 24px;
+}
 
 .short200 {
   font-size: 12px;
   height: 35px;
   width: 188px;
   text-decoration: none;
-  font-size: medium;
+
 }
 .dateFilterFirstBanner {
   height: 25px;
