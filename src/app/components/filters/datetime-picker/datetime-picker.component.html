@@ -10,17 +10,18 @@
 
   <mat-card-content *ngIf="collapsed">
     <mat-list>
-      <mat-list-item >
+      <mat-list-item>
+  <!--                                                    TODO      add function -1 day to arrow-->
 
-<!--                                                                  TODO      add function -1 day to arrow-->
-        <button class="dateFilterHeaderButtons">
-          <mat-icon>navigate_before</mat-icon>
-        </button>
-        <button class="dateFilterHeaderButtons" >{{pickerChange | date}}</button>
-<!--                                                                  TODO      add function +1 day to arrow-->
-        <button class="dateFilterHeaderButtons">
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
+          <i (click)="dateFilter_prevDay()">
+            <mat-icon>navigate_before</mat-icon>
+          </i>
+          <i>{{pickerChange | date}}</i>
+
+  <!--                                                    TODO      add function +1 day to arrow-->
+          <i (click)="dateFilter_nextDay()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </i>
       </mat-list-item>
 
       <mat-list-item>

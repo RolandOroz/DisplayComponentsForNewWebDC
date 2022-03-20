@@ -21,6 +21,13 @@ export class DatetimePickerComponentPage{
   lastWeekSearch: string | undefined;
   lastMonthSearch: string | undefined;
 
+  dateFilter_prevDay() {
+
+  }
+
+  dateFilter_nextDay() {
+
+  }
 
   addPickerEvent(event: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.pickerChange = (`${event.value}`);
