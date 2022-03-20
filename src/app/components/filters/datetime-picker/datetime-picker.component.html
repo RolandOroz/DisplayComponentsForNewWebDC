@@ -1,30 +1,42 @@
 <mat-card>
-  <mat-card-content>Date Filter
-    <span class="spacer"></span>
-    <button>
-      <mat-icon>arrow_upward</mat-icon>
-    </button>
-  </mat-card-content>
   <mat-card-header>
+    <mat-card-title>Date Filter</mat-card-title>
+    <span class="spacer"></span>
+    <button (click)="toggleCollapsed()" >
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="collapsed">
+    <mat-list>
+      <mat-list-item>
     <button class="dateFilterHeaderButtons">
       <mat-icon>navigate_before</mat-icon>
     </button>
-    <button class="dateFilterHeaderButtons">ggg</button>
-    <button class="dateFilterHeaderButtons">
-      <mat-icon>keyboard_arrow_right</mat-icon>
-    </button>
-  </mat-card-header>
-  <br />
-  <mat-card-content>
-    <span class="spacer">select:</span>
-    <mat-button-toggle ></mat-button-toggle>
-    <span class="spacer">range:</span>
-    <mat-button-toggle ></mat-button-toggle>
-  </mat-card-content>
-  <mat-card-content>
-      <div>today</div>
-      <div>yesterday</div>
-      <div>last week</div>
-      <div>last month</div>
+        <button class="dateFilterHeaderButtons">{{todayISOString}}</button>
+        <button class="dateFilterHeaderButtons">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-list-item>
+<mat-list-item>
+    <span>select:</span>
+  <mat-form-field>
+    <input  matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <span class="spacer"></span>
+    <span>range:</span>
+  <button>|<->|</button>
+</mat-list-item>
+      <mat-list-item>today</mat-list-item>
+      <mat-list-item>yesterday</mat-list-item>
+      <mat-list-item>last week</mat-list-item>
+      <mat-list-item>last month</mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>
+<mat-calendar>
+  <mat-calendar-header >fsdgfsd</mat-calendar-header>
+
+</mat-calendar>

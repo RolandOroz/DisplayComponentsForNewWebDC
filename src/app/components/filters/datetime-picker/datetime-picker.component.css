@@ -17,3 +17,9 @@ margin: 0;
   padding: 0;
   width: 220px;
 }
+mat-form-field {
+  width: 24px;
+}
+mat-calendar {
+  width: 220px;
+}
