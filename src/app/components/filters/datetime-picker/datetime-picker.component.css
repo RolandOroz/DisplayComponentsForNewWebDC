@@ -13,14 +13,15 @@ mat-card-content {
 
 }
 .dateFilterHeaderButtons{
-margin: 0;
+
+  font-size: 12px;
+  margin: 0;
   padding: 0;
-  width: 220px;
+  width: 210px;
+  height: 35px;
 }
-mat-form-field {
-  width: 24px;
+.short200 {
+width: 200px;
   text-decoration: none;
-}
-mat-calendar {
-  width: 220px;
+  font-size: medium;
 }

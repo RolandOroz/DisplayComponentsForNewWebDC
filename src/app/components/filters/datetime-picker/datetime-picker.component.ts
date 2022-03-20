@@ -13,14 +13,17 @@ export class DatetimePickerComponentPage{
 
   collapsed: boolean | undefined;
   date = new FormControl(new Date());
-  serializedDate = new FormControl((new Date()).toISOString());
-  todayISOString : string = new Date().toISOString();
+  // serializedDate = new FormControl((new Date()).toISOString());
+  pickerChange: string = new Date().toISOString();
 
-  events: string[] = [];
+  todaySearch: string | undefined;
+  yesterdaySearch: string | undefined;
+  lastWeekSearch: string | undefined;
+  lastMonthSearch: string | undefined;
 
 
-  addEvent(event: MatDatepickerInputEvent<Date>) {
-    this.events.push(`${event.value}`);
+  addPickerEvent(event: MatDatepickerInputEvent<unknown, unknown | null>) {
+    this.pickerChange = (`${event.value}`);
   }
 
   toggleCollapsed() {
