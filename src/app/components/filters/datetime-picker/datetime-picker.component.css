@@ -21,7 +21,9 @@ mat-card-content {
   height: 35px;
 }
 .short200 {
-width: 200px;
+  font-size: 12px;
+  height: 35px;
+  width: 200px;
   text-decoration: none;
   font-size: medium;
 }
