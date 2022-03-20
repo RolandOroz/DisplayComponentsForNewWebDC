@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {DatePipe} from "@angular/common";
+import {FormControl} from "@angular/forms";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -10,7 +12,16 @@ import {DatePipe} from "@angular/common";
 export class DatetimePickerComponentPage{
 
   collapsed: boolean | undefined;
+  date = new FormControl(new Date());
+  serializedDate = new FormControl((new Date()).toISOString());
   todayISOString : string = new Date().toISOString();
+
+  events: string[] = [];
+
+
+  addEvent(event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${event.value}`);
+  }
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;

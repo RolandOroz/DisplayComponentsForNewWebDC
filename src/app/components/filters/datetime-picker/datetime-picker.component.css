@@ -19,6 +19,7 @@ margin: 0;
 }
 mat-form-field {
   width: 24px;
+  text-decoration: none;
 }
 mat-calendar {
   width: 220px;
