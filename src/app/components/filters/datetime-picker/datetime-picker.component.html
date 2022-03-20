@@ -3,7 +3,7 @@
   <mat-card-header>
     <mat-card-title>Date Filter</mat-card-title>
     <span class="spacer"></span>
-    <button (click)="toggleCollapsed()" >
+    <button class="dataFilterCollapse"(click)="toggleCollapsed()" >
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
   </mat-card-header>
@@ -13,13 +13,13 @@
       <mat-list-item>
   <!--                                                    TODO      add function -1 day to arrow-->
 
-          <i (click)="dateFilter_prevDay()">
+          <i class="prevDay" (click)="dateFilter_prevDay()">
             <mat-icon>navigate_before</mat-icon>
           </i>
           <i>{{pickerChange | date}}</i>
 
   <!--                                                    TODO      add function +1 day to arrow-->
-          <i (click)="dateFilter_nextDay()">
+          <i class="nextDay" (click)="dateFilter_nextDay()">
             <mat-icon>keyboard_arrow_right</mat-icon>
           </i>
       </mat-list-item>

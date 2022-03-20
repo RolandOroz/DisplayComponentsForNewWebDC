@@ -17,7 +17,7 @@ mat-card-content {
 .short200 {
   font-size: 12px;
   height: 35px;
-  width: 200px;
+  width: 188px;
   text-decoration: none;
   font-size: medium;
 }
@@ -26,16 +26,43 @@ mat-card-content {
   width: 218px !important;
   line-height: 0.9em;
   font-size: 12px;
-  border: 1px solid black;
+  border: 1px solid #e0e0e0;
   border-radius: 5px;
   flex: 1 1 auto;
 }
 i {
  flex: 1 1 auto;
-  height: 35px;
-  border: 1px solid black;
-  border-radius: 5px;
+  height: 24px;
+  border: 1px solid #e0e0e0;
+  background-color: #eeeeee;
+  text-align: center;
 }
+button.dataFilterCollapse {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 24px;
+  text-align: center;
+}
+
  i:hover {
-  background-color: #999999;
+   background-color: #e0e0e0;
  }
+
+ i.prevDay {
+   float: left;
+   cursor: pointer;
+   border-bottom-left-radius: 5px;
+   border-top-left-radius: 5px;
+
+   height: 24px;
+   text-align: center;
+ }
+i.nextDay {
+  float: right;
+  cursor: pointer;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+
+  height: 24px;
+  text-align: center;
+}
