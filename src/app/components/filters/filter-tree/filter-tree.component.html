@@ -1,13 +1,23 @@
-<mat-radio-group labelPosition="before" >
-
-  <mat-radio-button class="radio-button" ngModel value="media" checked="true">Media</mat-radio-button>
-  <mat-radio-button class="radio-button" ngModel value="both">Both</mat-radio-button>
-  <mat-radio-button class="radio-button" ngModel value="Engagement">Engagement</mat-radio-button>
-</mat-radio-group>
-<mat-action-list>
-  <mat-expansion-panel>
-
-    <mat-expansion-panel-header>Date filter</mat-expansion-panel-header>
-
-  </mat-expansion-panel>
-</mat-action-list>
+<mat-card>
+  <mat-card-header>
+    <mat-radio-group color="primary" >
+      <mat-list>
+        <mat-label>Media</mat-label>
+        <mat-radio-button class="radio-button" ngModel value="media" checked="true"></mat-radio-button>
+      </mat-list>
+      <mat-list>
+        <mat-label>Both</mat-label>
+        <mat-radio-button class="radio-button" ngModel value="both"></mat-radio-button>
+      </mat-list>
+      <mat-list>
+        <mat-label>Engagement</mat-label>
+        <mat-radio-button class="radio-button" ngModel value="Engagement"></mat-radio-button>
+      </mat-list>
+    </mat-radio-group>
+  </mat-card-header>
+<mat-card-content>
+  <mat-list-item>
+      <app-datetime-picker></app-datetime-picker>
+  </mat-list-item>
+</mat-card-content>
+</mat-card>

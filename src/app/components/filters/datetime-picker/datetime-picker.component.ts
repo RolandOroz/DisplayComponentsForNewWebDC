@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {DatePipe} from "@angular/common";
 import {FormControl} from "@angular/forms";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
@@ -14,14 +13,15 @@ export class DatetimePickerComponentPage{
   collapsed: boolean | undefined;
   date = new FormControl(new Date());
   // serializedDate = new FormControl((new Date()).toISOString());
-  pickerChange: string = new Date().toISOString();
-
+  pickerChange: string = new Date().toDateString();
+  prevDay = new Date(this.pickerChange);
   todaySearch: string | undefined;
   yesterdaySearch: string | undefined;
   lastWeekSearch: string | undefined;
   lastMonthSearch: string | undefined;
 
   dateFilter_prevDay() {
+
 
   }
 
