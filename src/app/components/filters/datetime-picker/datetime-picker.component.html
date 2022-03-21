@@ -42,14 +42,16 @@
 
         <mat-form-field appearance="fill" class="short200" >
           <mat-label>Range: </mat-label>
-          <mat-date-range-input [rangePicker]="dateRangePicker">
+          <mat-date-range-input [rangePicker]="dateRangePicker" >
             <input matStartDate
                    placeholder="Start date"
-                   #dateRangeStart>
+                   #dateRangeStart
+                   readonly>
             <input matEndDate
                    placeholder="End date"
                    #dateRangeEnd
-                   (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
+                   (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)"
+                   readonly>
           </mat-date-range-input>
           <mat-datepicker-toggle matSuffix
                                  [for]="dateRangePicker">
@@ -67,6 +69,7 @@
 
 </mat-card>
 
+<div>Date data:</div>
 <div *ngFor="let p of picker2Change">with ngFor: {{p}}</div>
 <div>from: {{fromDate}}</div>
 <div>to: {{toDate}}</div>
