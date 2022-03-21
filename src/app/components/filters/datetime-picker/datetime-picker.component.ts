@@ -12,7 +12,6 @@ export class DatetimePickerComponentPage{
 
   collapsed: boolean | undefined;
   date = new FormControl(new Date());
-  // serializedDate = new FormControl((new Date()).toISOString());
   pickerChange: string = new Date().toDateString();
   picker2Change: string[] = [];
   prevDay = new Date(this.pickerChange);
@@ -22,7 +21,6 @@ export class DatetimePickerComponentPage{
   lastMonthSearch: string | undefined;
 
   dateFilter_prevDay() {
-
 
   }
 
@@ -42,11 +40,5 @@ export class DatetimePickerComponentPage{
     this.picker2Change.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
 
   }
-  // toggleCalendar() {
-  //
-  // }
-  // constructor(public datepipe: DatePipe){
-  //   let currentDateTime =this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss');
-  //
-  // }
+
 }
