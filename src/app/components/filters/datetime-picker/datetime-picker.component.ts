@@ -14,6 +14,7 @@ export class DatetimePickerComponentPage{
   date = new FormControl(new Date());
   // serializedDate = new FormControl((new Date()).toISOString());
   pickerChange: string = new Date().toDateString();
+  picker2Change: string[] = [];
   prevDay = new Date(this.pickerChange);
   todaySearch: string | undefined;
   yesterdaySearch: string | undefined;
@@ -37,6 +38,10 @@ export class DatetimePickerComponentPage{
     this.collapsed = !this.collapsed;
   }
 
+  dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
+    this.picker2Change.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
+
+  }
   // toggleCalendar() {
   //
   // }

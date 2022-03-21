@@ -28,29 +28,36 @@
       </mat-list-item>
 
       <mat-list-item>
-        <mat-form-field class="short200" >
+        <mat-form-field appearance="fill" class="short200" >
           <mat-label>Select:</mat-label>
           <input matInput [matDatepicker]="picker" readonly
             (dateChange)="addPickerEvent( $event)">
            <mat-datepicker-toggle  matSuffix [for]="picker" >
-<!--      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>-->
           </mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>
         </mat-form-field>
       </mat-list-item>
-
+<br />
       <mat-list-item>
-        <mat-form-field class="short200" >
-          <mat-label>Range: </mat-label>
-          <mat-date-range-input [rangePicker]="picker2">
-            <input matStartDate placeholder="Start date" readonly>
-            <input matEndDate placeholder="End date" readonly>
-          </mat-date-range-input>
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-date-range-picker #picker2></mat-date-range-picker>
-        </mat-form-field>
-      </mat-list-item >
 
+        <mat-form-field appearance="fill" class="short200" >
+          <mat-label>Range: </mat-label>
+          <mat-date-range-input [rangePicker]="dateRangePicker">
+            <input matStartDate
+                   placeholder="Start date"
+                   #dateRangeStart>
+            <input matEndDate
+                   placeholder="End date"
+                   #dateRangeEnd
+                   (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix
+                                 [for]="dateRangePicker">
+          </mat-datepicker-toggle>
+          <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+        </mat-form-field>
+
+      </mat-list-item >
       <mat-list-item>today</mat-list-item>
       <mat-list-item>yesterday</mat-list-item>
       <mat-list-item>last week</mat-list-item>

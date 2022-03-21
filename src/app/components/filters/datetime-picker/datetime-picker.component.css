@@ -2,6 +2,7 @@ mat-card{
   border-radius: 5px;
   width: 220px;
   font-family: glyphicons-basic-regular, sans-serif;
+  font-size: 12px;
 }
 .spacer {
   flex: 1 1 auto;
@@ -12,6 +13,7 @@ mat-card-content {
   padding: 0;
   width: 220px;
   line-height: 1.9em;
+  font-size: 12px;
 
 }
 
@@ -31,8 +33,6 @@ input {
   height: 35px;
   width: 188px;
   text-align: left;
-
-
 }
 .dateFilterFirstBanner {
 
@@ -45,7 +45,8 @@ input {
   flex: 1 1 auto;
 }
 i {
- flex: 1 1 auto;
+  font-size: 12px;
+  flex: 1 1 auto;
   height: 24px;
   border: 1px solid #e0e0e0;
   background-color: #eeeeee;
@@ -80,5 +81,10 @@ i.nextDay {
 
   height: 24px;
   text-align: center;
+
+}
+
+mat-list-item {
+  font-size: 12px;
 
 }
