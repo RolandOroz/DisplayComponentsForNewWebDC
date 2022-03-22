@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ArticleInterface } from "../model/article/articleInterface";
-import { Observable } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {Observable} from "rxjs";
+import { HttpClient} from "@angular/common/http";
+// import {DatetimePickerComponentPage} from "../components/filters/datetime-picker/datetime-picker.component";
 
 @Injectable({
   providedIn: 'root'
