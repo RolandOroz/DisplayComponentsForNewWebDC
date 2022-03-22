@@ -81,10 +81,25 @@ i.nextDay {
 
   height: 24px;
   text-align: center;
-
 }
 
 mat-list-item {
   font-size: 12px;
+}
 
+li,ul {
+  list-style-type: none;
+  margin: 0 8px;
+  padding: 0;
+}
+
+span.iDateFilter {
+  alignment: right ;
+}
+
+.floatleft {
+  float:left;
+}
+.floatright {
+  float:right;
 }

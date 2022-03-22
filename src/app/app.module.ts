@@ -37,8 +37,9 @@ import { Page3Component } from './pages/page3/page3.component';
 import { Page4Component } from './pages/page4/page4.component';
 import { Page5Component } from './pages/page5/page5.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatNativeDateModule} from "@angular/material/core";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+
 
 
 

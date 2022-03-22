@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// import {FormControl} from "@angular/forms";
-// import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import { DatePickerDataService } from "../../../services/date-picker-data.service";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -11,9 +10,11 @@ import {Component, OnInit} from '@angular/core';
 
 export class DatetimePickerComponentPage implements OnInit{
 
-
+  constructor(private datePickerDataService:DatePickerDataService) {
+  }
 
   collapsed: boolean | undefined;
+
 
 
   dateDayPickerData = new Date();
@@ -25,13 +26,17 @@ export class DatetimePickerComponentPage implements OnInit{
 
 
   selectedDay = new Date();
-  startDate = new Date().toDateString();
-  endDate = new Date().toDateString();
+  startDate = new Date().toLocaleDateString();
+  endDate = new Date().toLocaleDateString();
 
-  todaySearch: string | undefined;
-  yesterdaySearch: string | undefined;
-  lastWeekSearch: string | undefined;
-  lastMonthSearch: string | undefined;
+  todaySearch = new Date();
+  yesterdaySearch = "date -1";
+  lastWeekSearch = "date -7";
+  lastMonthSearch = "date -Month";
+
+
+
+
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.dateDayPickerData);
@@ -49,31 +54,25 @@ export class DatetimePickerComponentPage implements OnInit{
     }
   }
 
-  // addPickerEvent(event: MatDatepickerInputEvent<unknown, unknown | null>) {
-  //   this.pickerChange = (`${event.value}`);
-  //   this.fromDate = this.pickerChange;
-  //   this.toDate = this.pickerChange;
-  // }
-
-  displayChange() {
-
+  dateChange() {
     this.dateDayPickerData = this.selectedDay;
-
+    this.pickerData = this.selectedDay;
   }
+
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
 
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
-
     this.startDate = (`${dateRangeStart.value}`);
     this.endDate = (`${dateRangeEnd.value}`);
     this.dateRangePickerDataArr.push(`${dateRangeStart.value}`,`${dateRangeEnd.value}`);
     this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
   }
-
+  pickerData = this.dateDayPickerData;
   ngOnInit(): void {
+    this.datePickerDataService.setPickerData(this.pickerData);
   }
 
 }
