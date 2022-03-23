@@ -80,12 +80,13 @@
 </mat-card>
 
 <!--Testing-->
-
-<div>{{dateDayPickerData}}</div>
-<br />
-<div>Range with ngFor:</div>
-<div *ngFor="let rangeData of dateRangePickerDataArr">{{rangeData}}
-<br />
-</div><div>Range no ngFor:</div>
-<div>{{dateRangePickerDataStart}}</div>
-<div>{{dateRangePickerDataEnd}}</div>
+<label>Add an item: <input #newItem></label>
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+<!--<div>{{dateDayPickerData}}</div>-->
+<!--<br />-->
+<!--<div>Range with ngFor:</div>-->
+<!--<div *ngFor="let rangeData of dateRangePickerDataArr">{{rangeData}}-->
+<!--<br />-->
+<!--</div><div>Range no ngFor:</div>-->
+<!--<div>{{dateRangePickerDataStart}}</div>-->
+<!--<div>{{dateRangePickerDataEnd}}</div>-->

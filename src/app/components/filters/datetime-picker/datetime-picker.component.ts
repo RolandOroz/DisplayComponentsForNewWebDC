@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { DatePickerDataService } from "../../../services/date-picker-data.service";
+import { Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -11,6 +12,12 @@ import { DatePickerDataService } from "../../../services/date-picker-data.servic
 export class DatetimePickerComponentPage implements OnInit{
 
   constructor(private datePickerDataService:DatePickerDataService) {
+  }
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
   }
 
   collapsed: boolean | undefined;
@@ -30,7 +37,7 @@ export class DatetimePickerComponentPage implements OnInit{
   endDate = new Date().toLocaleDateString();
 
   todaySearch = new Date();
-  yesterdaySearch = "date -1";
+  yesterdaySearch= "date -1";
   lastWeekSearch = "date -7";
   lastMonthSearch = "date -Month";
 

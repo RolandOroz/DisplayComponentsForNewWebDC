@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 // import { DatetimePickerComponentPage} from "../datetime-picker/datetime-picker.component";
 
 @Component({
@@ -8,6 +8,7 @@ import { Component} from '@angular/core';
 })
 
 export class FilterTreeComponent {
+
 
 
 }

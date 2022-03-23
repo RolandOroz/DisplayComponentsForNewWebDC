@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Component implements OnInit {
 
+  myItem: string = "burek";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setBurek(burek: string) {
+    this.myItem = burek;
   }
 
 }
