@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { DatePickerDataService } from "../../../services/date-picker-data.service";
 import { Output, EventEmitter } from "@angular/core";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -14,11 +15,11 @@ export class DatetimePickerComponentPage implements OnInit{
   constructor(private datePickerDataService:DatePickerDataService) {
   }
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newItemEvent = new EventEmitter<any>();
 
-  addNewItem(value: string) {
-    this.newItemEvent.emit(value);
-  }
+  // addNewItem(value: string) {
+  //   this.newItemEvent.emit(value);
+  // }
 
   collapsed: boolean | undefined;
 
@@ -61,9 +62,10 @@ export class DatetimePickerComponentPage implements OnInit{
     }
   }
 
-  dateChange() {
+  dateChange($event: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.dateDayPickerData = this.selectedDay;
     this.pickerData = this.selectedDay;
+    this.newItemEvent.emit($event);
   }
 
   toggleCollapsed() {

@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Component implements OnInit {
 
-  myItem: string = "burek";
+  myItem= new Date();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setBurek(burek: string) {
-    this.myItem = burek;
+  setBurek(value: Date) {
+    this.myItem = value;
+    console.log(this.myItem);
+
   }
 
 }

@@ -33,7 +33,7 @@
           <mat-label>Select:</mat-label>
 <!-- USING ngModel for data binding-->
           <input matInput [(ngModel)]="selectedDay" name="selectedDay" [matDatepicker]="picker" readonly
-            (dateChange)="dateChange()">
+            (dateChange)="dateChange($event)">
            <mat-datepicker-toggle  matSuffix [for]="picker" >
           </mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>
@@ -80,8 +80,8 @@
 </mat-card>
 
 <!--Testing-->
-<label>Add an item: <input #newItem></label>
-<button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+<!--<label>Add an item: <input #newItem></label>-->
+<!--<button (click)="addNewItem(newItem.value)">Add to parent's list</button>-->
 <!--<div>{{dateDayPickerData}}</div>-->
 <!--<br />-->
 <!--<div>Range with ngFor:</div>-->
