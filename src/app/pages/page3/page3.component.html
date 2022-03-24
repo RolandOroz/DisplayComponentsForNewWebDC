@@ -1,3 +1,4 @@
-<app-datetime-picker (newItemEvent)="datePickerData($event)"></app-datetime-picker>
-<span>{{myItem | date}}</span>
-<div (newDateEvent)="datePickerDateFormat($event)">{{dateFormat}}</div>
+<app-datetime-picker (onRangeSelected)="datePickerData($event)"></app-datetime-picker>
+
+<div>{{dateSelection.start}}</div>
+<div>{{dateSelection.end}}</div>

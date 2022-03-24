@@ -9,19 +9,28 @@ import { Component, OnInit } from '@angular/core';
 export class Page3Component implements OnInit {
 
   myItem= new Date();
-  dateFormat:any;
+
+  //TODO make model with date type
+
+  dateSelection = {
+    'start': new Date(),
+    'end': new Date()
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  datePickerDateFormat(value: any) {
-    this.dateFormat = value;
-  }
+  // datePickerDateFormat(value: Date) {
+  //
+  // }
+
 
   datePickerData(value: Date) {
-   this.myItem = value;
+    // TODO make use of moment lib https://momentjs.com/
+   this.dateSelection.start = value;
+   this.dateSelection.end = value;
 
   }
 

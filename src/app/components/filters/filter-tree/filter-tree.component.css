@@ -5,7 +5,8 @@ mat-radio-group {
 }
 
 mat-radio-button{
-  margin: 5px;
+
+  display: block;
 
 }
 
@@ -17,4 +18,12 @@ mat-card {
 }
 mat-card-content {
   width: 220px;
+}
+
+mat-label {
+
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

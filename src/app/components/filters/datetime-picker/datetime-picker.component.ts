@@ -20,8 +20,8 @@ export class DatetimePickerComponentPage implements OnInit{
   constructor(private datePickerDataService:DatePickerDataService) {
   }
 
-  @Output() newItemEvent = new EventEmitter<Date>();
-  @Output() newDateEvent = new EventEmitter<number>();
+
+  @Output() onRangeSelected = new EventEmitter<Date>();
   // addNewItem(value: string) {
   //   this.newItemEvent.emit(value);
   // }
@@ -35,6 +35,11 @@ export class DatetimePickerComponentPage implements OnInit{
   dateRangePickerDataStart = new Date().toLocaleDateString();
   dateRangePickerDataEnd = new Date().toLocaleDateString();
 
+  dateSelection = {
+    'start': Date(),
+    'end': Date()
+  }
+
   pickerChange: Date = new Date();
 
 
@@ -46,12 +51,6 @@ export class DatetimePickerComponentPage implements OnInit{
   yesterdaySearch= "date -1";
   lastWeekSearch = "date -7";
   lastMonthSearch = "date -Month";
-
-
-  addNewDate(value: MatDatepicker<any>) {
-  this.newDateEvent.emit(this.dateFormat);
-
-  }
 
 
   dateFilter_prevDay() {
@@ -72,21 +71,22 @@ export class DatetimePickerComponentPage implements OnInit{
   timestampToMoment(value: number): Moment {
     return moment(value * 1000);
   }
-  dateChange($event: MatDatepickerInputEvent<unknown, unknown | null>) {
+
+  dateChange($event: MatDatepicker<any>) {
     this.dateDayPickerData = this.selectedDay;
     this.pickerData = this.selectedDay;
-    this.newItemEvent.emit(this.pickerData);
-    this.newDateEvent.emit(this.dateFormat);
     this.dateFormat = this.pickerData;
-    console.log(this.startDate);
+
   }
 
   addDateEvent(type: string, dinput: MatDatepickerInputEvent<unknown, unknown | null>) {
-    this.datesInput.push(`${dinput.value}`);
-    this.date = new Date(this.datesInput[0].toString());
-    this.selectedDay = new Date(this.datesInput[0].toString());
-    this.dates = moment(this.date, 'YYYY-MM-DD').toString();
-    console.log(this.datesInput);
+
+    this.date = new Date();
+
+    this.dates = moment(this.date, 'DD-MM-YYYY').toString();
+
+    this.onRangeSelected.emit(this.selectedDay);
+    console.log(this.selectedDay);
   }
 
   toggleCollapsed() {
@@ -100,6 +100,13 @@ export class DatetimePickerComponentPage implements OnInit{
     this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
   }
+  // onRangeSelected(type: string, dinput: MatDatepickerInputEvent<unknown, unknown | null>){
+  //   this.date = new Date();
+  //   this.dates = moment(this.date, 'DD-MM-YYYY').toString();
+  //   this.dateSelection.start = this.date;
+  //   this.dateSelection.end = this.date.getDate()+1;
+  // }
+
   pickerData = this.dateDayPickerData;
   dateFormat:any;
 
