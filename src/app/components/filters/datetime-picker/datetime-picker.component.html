@@ -33,7 +33,7 @@
           <mat-label>Select:</mat-label>
 <!-- USING ngModel for data binding-->
           <input matInput [(ngModel)]="selectedDay" name="selectedDay" [matDatepicker]="picker" readonly
-            (dateChange)="dateChange()">
+            (dateChange)="dateChange($event)">
            <mat-datepicker-toggle  matSuffix [for]="picker" >
           </mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>

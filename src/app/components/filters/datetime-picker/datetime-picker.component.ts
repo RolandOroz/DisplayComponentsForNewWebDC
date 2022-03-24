@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DatePickerDataService} from "../../../services/date-picker-data.service";
-import {Output, EventEmitter} from "@angular/core";
-
+import { DatePickerDataService } from "../../../services/date-picker-data.service";
+import { Output, EventEmitter } from "@angular/core";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -10,9 +10,9 @@ import {Output, EventEmitter} from "@angular/core";
 
 })
 
-export class DatetimePickerComponentPage implements OnInit {
+export class DatetimePickerComponentPage implements OnInit{
 
-  constructor(private datePickerDataService: DatePickerDataService) {
+  constructor(private datePickerDataService:DatePickerDataService) {
   }
 
   @Output() newItemEvent = new EventEmitter<Date>();
@@ -22,6 +22,7 @@ export class DatetimePickerComponentPage implements OnInit {
   // }
 
   collapsed: boolean | undefined;
+
 
 
   dateDayPickerData = new Date();
@@ -37,28 +38,31 @@ export class DatetimePickerComponentPage implements OnInit {
   endDate = new Date().toLocaleDateString();
 
   todaySearch = new Date();
-  yesterdaySearch = "date -1";
+  yesterdaySearch= "date -1";
   lastWeekSearch = "date -7";
   lastMonthSearch = "date -Month";
 
 
+
+
+
   dateFilter_prevDay() {
     let prevDay = new Date(this.dateDayPickerData);
-    prevDay.setDate(this.dateDayPickerData.getDate() - 1);
+    prevDay.setDate(this.dateDayPickerData.getDate()-1);
     this.dateDayPickerData = prevDay;
   }
 
   dateFilter_nextDay() {
     const maxDate = new Date();
     let nextDay = new Date(this.dateDayPickerData);
-    nextDay.setDate(this.dateDayPickerData.getDate() + 1);
+    nextDay.setDate(this.dateDayPickerData.getDate()+1);
     this.dateDayPickerData = nextDay;
-    if (this.dateDayPickerData >= maxDate) {
+    if(this.dateDayPickerData >= maxDate){
       this.dateDayPickerData = maxDate;
     }
   }
 
-  dateChange() {
+  dateChange($event: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.dateDayPickerData = this.selectedDay;
     this.pickerData = this.selectedDay;
     this.newItemEvent.emit(this.pickerData);
@@ -72,13 +76,11 @@ export class DatetimePickerComponentPage implements OnInit {
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
     this.startDate = (`${dateRangeStart.value}`);
     this.endDate = (`${dateRangeEnd.value}`);
-    this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
+    this.dateRangePickerDataArr.push(`${dateRangeStart.value}`,`${dateRangeEnd.value}`);
     this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
   }
-
   pickerData = this.dateDayPickerData;
-
   ngOnInit(): void {
     this.datePickerDataService.setPickerData(this.pickerData);
   }
