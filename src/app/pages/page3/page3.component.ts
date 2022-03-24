@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-page3',
   templateUrl: './page3.component.html',
@@ -8,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class Page3Component implements OnInit {
 
   myItem= new Date();
+  dateFormat:any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setBurek(value: Date) {
-    this.myItem = value;
-    console.log(this.myItem);
+  datePickerDateFormat(value: any) {
+    this.dateFormat = value;
+  }
+
+  datePickerData(value: Date) {
+   this.myItem = value;
 
   }
 

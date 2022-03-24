@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { DatePickerDataService } from "../../../services/date-picker-data.service";
 import { Output, EventEmitter } from "@angular/core";
-import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import { MatDatepicker, MatDatepickerInputEvent } from "@angular/material/datepicker";
+import { Moment } from "moment/moment";
+import * as moment from "moment/moment";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -12,11 +14,14 @@ import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 export class DatetimePickerComponentPage implements OnInit{
 
+  private date: any;
+  private dates: any;
+  datesInput: string[] = [];
   constructor(private datePickerDataService:DatePickerDataService) {
   }
 
   @Output() newItemEvent = new EventEmitter<Date>();
-
+  @Output() newDateEvent = new EventEmitter<number>();
   // addNewItem(value: string) {
   //   this.newItemEvent.emit(value);
   // }
@@ -24,7 +29,7 @@ export class DatetimePickerComponentPage implements OnInit{
   collapsed: boolean | undefined;
 
 
-
+// formated dates with moment.js (EPOCH)
   dateDayPickerData = new Date();
   dateRangePickerDataArr: any[] = [];
   dateRangePickerDataStart = new Date().toLocaleDateString();
@@ -43,7 +48,10 @@ export class DatetimePickerComponentPage implements OnInit{
   lastMonthSearch = "date -Month";
 
 
+  addNewDate(value: MatDatepicker<any>) {
+  this.newDateEvent.emit(this.dateFormat);
 
+  }
 
 
   dateFilter_prevDay() {
@@ -61,12 +69,24 @@ export class DatetimePickerComponentPage implements OnInit{
       this.dateDayPickerData = maxDate;
     }
   }
-
+  timestampToMoment(value: number): Moment {
+    return moment(value * 1000);
+  }
   dateChange($event: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.dateDayPickerData = this.selectedDay;
     this.pickerData = this.selectedDay;
     this.newItemEvent.emit(this.pickerData);
+    this.newDateEvent.emit(this.dateFormat);
+    this.dateFormat = this.pickerData;
+    console.log(this.startDate);
+  }
 
+  addDateEvent(type: string, dinput: MatDatepickerInputEvent<unknown, unknown | null>) {
+    this.datesInput.push(`${dinput.value}`);
+    this.date = new Date(this.datesInput[0].toString());
+    this.selectedDay = new Date(this.datesInput[0].toString());
+    this.dates = moment(this.date, 'YYYY-MM-DD').toString();
+    console.log(this.datesInput);
   }
 
   toggleCollapsed() {
@@ -81,6 +101,8 @@ export class DatetimePickerComponentPage implements OnInit{
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
   }
   pickerData = this.dateDayPickerData;
+  dateFormat:any;
+
   ngOnInit(): void {
     this.datePickerDataService.setPickerData(this.pickerData);
   }

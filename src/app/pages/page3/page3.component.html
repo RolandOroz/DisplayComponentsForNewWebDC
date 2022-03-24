@@ -1,2 +1,3 @@
-<app-datetime-picker (newItemEvent)="setBurek($event)"></app-datetime-picker>
+<app-datetime-picker (newItemEvent)="datePickerData($event)"></app-datetime-picker>
 <span>{{myItem | date}}</span>
+<div (newDateEvent)="datePickerDateFormat($event)">{{dateFormat}}</div>
