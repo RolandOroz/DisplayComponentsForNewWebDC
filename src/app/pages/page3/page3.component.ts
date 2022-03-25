@@ -19,7 +19,7 @@ export class Page3Component implements OnInit {
   }
 
 
-  datePickerData(value: Date) {
+  datePickerData(value: any) {
     // TODO make use of moment lib https://momentjs.com/
    this.dateSelection.start = value.getTime();
    this.dateSelection.end = value.getTime() + (1000 * 60 * 60 * 24);

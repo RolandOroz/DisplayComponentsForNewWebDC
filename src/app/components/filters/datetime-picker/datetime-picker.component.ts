@@ -16,7 +16,8 @@ export class DatetimePickerComponentPage implements OnInit {
   }
 
 
-  @Output() onRangeSelected = new EventEmitter<Date>();
+   @Output() onRangeSelected = new EventEmitter<Date>();
+  // @Output() onRangeSelected = new EventEmitter<Object>();
   // addNewItem(value: string) {
   //   this.newItemEvent.emit(value);
   // }
@@ -59,7 +60,7 @@ export class DatetimePickerComponentPage implements OnInit {
 
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
-    this.onRangeSelected.emit(this.selectedDay);
+    this.onRangeSelected.emit(this.selectedDay );
     // // this.onRangeSelected.emit();
     // this.onRangeSelected.emit(this.selectedRangeEndDay);
   }
