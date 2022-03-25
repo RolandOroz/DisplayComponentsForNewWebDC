@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DatePickerData} from "../../model/datePickerData";
 
 @Component({
   selector: 'app-page3',
@@ -9,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class Page3Component implements OnInit {
 
   myItem= new Date();
-
+  date = new Date();
   //TODO make model with date type
 
-  dateSelection = {
-    'start': new Date(),
-    'end': new Date()
-  }
+  // dateSelection = {
+  //   'start': new Date(),
+  //   'end': new Date()
+  // }
+
+  dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
 
   constructor() { }
 
@@ -29,8 +31,8 @@ export class Page3Component implements OnInit {
 
   datePickerData(value: Date) {
     // TODO make use of moment lib https://momentjs.com/
-   this.dateSelection.start = value;
-   this.dateSelection.end = value;
+   this.dateSelection.start = value.getTime();
+   this.dateSelection.end = value.getTime() + (1000 * 60 * 60 * 24);
 
   }
 

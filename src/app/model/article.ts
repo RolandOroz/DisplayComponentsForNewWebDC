@@ -1,4 +1,4 @@
-import { ArticleInterface } from "./article/articleInterface";
+import { ArticleInterface } from "./Interface/articleInterface";
 
 export class Article implements ArticleInterface {
 
