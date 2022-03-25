@@ -17,6 +17,7 @@ export class DatetimePickerComponentPage implements OnInit {
 
 
    @Output() onRangeSelected = new EventEmitter<Date>();
+  //pošlji datepickerData
    @Output() onRangeSelected_2 = new EventEmitter<{
      singleDate: string,
      startRangeDate: string,
