@@ -48,11 +48,11 @@
           <mat-label>Range: </mat-label>
 <!-- NOT USING ngModel because it does not show range in input field (bug?)-->
           <mat-date-range-input [rangePicker]="dateRangePicker" >
-            <input matStartDate
+            <input matInput matStartDate
                    placeholder="Start date"
                    #dateRangeStart
                    readonly>
-            <input matEndDate
+            <input matInput matEndDate
                    placeholder="End date"
                    #dateRangeEnd
                    (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)"
@@ -88,5 +88,5 @@
 <!--<div *ngFor="let rangeData of dateRangePickerDataArr">{{rangeData}}-->
 <!--<br />-->
 <!--</div><div>Range no ngFor:</div>-->
-<!--<div>{{dateRangePickerDataStart}}</div>-->
-<!--<div>{{dateRangePickerDataEnd}}</div>-->
+<div>{{dateRangePickerDataStart}}</div>
+<div>{{dateRangePickerDataEnd}}</div>

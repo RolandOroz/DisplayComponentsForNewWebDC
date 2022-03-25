@@ -35,7 +35,8 @@ export class DatetimePickerComponentPage implements OnInit {
   }
 
   selectedDay = new Date();
-
+  selectedRangeStartDay = new Date();
+  selectedRangeEndDay = new Date();
 
   todaySearch = new Date();
   yesterdaySearch = "date -1";
@@ -44,25 +45,26 @@ export class DatetimePickerComponentPage implements OnInit {
 
 
   dateFilter_prevDay() {
-    let prevDay = new Date(this.dateDayPickerData);
-    prevDay.setDate(this.dateDayPickerData.getDate() - 1);
-    this.dateDayPickerData = prevDay;
+    let prevDay = new Date(this.selectedDay);
+    prevDay.setDate(this.selectedDay.getDate() - 1);
+    this.selectedDay = prevDay;
   }
 
   dateFilter_nextDay() {
     const maxDate = new Date();
-    let nextDay = new Date(this.dateDayPickerData);
-    nextDay.setDate(this.dateDayPickerData.getDate() + 1);
-    this.dateDayPickerData = nextDay;
-    if (this.dateDayPickerData >= maxDate) {
-      this.dateDayPickerData = maxDate;
+    let nextDay = new Date(this.selectedDay);
+    nextDay.setDate(this.selectedDay.getDate() + 1);
+    this.selectedDay = nextDay;
+    if (this.selectedDay >= maxDate) {
+      this.selectedDay = maxDate;
     }
   }
 
 
   addDateEvent(type: string, dinput: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(this.selectedDay);
-    console.log(this.selectedDay);
+    // // this.onRangeSelected.emit();
+    // this.onRangeSelected.emit(this.selectedRangeEndDay);
   }
 
   toggleCollapsed() {
