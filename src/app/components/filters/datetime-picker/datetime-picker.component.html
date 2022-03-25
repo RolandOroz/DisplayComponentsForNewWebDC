@@ -20,7 +20,7 @@
             <mat-icon>navigate_before</mat-icon>
           </i>
 <!-- display chosen date-->
-          <i>{{ dateDayPickerData | date}}</i>
+          <i>{{ selectedDay | date}}</i>
 <!-- day increment +1-->
           <i class="nextDay" (click)="dateFilter_nextDay()">
             <mat-icon>keyboard_arrow_right</mat-icon>
@@ -33,7 +33,7 @@
           <mat-label>Select:</mat-label>
 <!-- USING ngModel for data binding-->
           <input matInput [(ngModel)]="selectedDay" name="selectedDay" [matDatepicker]="picker" readonly
-                 (dateInput)="addDateEvent('input', $event)" (select)="dateChange(picker)">
+                 (dateChange)="addDateEvent('input', $event)" >
            <mat-datepicker-toggle  matSuffix [for]="picker" >
           </mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>
