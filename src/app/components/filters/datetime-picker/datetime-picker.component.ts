@@ -17,14 +17,17 @@ export class DatetimePickerComponentPage implements OnInit {
 
 
    @Output() onRangeSelected = new EventEmitter<Date>();
-   @Output() onRangeSelected_2 = new EventEmitter<Object>();
+   @Output() onRangeSelected_2 = new EventEmitter<{
+     singleDate: string,
+     startRangeDate: string,
+     endRangeDate: string }>();
   // addNewItem(value: string) {
   //   this.newItemEvent.emit(value);
   // }
 
   collapsed: boolean | undefined;
 
-  dateRangePickerDataArr: any[] = [];
+  // dateRangePickerDataArr: any[] = [];
   dateRangePickerDataStart = new Date().toLocaleDateString();
   dateRangePickerDataEnd = new Date().toLocaleDateString();
   datesInput: string[] = [];
@@ -40,6 +43,7 @@ export class DatetimePickerComponentPage implements OnInit {
   yesterdaySearch = "date -1";
   lastWeekSearch = "date -7";
   lastMonthSearch = "date -Month";
+  private singleDate = this.selectedDay ;
 
 
   dateFilter_prevDay() {
@@ -61,9 +65,10 @@ export class DatetimePickerComponentPage implements OnInit {
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(this.selectedDay);
-    // this.onRangeSelected.emit({start:this.selectedDay});
-    // // this.onRangeSelected.emit();
-    // this.onRangeSelected.emit(this.selectedRangeEndDay);
+    // this.onRangeSelected_2.emit({
+    //   singleDate: this.selectedDay.toDateString(),
+    //   startRangeDate: this.dateRangePickerDataStart,
+    //   endRangeDate: this.dateRangePickerDataEnd})
   }
 
   toggleCollapsed() {
@@ -71,17 +76,14 @@ export class DatetimePickerComponentPage implements OnInit {
   }
 
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
-    this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
+    // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
     this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
-    this.onRangeSelected_2.emit({dateRangeStart: `${dateRangeStart.value}`})
-
   }
 
-  dateFormat: any;
+  // dateFormat: any;
 
   ngOnInit(): void {
-
   }
 
 }

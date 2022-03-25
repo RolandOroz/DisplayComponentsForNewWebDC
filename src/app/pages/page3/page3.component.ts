@@ -11,12 +11,20 @@ export class Page3Component implements OnInit {
   myItem= new Date();
   date = new Date();
 
+  // public dateSelectionModel = {singleDate:"zfu", startRangeDate: "hj", endRangeDate: "jhf"};
+  //
+  // dateSelection_2(onRangeSelected_2) {
+  //
+  //   this.dateSelectionModel = onRangeSelected_2;
+  // }
+
   dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 
   datePickerData(value: any) {
