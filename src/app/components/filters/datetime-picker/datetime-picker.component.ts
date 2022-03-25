@@ -23,7 +23,6 @@ export class DatetimePickerComponentPage implements OnInit {
 
   collapsed: boolean | undefined;
 
-  dateDayPickerData = new Date();
   dateRangePickerDataArr: any[] = [];
   dateRangePickerDataStart = new Date().toLocaleDateString();
   dateRangePickerDataEnd = new Date().toLocaleDateString();
@@ -35,8 +34,6 @@ export class DatetimePickerComponentPage implements OnInit {
   }
 
   selectedDay = new Date();
-  selectedRangeStartDay = new Date();
-  selectedRangeEndDay = new Date();
 
   todaySearch = new Date();
   yesterdaySearch = "date -1";
@@ -61,7 +58,7 @@ export class DatetimePickerComponentPage implements OnInit {
   }
 
 
-  addDateEvent(type: string, dinput: MatDatepickerInputEvent<unknown, unknown | null>) {
+  addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(this.selectedDay);
     // // this.onRangeSelected.emit();
     // this.onRangeSelected.emit(this.selectedRangeEndDay);
