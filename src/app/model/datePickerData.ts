@@ -1,15 +1,21 @@
-import {datepickerDataInterface} from "./Interface/datepickerDataInterface";
+import {DatepickerDataInterface} from "./Interface/datepickerDataInterface";
 
-export class DatePickerData implements datepickerDataInterface {
-  public start: number;
-  public end: number;
+export class DatePickerData implements DatepickerDataInterface {
+  // public start: number;
+  // public end: number;
+  public dateRangeStart: number;
+  public dateRangeEnd: number;
 
   constructor(
-    start: number,
-    end: number
+    // start: number,
+    // end: number,
+    dateRangeStart: number,
+    dateRangeEnd: number,
   ) {
-    this.start = start;
-    this.end = end
+    // this.start = start;
+    // this.end = end;
+    this.dateRangeStart = dateRangeStart;
+    this.dateRangeEnd = dateRangeEnd;
   }
 
   // getDatePickerData() {

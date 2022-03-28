@@ -17,7 +17,7 @@ export class DatetimePickerComponentPage implements OnInit {
 
   constructor() {
   }
-@Output() greetEvent = new EventEmitter<{ start: number, end: number }>();
+@Output() public greetEvent = new EventEmitter<{ dateRangeStart: number, dateRangeEnd: number }>();
 nameC = 'emitFromChild';
    @Output() onRangeSelected = new EventEmitter<Date>();
   //pošlji datepickerData
@@ -45,6 +45,8 @@ nameC = 'emitFromChild';
   lastWeekSearch = "date -7";
   lastMonthSearch = "date -Month";
   private singleDate = this.selectedDay ;
+  private dateRangeStart: any;
+  private dateRangeEnd: any;
 
 
 
@@ -70,27 +72,23 @@ nameC = 'emitFromChild';
     // this.onRangeSelected_2.emit({
     //   start: parseInt(this.dateRangePickerDataStart),
     //   end: parseInt(this.dateRangePickerDataEnd)});
+    this.dateRangePickerDataStart = (`${this.dateRangeStart.value}`);
+    this.dateRangePickerDataEnd = (`${this.dateRangeEnd.value}`);
+    this.greetEvent.emit({dateRangeStart: parseInt(this.dateRangePickerDataStart), dateRangeEnd: parseInt(this.dateRangePickerDataEnd)});
   }
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
 
-  dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
+  dateRangeChange() {
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
-    this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
-    this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
-    this.greetEvent.emit({start: parseInt(`${dateRangeStart.value}`), end: parseInt(`${dateRangeEnd.value}`)});
+    // this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
+    // this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
+    this.greetEvent.emit({dateRangeStart: parseInt(this.dateRangePickerDataStart), dateRangeEnd: parseInt(this.dateRangePickerDataEnd)});
 
   }
 
-  callParentGreet(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement){
 
-   this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
-    this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
-
-
-
-  }
 
   // dateFormat: any;
 

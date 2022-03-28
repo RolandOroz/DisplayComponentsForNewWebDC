@@ -33,7 +33,7 @@
           <mat-label>Select:</mat-label>
 <!-- USING ngModel for data binding-->
           <input matInput [(ngModel)]="selectedDay" name="selectedDay" [matDatepicker]="picker" readonly
-                 (dateChange)="addDateEvent('input', $event)" >
+                 (dateChange)="addDateEvent('input',$event)" >
            <mat-datepicker-toggle  matSuffix [for]="picker" >
           </mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>
@@ -46,19 +46,22 @@
       <mat-list-item>
         <mat-form-field appearance="fill" class="short200" >
           <mat-label>Range: </mat-label>
-<!-- NOT USING ngModel because it does not show range in input field (bug?)-->
+
           <mat-date-range-input [rangePicker]="dateRangePicker" >
-            <input matInput matStartDate
+            <input matInput
+                   matStartDate
                    placeholder="Start date"
                    #dateRangeStart
                    readonly>
-            <input matInput matEndDate
+            <input matInput
+                   matEndDate
                    placeholder="End date"
                    #dateRangeEnd
-                   (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)"
-                   (dateInput)="callParentGreet(dateRangeStart,dateRangeEnd)"
+                   (dateChange)="dateRangeChange()"
+
                    readonly>
           </mat-date-range-input>
+
           <mat-datepicker-toggle matSuffix
                                  [for]="dateRangePicker">
           </mat-datepicker-toggle>

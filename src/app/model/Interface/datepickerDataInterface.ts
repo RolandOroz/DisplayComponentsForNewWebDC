@@ -1,5 +1,5 @@
-//spremeni zacetnico
-export interface datepickerDataInterface {
-  start: number,
-  end: number
+
+export interface DatepickerDataInterface {
+  dateRangeStart: number,
+  dateRangeEnd: number
 }
