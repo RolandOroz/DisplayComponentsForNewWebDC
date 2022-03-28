@@ -11,16 +11,12 @@ export class Page3Component implements OnInit {
   myItem= new Date();
   date = new Date();
 
-  model: { dateRangeEnd: number; dateRangeStart: number } | undefined = {
-    dateRangeStart: 0,
-    dateRangeEnd:0
-  }
 
   dateSelection_2 = new DatePickerData(this.date.setDate( this.date.getTime()),
     this.date.setDate(this.date.getDate()))
 
   dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
-  private greetEvent: { dateRangeEnd: number; dateRangeStart: number; } | undefined;
+  // private greetEvent: { dateRangeEnd: number; dateRangeStart: number; } | undefined;
 
   constructor() { }
 
@@ -36,7 +32,7 @@ export class Page3Component implements OnInit {
   }
 
   greet($event: { dateRangeStart: number; dateRangeEnd: number }) {
-this.model = this.greetEvent;
 
-}
+
+  }
 }

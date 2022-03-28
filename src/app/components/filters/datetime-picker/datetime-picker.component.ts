@@ -17,7 +17,7 @@ export class DatetimePickerComponentPage implements OnInit {
 
   constructor() {
   }
-@Output() public greetEvent = new EventEmitter<{ dateRangeStart: number, dateRangeEnd: number }>();
+@Output() public greetEvent = new EventEmitter<DatePickerData>();
 nameC = 'emitFromChild';
    @Output() onRangeSelected = new EventEmitter<Date>();
   //pošlji datepickerData
@@ -72,20 +72,25 @@ nameC = 'emitFromChild';
     // this.onRangeSelected_2.emit({
     //   start: parseInt(this.dateRangePickerDataStart),
     //   end: parseInt(this.dateRangePickerDataEnd)});
-    this.dateRangePickerDataStart = (`${this.dateRangeStart.value}`);
-    this.dateRangePickerDataEnd = (`${this.dateRangeEnd.value}`);
-    this.greetEvent.emit({dateRangeStart: parseInt(this.dateRangePickerDataStart), dateRangeEnd: parseInt(this.dateRangePickerDataEnd)});
+    this.dateRangePickerDataStart = this.dateRangeStart;
+    this.dateRangePickerDataEnd = this.dateRangeEnd;
+    this.onRangeSelected.emit();
+  console.log(this.dateRangeStart)
   }
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
 
-  dateRangeChange() {
+  dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
-    // this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
-    // this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
-    this.greetEvent.emit({dateRangeStart: parseInt(this.dateRangePickerDataStart), dateRangeEnd: parseInt(this.dateRangePickerDataEnd)});
 
+     this.greetEvent.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
+
+     let model = new DatePickerData(parseInt(`${dateRangeStart.value}`), parseInt(`${dateRangeEnd.value}`));
+    console.log(`${dateRangeStart.value}`)
+    console.log(`${dateRangeEnd.value}`)
+    console.log(model.dateRangeStart)
+    return model;
   }
 
 

@@ -51,13 +51,13 @@
             <input matInput
                    matStartDate
                    placeholder="Start date"
-                   #dateRangeStart
+                   #dateRangePickerStart
                    readonly>
             <input matInput
                    matEndDate
                    placeholder="End date"
-                   #dateRangeEnd
-                   (dateChange)="dateRangeChange()"
+                   #dateRangePickerEnd
+                   (dateChange)="dateRangeChange(dateRangePickerStart, dateRangePickerEnd)"
 
                    readonly>
           </mat-date-range-input>
@@ -70,6 +70,7 @@
       </mat-list-item >
 
   <br />
+
 <!--                                                               TODO          separate to left and right -->
         <ul>
           <li>today____________<span class="spacer">{{todaySearch | date}}</span></li>
