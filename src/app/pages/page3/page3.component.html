@@ -1,9 +1,12 @@
 <app-datetime-picker (onRangeSelected)="datePickerData($event)"></app-datetime-picker>
 <!--<app-datetime-picker (onRangeSelected_2)="dateSelection_2($event)"></app-datetime-picker>-->
+<app-datetime-picker (greetEvent)="greet($event)"></app-datetime-picker>
 
-<div>{{dateSelection.start | date: 'EEEE, MMMM d, y, h:mm:ss a zzzz' }}</div>
+<div>{{dateSelection.start | date: 'EEEE, MMMM d, y,h:mm:ss a zzzz ' }}</div>
 <div>{{dateSelection.end | date: "full" }}</div>
 
 <!--<div>{{dateSelectionModel.singleDate}}</div>-->
 <!--<div>{{dateSelectionModel.startRangeDate}}</div>-->
 <!--<div>{{dateSelectionModel.endRangeDate}}</div>-->
+<div>{{dateSelection_2.start  | date: 'EEEE, MMMM d, y,h:mm:ss a zzzz '}}</div>
+<div>{{dateSelection_2.end}}</div>

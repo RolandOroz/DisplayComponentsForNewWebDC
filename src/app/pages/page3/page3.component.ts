@@ -11,12 +11,10 @@ export class Page3Component implements OnInit {
   myItem= new Date();
   date = new Date();
 
-  // public dateSelectionModel = {singleDate:"zfu", startRangeDate: "hj", endRangeDate: "jhf"};
-  //
-  // dateSelection_2(onRangeSelected_2) {
-  //
-  //   this.dateSelectionModel = onRangeSelected_2;
-  // }
+
+
+  dateSelection_2 = new DatePickerData(this.date.setDate( this.date.getTime()),
+    this.date.setDate(this.date.getDate()))
 
   dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
 
@@ -28,9 +26,14 @@ export class Page3Component implements OnInit {
 
 
   datePickerData(value: any) {
-    // TODO make use of moment lib https://momentjs.com/
+
    this.dateSelection.start = value.getTime();
    this.dateSelection.end = value.getTime() + (1000 * 60 * 60 * 24);
   }
 
+  greet(value: any) {
+    this.dateSelection_2.start = value.getTime();
+    this.dateSelection_2.end = value;
+
+}
 }

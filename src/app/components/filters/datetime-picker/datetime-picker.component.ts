@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Output, EventEmitter} from "@angular/core";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {DatePickerData} from "../../../model/datePickerData";
+import {findPackageJson} from "@angular/cli/utilities/package-tree";
+import {retry} from "rxjs";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -14,14 +17,11 @@ export class DatetimePickerComponentPage implements OnInit {
 
   constructor() {
   }
-
-
+@Output() greetEvent = new EventEmitter<{ start: number, end: number }>();
+nameC = 'emitFromChild';
    @Output() onRangeSelected = new EventEmitter<Date>();
   //pošlji datepickerData
-   @Output() onRangeSelected_2 = new EventEmitter<{
-     singleDate: string,
-     startRangeDate: string,
-     endRangeDate: string }>();
+   @Output() onRangeSelected_2 = new EventEmitter<DatePickerData>();
   // addNewItem(value: string) {
   //   this.newItemEvent.emit(value);
   // }
@@ -47,6 +47,7 @@ export class DatetimePickerComponentPage implements OnInit {
   private singleDate = this.selectedDay ;
 
 
+
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
     prevDay.setDate(this.selectedDay.getDate() - 1);
@@ -67,11 +68,9 @@ export class DatetimePickerComponentPage implements OnInit {
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(this.selectedDay);
     // this.onRangeSelected_2.emit({
-    //   singleDate: this.selectedDay.toDateString(),
-    //   startRangeDate: this.dateRangePickerDataStart,
-    //   endRangeDate: this.dateRangePickerDataEnd})
+    //   start: parseInt(this.dateRangePickerDataStart),
+    //   end: parseInt(this.dateRangePickerDataEnd)});
   }
-
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
@@ -80,6 +79,17 @@ export class DatetimePickerComponentPage implements OnInit {
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
     this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
     this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
+    this.greetEvent.emit({start: parseInt(`${dateRangeStart.value}`), end: parseInt(`${dateRangeEnd.value}`)});
+
+  }
+
+  callParentGreet(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement){
+
+   this.dateRangePickerDataStart = (`${dateRangeStart.value}`);
+    this.dateRangePickerDataEnd = (`${dateRangeEnd.value}`);
+
+
+
   }
 
   // dateFormat: any;

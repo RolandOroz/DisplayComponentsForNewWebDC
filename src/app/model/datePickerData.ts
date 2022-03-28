@@ -12,11 +12,11 @@ export class DatePickerData implements datepickerDataInterface {
     this.end = end
   }
 
-  getDatePickerData() {
-    const data: { start: number; end: number } = {
-      start: new Date().getTime(),
-      end: new Date().getTime()
-    }
-    return data;
-  }
+  // getDatePickerData() {
+  //   const data: { start: number; end: number } = {
+  //     start: new Date().getTime(),
+  //     end: new Date().getTime()
+  //   }
+  //   return data;
+  // }
 }
