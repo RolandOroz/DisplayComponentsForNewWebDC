@@ -23,7 +23,9 @@ mat-card-content {
 mat-label {
 
 }
-
+.short200 {
+  width: 200px;
+}
 .spacer {
   flex: 1 1 auto;
 }
