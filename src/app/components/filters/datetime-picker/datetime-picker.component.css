@@ -14,7 +14,17 @@ mat-card-content {
   width: 220px;
   line-height: 1.9em;
   font-size: 12px;
+}
 
+mat-grid-list{
+ width: 220px;
+  padding: 0;
+  margin: 10px;
+ }
+
+mat-grid-tile {
+  width: 80px;
+  margin: 0;
 }
 
 mat-card-header {

@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Output, EventEmitter} from "@angular/core";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {DatePickerData} from "../../../model/datePickerData";
-import {findPackageJson} from "@angular/cli/utilities/package-tree";
-import {retry} from "rxjs";
 
 @Component({
   selector: 'app-datetime-picker',
@@ -40,11 +38,15 @@ nameC = 'emitFromChild';
 
   selectedDay = new Date();
 
+  // todaySearch = new Date();
+  // yesterdaySearch = new Date();
+  // lastWeekSearch = new Date();
+  // lastMonthSearch = new Date();
   todaySearch = new Date();
-  yesterdaySearch = "date -1";
-  lastWeekSearch = "date -7";
-  lastMonthSearch = "date -Month";
-  private singleDate = this.selectedDay ;
+  yesterdaySearch = this.selectedDay.setDate(this.selectedDay.getDate() - 1 )  ;
+  lastWeekSearch = this.selectedDay.setDate(this.selectedDay.getDate() - 7 );
+  lastMonthSearch = this.selectedDay.setMonth(this.selectedDay.getMonth() - 1);
+
   private dateRangeStart: any;
   private dateRangeEnd: any;
 

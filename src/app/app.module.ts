@@ -39,6 +39,7 @@ import { Page5Component } from './pages/page5/page5.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 
@@ -90,7 +91,8 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
     MatRadioModule,
     MatCheckboxModule,
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatGridListModule
 
 
   ],

@@ -72,12 +72,16 @@
   <br />
 
 <!--                                                               TODO          separate to left and right -->
-        <ul>
-          <li>today____________<span class="spacer">{{todaySearch | date}}</span></li>
-          <li>yesterday___________<span class="spacer">{{yesterdaySearch}}</span></li>
-          <li>last week____________<span class="spacer">{{lastWeekSearch}}</span></li>
-          <li>last month________<span class="spacer">{{lastMonthSearch}}</span></li>
-        </ul>
+        <mat-grid-list cols="2" rowHeight="25px" gutterSize="5px">
+<!--          <mat-grid-tile>today</mat-grid-tile><mat-grid-tile >{{ todaySearch | date}}</mat-grid-tile>-->
+<!--          <mat-grid-tile>yesterday</mat-grid-tile><mat-grid-tile>{{yesterdaySearch.setDate(this.yesterdaySearch.getDate() - 1 ) | date}}</mat-grid-tile>-->
+<!--          <mat-grid-tile>last week</mat-grid-tile><mat-grid-tile>{{lastWeekSearch.setDate(this.lastWeekSearch.getDate() - 7 )  | date}}</mat-grid-tile>-->
+<!--          <mat-grid-tile>last month</mat-grid-tile><mat-grid-tile>{{lastMonthSearch.setMonth(this.lastMonthSearch.getMonth() - 1)| date}}</mat-grid-tile>-->
+          <mat-grid-tile>today</mat-grid-tile><mat-grid-tile >{{ todaySearch | date}}</mat-grid-tile>
+          <mat-grid-tile>yesterday</mat-grid-tile><mat-grid-tile>{{yesterdaySearch | date}}</mat-grid-tile>
+          <mat-grid-tile>last week</mat-grid-tile><mat-grid-tile>{{lastWeekSearch  | date}}</mat-grid-tile>
+          <mat-grid-tile>last month</mat-grid-tile><mat-grid-tile>{{lastMonthSearch | date}}</mat-grid-tile>
+        </mat-grid-list>
 
     </mat-list>
   </mat-card-content>
