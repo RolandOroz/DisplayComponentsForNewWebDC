@@ -74,7 +74,7 @@ nameC = 'emitFromChild';
     //   end: parseInt(this.dateRangePickerDataEnd)});
     this.dateRangePickerDataStart = this.dateRangeStart;
     this.dateRangePickerDataEnd = this.dateRangeEnd;
-    this.onRangeSelected.emit();
+
   console.log(this.dateRangeStart)
   }
   toggleCollapsed() {
