@@ -3,12 +3,9 @@
   <mat-card-header>
     <mat-card-title class="spacer">Date Filter</mat-card-title>
     <span class="spacer"></span>
-
     <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
-
-
   </mat-card-header>
 
   <mat-card-content *ngIf="collapsed">
@@ -70,18 +67,24 @@
       </mat-list-item >
 
   <br />
-
 <!--                                                               TODO          separate to left and right -->
         <mat-grid-list cols="1" rowHeight="20px" gutterSize="5px">
 <!--          <mat-grid-tile>today</mat-grid-tile><mat-grid-tile >{{ todaySearch | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>yesterday</mat-grid-tile><mat-grid-tile>{{yesterdaySearch.setDate(this.yesterdaySearch.getDate() - 1 ) | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>last week</mat-grid-tile><mat-grid-tile>{{lastWeekSearch.setDate(this.lastWeekSearch.getDate() - 7 )  | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>last month</mat-grid-tile><mat-grid-tile>{{lastMonthSearch.setMonth(this.lastMonthSearch.getMonth() - 1)| date}}</mat-grid-tile>-->
-          <mat-grid-tile class="clickable" >today<span class="spacer"></span><span matRipple class="spacer-color">0</span></mat-grid-tile>
-          <mat-grid-tile class="clickable" >yesterday<span class="spacer"></span><span matRipple class="spacer-color">0</span></mat-grid-tile>
-          <mat-grid-tile class="clickable" >last week<span class="spacer"></span><span matRipple class="spacer-color">0</span></mat-grid-tile>
-          <mat-grid-tile class="clickable" >last month<span class="spacer"></span><span matRipple class="spacer-color">0</span></mat-grid-tile>
-
+          <mat-grid-tile class="clickable" >today
+            <span class="spacer"></span><span matRipple class="spacer-color">0</span>
+          </mat-grid-tile>
+          <mat-grid-tile class="clickable" >yesterday
+            <span class="spacer"></span><span matRipple class="spacer-color">0</span>
+          </mat-grid-tile>
+          <mat-grid-tile class="clickable" >last week
+            <span class="spacer"></span><span matRipple class="spacer-color">0</span>
+          </mat-grid-tile>
+          <mat-grid-tile class="clickable" >last month
+            <span class="spacer"></span><span matRipple class="spacer-color">0</span>
+          </mat-grid-tile>
         </mat-grid-list>
 
     </mat-list>
