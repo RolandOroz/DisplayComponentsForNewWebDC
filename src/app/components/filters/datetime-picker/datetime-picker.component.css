@@ -17,7 +17,8 @@ mat-card{
   border-radius: 5px;
 }
 .spacer-color:hover {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
 }
 mat-card-content {
   margin: 0;
