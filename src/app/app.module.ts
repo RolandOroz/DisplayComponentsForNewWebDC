@@ -7,7 +7,7 @@ import { ArticleDetailsComponentPage } from './components/article-details/articl
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { ArticleListItemComponent } from './components/article-list/article-list-item/article-list-item.component';
 import { FiltersComponent } from './components/filters/filters.component';
-import { DatetimePickerComponentPage } from './components/filters/datetime-picker/datetime-picker.component';
+import { DatetimePickerComponent } from './components/filters/datetime-picker/datetime-picker.component';
 import { FilterTreeComponent } from './components/filters/filter-tree/filter-tree.component';
 import { SearchComponent } from './components/search/search.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
@@ -40,6 +40,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import {MatNativeDateModule, MatRippleModule} from "@angular/material/core";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { TopicsComponent } from './components/filters/topics/topics.component';
 
 
 
@@ -51,7 +52,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
     ArticleListComponent,
     ArticleListItemComponent,
     FiltersComponent,
-    DatetimePickerComponentPage,
+    DatetimePickerComponent,
     FilterTreeComponent,
     SearchComponent,
     UserDetailsComponent,
@@ -62,6 +63,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
     Page3Component,
     Page4Component,
     Page5Component,
+    TopicsComponent,
 
   ],
   imports: [

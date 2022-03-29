@@ -17,10 +17,12 @@ mat-card{
   margin: 20px;
   border-radius: 5px;
 }
+
 .spacer-color:hover {
   border: 1px solid #eeeeee;
   border-radius: 5px;
 }
+
 mat-card-content {
   margin: 0;
   padding: 0;
@@ -35,10 +37,6 @@ mat-grid-list{
   margin: 10px;
  }
 
-mat-grid-tile {
-  width: 80px;
-
-}
 
 mat-card-header {
   width: 204px;
@@ -51,6 +49,7 @@ input {
 
 }
 mat-grid-tile {
+  width: 80px;
   text-align: center;
 }
 mat-grid-tile:hover {
@@ -66,6 +65,7 @@ mat-grid-tile:hover {
   width: 188px;
   text-align: left;
 }
+
 .dateFilterFirstBanner {
   height: 25px;
   width: 218px !important;
@@ -84,6 +84,7 @@ i {
   background-color: #eeeeee;
   text-align: center;
 }
+
 button.dataFilterCollapse {
   border: 1px solid #e0e0e0;
   border-radius: 5px;

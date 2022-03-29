@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { DatetimePickerComponentPage} from "../datetime-picker/datetime-picker.component";
+// import { DatetimePickerComponent} from "../datetime-picker/datetime-picker.component";
 
 @Component({
   selector: 'app-filter-tree',

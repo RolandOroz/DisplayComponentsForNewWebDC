@@ -12,7 +12,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 })
 
 
-export class DatetimePickerComponentPage implements OnInit {
+export class DatetimePickerComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
   }

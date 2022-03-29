@@ -8,7 +8,7 @@ import {Page5Component} from "./pages/page5/page5.component";
 
 const routes: Routes = [
 
-  // { path: 'app-datetime-picker', component: DatetimePickerComponentPage},
+  // { path: 'app-datetime-picker', component: DatetimePickerComponent},
   // { path: 'app-filter-tree', component: FilterTreeComponent},
   // { path: 'app-search', component: SearchComponent},
   // { path: 'app-user-details', component: UserDetailsComponent},
