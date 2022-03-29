@@ -90,11 +90,10 @@ nameC = 'emitFromChild';
 
      this.onRangeSelected_2.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
 
-     let model = new DatePickerData(parseInt(`${dateRangeStart.value}`), parseInt(`${dateRangeEnd.value}`));
+
     console.log(`${dateRangeStart.value}`)
     console.log(`${dateRangeEnd.value}`)
-    console.log(model.dateRangeStart)
-    return model;
+
   }
 
 
