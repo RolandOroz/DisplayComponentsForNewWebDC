@@ -15,7 +15,7 @@ export class Page3Component implements OnInit {
   // dateSelection_2 = new DatePickerData(parseInt(new Date().toLocaleDateString()),
   //   this.date.setDate(this.date.getDate()))
 
-  dateSelection = new DatePickerData(parseInt(new Date().toLocaleDateString()), parseInt(new Date().toLocaleDateString()));
+  dateSelection = new DatePickerData(parseInt(new Date().toDateString()), parseInt(new Date().toDateString()));
 
   constructor() { }
 

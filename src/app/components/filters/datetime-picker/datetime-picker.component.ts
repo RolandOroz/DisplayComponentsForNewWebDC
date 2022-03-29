@@ -57,15 +57,22 @@ nameC = 'emitFromChild';
     let prevDay = new Date(this.selectedDay);
     prevDay.setDate(this.selectedDay.getDate() - 1);
     this.selectedDay = prevDay;
+    this.onRangeSelected.emit({
+      dateRangeStart: this.selectedDay.getTime(),
+      dateRangeEnd: this.selectedDay.getTime()});
   }
 
   dateFilter_nextDay() {
     const maxDate = new Date();
     let nextDay = new Date(this.selectedDay);
     nextDay.setDate(this.selectedDay.getDate() + 1);
+    this.onRangeSelected.emit({
+      dateRangeStart: this.selectedDay.getTime(),
+      dateRangeEnd: this.selectedDay.getTime()});
     this.selectedDay = nextDay;
     if (this.selectedDay >= maxDate) {
       this.selectedDay = maxDate;
+
     }
   }
 
