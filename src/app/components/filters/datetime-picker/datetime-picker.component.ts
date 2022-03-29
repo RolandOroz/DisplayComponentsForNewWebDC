@@ -66,8 +66,6 @@ export class DatetimePickerComponent implements OnInit {
       dateRangeStart: (this.formDateRangePicker.value.dateRange.startRange),
       dateRangeEnd: (this.formDateRangePicker.value.dateRange.endRange)
     });
-    console.log(this.formDateRangePicker.value.dateRange.startRange);
-    console.log(this.formDateRangePicker.value.dateRange.endRange);
   }
 
   ngOnInit(): void {
