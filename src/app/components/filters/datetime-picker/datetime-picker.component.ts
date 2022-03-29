@@ -43,9 +43,10 @@ nameC = 'emitFromChild';
   // lastWeekSearch = new Date();
   // lastMonthSearch = new Date();
   todaySearch = new Date();
-  yesterdaySearch = this.selectedDay.setDate(this.selectedDay.getDate() - 1 )  ;
-  lastWeekSearch = this.selectedDay.setDate(this.selectedDay.getDate() - 7 );
-  lastMonthSearch = this.selectedDay.setMonth(this.selectedDay.getMonth() - 1);
+  yesterdaySearch = new Date().setDate(this.selectedDay.getDate() - 1 )  ;
+  lastWeekSearch = new Date().setDate(this.selectedDay.getDate() - 7 );
+  lastMonthSearch = new Date().setMonth(this.selectedDay.getMonth() - 1);
+
 
   private dateRangeStart: any;
   private dateRangeEnd: any;
@@ -89,8 +90,6 @@ nameC = 'emitFromChild';
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
 
      this.onRangeSelected_2.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
-
-
     console.log(`${dateRangeStart.value}`)
     console.log(`${dateRangeEnd.value}`)
 
