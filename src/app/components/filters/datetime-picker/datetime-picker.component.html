@@ -50,15 +50,11 @@
                      matStartDate
                      placeholder="Start date"
                      formControlName="startRange"
-                     #dateRangePickerStart
-
                      readonly>
               <input matInput
                      matEndDate
                      placeholder="End date"
                      formControlName="endRange"
-                     #dateRangePickerEnd
-                     (dateInput)="dateRangeChange(dateRangePickerStart, dateRangePickerEnd)"
                      (dateChange)="rangeChange()"
                      readonly>
             </mat-date-range-input>
@@ -72,7 +68,7 @@
       </mat-list-item >
 
   <br />
-<!--                                                               TODO          separate to left and right -->
+
         <mat-grid-list cols="1" rowHeight="20px" gutterSize="5px">
 <!--          <mat-grid-tile>today</mat-grid-tile><mat-grid-tile >{{ todaySearch | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>yesterday</mat-grid-tile><mat-grid-tile>{{yesterdaySearch.setDate(this.yesterdaySearch.getDate() - 1 ) | date}}</mat-grid-tile>-->
@@ -97,15 +93,4 @@
 
 </mat-card>
 
-<!--Testing-->
-<!--<label>Add an item: <input #newItem></label>-->
-<!--<button (click)="addNewItem(newItem.value)">Add to parent's list</button>-->
-<!--<div>{{dateDayPickerData}}</div>-->
-<!--<br />-->
-<!--<div>Range with ngFor:</div>-->
-<!--<div *ngFor="let rangeData of dateRangePickerDataArr">{{rangeData}}-->
-<!--<br />-->
-<!--</div><div>Range no ngFor:</div>-->
-<!--<div>{{dateRangePickerDataStart}}</div>-->
-<!--<div>{{dateRangePickerDataEnd}}</div>-->
-<!--<button (click)="callParentGreet()">Greet</button>-->
+
