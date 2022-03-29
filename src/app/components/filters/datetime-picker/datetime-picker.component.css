@@ -16,7 +16,9 @@ mat-card{
   margin: 20px;
   border-radius: 5px;
 }
-
+.spacer-color:hover {
+  border: 1px solid #e0e0e0;
+}
 mat-card-content {
   margin: 0;
   padding: 0;
@@ -53,8 +55,7 @@ mat-grid-tile:hover {
   float: right;
   cursor: pointer;
   text-align: center;
-  font-size: medium;
-
+  font-size: small;
 }
 
 .short200 {
@@ -64,7 +65,6 @@ mat-grid-tile:hover {
   text-align: left;
 }
 .dateFilterFirstBanner {
-
   height: 25px;
   width: 218px !important;
   line-height: 0.9em;
@@ -73,6 +73,7 @@ mat-grid-tile:hover {
   border-radius: 5px;
   flex: 1 1 auto;
 }
+
 i {
   font-size: 12px;
   flex: 1 1 auto;
