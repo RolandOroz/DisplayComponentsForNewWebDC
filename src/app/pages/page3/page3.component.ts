@@ -12,10 +12,10 @@ export class Page3Component implements OnInit {
   date = new Date();
 
 
-  // dateSelection_2 = new DatePickerData(this.date.setDate( this.date.getTime()),
+  // dateSelection_2 = new DatePickerData(parseInt(new Date().toLocaleDateString()),
   //   this.date.setDate(this.date.getDate()))
 
-  dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
+  dateSelection = new DatePickerData(parseInt(new Date().toLocaleDateString()), parseInt(new Date().toLocaleDateString()));
 
   constructor() { }
 
@@ -29,7 +29,7 @@ export class Page3Component implements OnInit {
    this.dateSelection.dateRangeEnd = value.dateRangeEnd + (1000 * 60 * 60 * 24);
   }
 
-  dateSelection_2(value: DatePickerData) {
+  datePickerData_2(value: DatePickerData) {
     this.dateSelection.dateRangeStart = value.dateRangeStart;
     this.dateSelection.dateRangeEnd = value.dateRangeEnd
   }

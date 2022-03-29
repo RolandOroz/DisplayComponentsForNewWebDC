@@ -72,13 +72,14 @@ nameC = 'emitFromChild';
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit({
-      dateRangeStart: parseInt(this.selectedDay.toLocaleDateString()),
-      dateRangeEnd: parseInt(this.selectedDay.toLocaleDateString())});
+      dateRangeStart: this.selectedDay.getTime(),
+      dateRangeEnd: this.selectedDay.getTime()});
     // this.onRangeSelected_2.emit({
     //   start: parseInt(this.dateRangePickerDataStart),
     //   end: parseInt(this.dateRangePickerDataEnd)});
     this.dateRangePickerDataStart = this.dateRangeStart;
     this.dateRangePickerDataEnd = this.dateRangeEnd;
+
 
   console.log(this.dateRangeStart)
   }
@@ -89,7 +90,9 @@ nameC = 'emitFromChild';
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
 
-     this.onRangeSelected_2.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
+     this.onRangeSelected_2.emit({
+       dateRangeStart: parseInt( `${dateRangeStart.value}`),
+       dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
     console.log(`${dateRangeStart.value}`)
     console.log(`${dateRangeEnd.value}`)
 
