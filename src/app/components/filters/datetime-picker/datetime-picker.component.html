@@ -41,29 +41,34 @@
 
 <!-- date Range Picker-->
       <mat-list-item>
-        <mat-form-field appearance="fill" class="short200" >
-          <mat-label>Range: </mat-label>
+        <form [formGroup]="formDateRangePicker" >
+          <mat-form-field appearance="fill" class="short200" >
+            <mat-label>Range: </mat-label>
 
-          <mat-date-range-input [rangePicker]="dateRangePicker" >
-            <input matInput
-                   matStartDate
-                   placeholder="Start date"
-                   #dateRangePickerStart
-                   readonly>
-            <input matInput
-                   matEndDate
-                   placeholder="End date"
-                   #dateRangePickerEnd
-                   (dateChange)="dateRangeChange(dateRangePickerStart, dateRangePickerEnd)"
+            <mat-date-range-input [rangePicker]="dateRangePicker" formGroupName="dateRange">
+              <input matInput
+                     matStartDate
+                     placeholder="Start date"
+                     formControlName="startRange"
+                     #dateRangePickerStart
 
-                   readonly>
-          </mat-date-range-input>
+                     readonly>
+              <input matInput
+                     matEndDate
+                     placeholder="End date"
+                     formControlName="endRange"
+                     #dateRangePickerEnd
+                     (dateInput)="dateRangeChange(dateRangePickerStart, dateRangePickerEnd)"
+                     (dateChange)="rangeChange()"
+                     readonly>
+            </mat-date-range-input>
 
-          <mat-datepicker-toggle matSuffix
-                                 [for]="dateRangePicker">
-          </mat-datepicker-toggle>
-          <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
-        </mat-form-field>
+            <mat-datepicker-toggle matSuffix
+                                   [for]="dateRangePicker">
+            </mat-datepicker-toggle>
+            <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+          </mat-form-field>
+        </form>
       </mat-list-item >
 
   <br />

@@ -8,15 +8,9 @@ import { DatePickerData} from "../../model/datePickerData";
 })
 export class Page3Component implements OnInit {
 
-  myItem= new Date();
-  date = new Date();
-
-
-  // dateSelection_2 = new DatePickerData(parseInt(new Date().toLocaleDateString()),
-  //   this.date.setDate(this.date.getDate()))
 
   dateSelection = new DatePickerData(parseInt(new Date().toDateString()), parseInt(new Date().toDateString()));
-
+  dateSel = new DatePickerData(parseInt(new Date().toDateString()), parseInt(new Date().toDateString()));
   constructor() { }
 
   ngOnInit(): void {
@@ -24,13 +18,16 @@ export class Page3Component implements OnInit {
 
 
   datePickerData(value: DatePickerData) {
-
    this.dateSelection.dateRangeStart = value.dateRangeStart;
    this.dateSelection.dateRangeEnd = value.dateRangeEnd + (1000 * 60 * 60 * 24);
   }
 
   datePickerData_2(value: DatePickerData) {
-    this.dateSelection.dateRangeStart = value.dateRangeStart;
-    this.dateSelection.dateRangeEnd = value.dateRangeEnd
+    this.dateSel = {
+      dateRangeStart: value.dateRangeStart,
+      dateRangeEnd: value.dateRangeEnd
+    }
+    // this.dateSel.dateRangeStart = value.dateRangeStart;
+    // this.dateSel.dateRangeEnd = value.dateRangeEnd
   }
 }

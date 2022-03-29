@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Output, EventEmitter} from "@angular/core";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {DatePickerData} from "../../../model/datePickerData";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+
+
 
 @Component({
   selector: 'app-datetime-picker',
@@ -13,8 +16,11 @@ import {DatePickerData} from "../../../model/datePickerData";
 export class DatetimePickerComponentPage implements OnInit {
 
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
+
+  formDateRangePicker!: FormGroup;
+
 @Output() public greetEvent = new EventEmitter<DatePickerData>();
 nameC = 'emitFromChild';
    @Output() onRangeSelected = new EventEmitter<DatePickerData>();
@@ -26,7 +32,7 @@ nameC = 'emitFromChild';
 
   collapsed: boolean | undefined;
 
-  // dateRangePickerDataArr: any[] = [];
+  //dateRangePickerDataArr: any[] = [];
   dateRangePickerDataStart = new Date().toLocaleDateString();
   dateRangePickerDataEnd = new Date().toLocaleDateString();
   datesInput: string[] = [];
@@ -84,32 +90,43 @@ nameC = 'emitFromChild';
     // this.onRangeSelected_2.emit({
     //   start: parseInt(this.dateRangePickerDataStart),
     //   end: parseInt(this.dateRangePickerDataEnd)});
-    this.dateRangePickerDataStart = this.dateRangeStart;
-    this.dateRangePickerDataEnd = this.dateRangeEnd;
+    // this.dateRangePickerDataStart = this.dateRangeStart.getTime();
+    // this.dateRangePickerDataEnd = this.dateRangeEnd.getTime();
 
-
-  console.log(this.dateRangeStart)
   }
+
+
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
 
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
-    // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
+     //this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
+    this.dateRangePickerDataStart = dateRangeStart.value;
+    this.dateRangePickerDataEnd = dateRangeEnd.value;
 
-     this.onRangeSelected_2.emit({
-       dateRangeStart: parseInt( `${dateRangeStart.value}`),
-       dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
-    console.log(`${dateRangeStart.value}`)
-    console.log(`${dateRangeEnd.value}`)
-
+// console.log(this.dateRangePickerDataStart)
+// console.log(this.dateRangePickerDataEnd)
   }
 
+  rangeChange() {
+    this.onRangeSelected.emit({
+      dateRangeStart: (this.formDateRangePicker.value.dateRange.startRange),
+      dateRangeEnd: (this.formDateRangePicker.value.dateRange.endRange)});
+    console.log(this.formDateRangePicker.value.dateRange.startRange);
+    console.log(this.formDateRangePicker.value.dateRange.endRange);
+  }
 
 
   // dateFormat: any;
 
   ngOnInit(): void {
+    this.formDateRangePicker = this.fb.group({
+      dateRange: new FormGroup({
+        startRange: new FormControl(),
+        endRange: new FormControl()
+      })
+    })
   }
 
 }
