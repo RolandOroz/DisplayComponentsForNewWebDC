@@ -1,0 +1,65 @@
+mat-card{
+  border-radius: 5px;
+  width: 220px;
+  font-family: glyphicons-basic-regular, sans-serif;
+  font-size: 12px;
+}
+
+mat-card-header {
+  width: 204px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.spacer-color {
+  float: left;
+  background-color: #eeeeee;
+  text-align: center;
+  width: 50px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.spacer-color:hover {
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+}
+
+button.dataFilterCollapse {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 24px;
+  text-align: center;
+  line-height: 10px;
+}
+
+mat-card-content {
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  line-height: 1.9em;
+  font-size: 12px;
+}
+mat-grid-list{
+  width: 220px;
+  padding: 0;
+  margin: 10px;
+}
+
+mat-grid-tile {
+  width: 80px;
+  text-align: center;
+}
+
+mat-grid-tile:hover {
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  font-size: small;
+}
+
+mat-list-item {
+  font-size: 12px;
+}
