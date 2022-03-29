@@ -18,14 +18,17 @@ mat-card {
 }
 mat-card-content {
   width: 220px;
+  height: 50px;
 }
 
-mat-label {
-
-}
 .short200 {
   width: 200px;
 }
 .spacer {
   flex: 1 1 auto;
+}
+
+mat-list {
+  height: 60px;
+
 }

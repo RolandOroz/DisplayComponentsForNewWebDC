@@ -8,6 +8,15 @@ mat-card{
   flex: 1 1 auto;
 }
 
+.spacer-color {
+  float: left;
+  background-color: #eeeeee;
+  text-align: center;
+  width: 50px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
 mat-card-content {
   margin: 0;
   padding: 0;
@@ -24,7 +33,7 @@ mat-grid-list{
 
 mat-grid-tile {
   width: 80px;
-  margin: 0;
+
 }
 
 mat-card-header {
@@ -35,6 +44,16 @@ input {
   text-align: justify;
   font-size: 12px;
   font-family: glyphicons-basic-regular, sans-serif;
+
+}
+mat-grid-tile {
+  text-align: center;
+}
+mat-grid-tile:hover {
+  float: right;
+  cursor: pointer;
+  text-align: center;
+  font-size: medium;
 
 }
 

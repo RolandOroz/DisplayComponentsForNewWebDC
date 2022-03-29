@@ -1,29 +1,35 @@
 <mat-card>
   <mat-card-header>
-    <mat-radio-group color="primary" >
+    <mat-radio-group color="primary">
       <mat-list>
-        <mat-label>AND</mat-label>
-        <mat-radio-button class="radio-button" value="and" checked="true"></mat-radio-button>
+        <mat-label>Media</mat-label>
+        <mat-radio-button class="radio-button" value="media" checked="true"></mat-radio-button>
       </mat-list>
       <span class="spacer"></span>
       <mat-list>
-        <mat-label>OR</mat-label>
-        <mat-radio-button class="radio-button" value="or"></mat-radio-button>
+        <mat-label>Both</mat-label>
+        <mat-radio-button class="radio-button" value="both"></mat-radio-button>
       </mat-list>
       <span class="spacer"></span>
       <mat-list>
-        <mat-label>NOT</mat-label>
-        <mat-radio-button class="radio-button" value="not"></mat-radio-button>
+        <mat-label>Engagement</mat-label>
+        <mat-radio-button class="radio-button" value="engagement"></mat-radio-button>
       </mat-list>
       <span class="spacer"></span>
     </mat-radio-group>
   </mat-card-header>
 
-<mat-card-content>
-  <mat-list-item>
+  <mat-card-content>
+
+    <mat-list-item>
       <app-datetime-picker></app-datetime-picker>
-  </mat-list-item>
-</mat-card-content>
+    </mat-list-item>
+
+    <mat-list-item>
+      <app-datetime-picker></app-datetime-picker>
+    </mat-list-item>
+
+  </mat-card-content>
 </mat-card>
 
 
