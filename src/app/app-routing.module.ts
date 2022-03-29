@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import {Page1Component} from "./pages/page1/page1.component";
-import {Page2Component} from "./pages/page2/page2.component";
-import {Page3Component} from "./pages/page3/page3.component";
-import {Page4Component} from "./pages/page4/page4.component";
-import {Page5Component} from "./pages/page5/page5.component";
+import {Page1Component} from "./pages/Page_1_ArticleDetails/page1.component";
+import {Page2Component} from "./pages/Page_2_ArticleList/page2.component";
+import {Page3Component} from "./pages/Page_3_DateTimePicker/page3.component";
+import {Page4Component} from "./pages/Page_4_FilterTree/page4.component";
+import {Page5Component} from "./pages/Page_5_SearchBar/page5.component";
 
 const routes: Routes = [
 
