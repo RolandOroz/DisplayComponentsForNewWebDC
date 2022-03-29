@@ -86,7 +86,7 @@ nameC = 'emitFromChild';
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
     // this.dateRangePickerDataArr.push(`${dateRangeStart.value}`, `${dateRangeEnd.value}`);
 
-     this.greetEvent.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
+     this.onRangeSelected_2.emit({dateRangeStart: parseInt(`${dateRangeStart.value}`), dateRangeEnd: parseInt(`${dateRangeEnd.value}`)});
 
      let model = new DatePickerData(parseInt(`${dateRangeStart.value}`), parseInt(`${dateRangeEnd.value}`));
     console.log(`${dateRangeStart.value}`)

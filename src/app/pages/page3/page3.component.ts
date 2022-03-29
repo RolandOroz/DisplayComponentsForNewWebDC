@@ -12,8 +12,8 @@ export class Page3Component implements OnInit {
   date = new Date();
 
 
-  dateSelection_2 = new DatePickerData(this.date.setDate( this.date.getTime()),
-    this.date.setDate(this.date.getDate()))
+  // dateSelection_2 = new DatePickerData(this.date.setDate( this.date.getTime()),
+  //   this.date.setDate(this.date.getDate()))
 
   dateSelection = new DatePickerData(this.date.setDate( this.date.getTime()), this.date.setDate( this.date.getDate()));
   // private greetEvent: { dateRangeEnd: number; dateRangeStart: number; } | undefined;
@@ -31,7 +31,7 @@ export class Page3Component implements OnInit {
    this.dateSelection.dateRangeEnd = value.getTime() + (1000 * 60 * 60 * 24);
   }
 
-  greet($event: { dateRangeStart: number; dateRangeEnd: number }) {
+  dateSelection_2($event: { dateRangeStart: number; dateRangeEnd: number }) {
 
 
   }
