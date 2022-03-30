@@ -19,9 +19,8 @@ export class DatetimePickerComponent implements OnInit {
   constructor() {
   }
 
-  // @Output() onRangeSelected = new EventEmitter<DatePickerData>();
-  @Output() onRangeSelected = new EventEmitter<IDateSelection>();
 
+  @Output() onRangeSelected = new EventEmitter<IDateSelection>();
 
 
   collapsed!: boolean;
@@ -34,21 +33,22 @@ export class DatetimePickerComponent implements OnInit {
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
-    prevDay.setDate(this.selectedDay.getDate() - 1);
+    prevDay.setDate(this.selectedDay.getDate());
     this.selectedDay = prevDay;
     this.onRangeSelected.emit({
-      dateRangeStart: this.selectedDay.getTime(),
-      dateRangeEnd: this.selectedDay.getTime()
+      dateRangeStart: prevDay.getTime(),
+      dateRangeEnd: prevDay.setDate(this.selectedDay.getDate() - 1)
     });
   }
 
   dateFilter_nextDay() {
     const maxDate = new Date();
     let nextDay = new Date(this.selectedDay);
-    nextDay.setDate(this.selectedDay.getDate() + 1);
+    nextDay.setDate(this.selectedDay.getDate());
+    this.selectedDay = nextDay;
     this.onRangeSelected.emit({
-      dateRangeStart: this.selectedDay.getTime(),
-      dateRangeEnd: this.selectedDay.getTime()
+      dateRangeStart: nextDay.getTime(),
+      dateRangeEnd: nextDay.setDate(this.selectedDay.getDate() + 1)
     });
     this.selectedDay = nextDay;
     if (this.selectedDay >= maxDate) {
