@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Output, EventEmitter} from "@angular/core";
-import {DateRange, ExtractDateTypeFromSelection, MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {DateSelection} from "../../../model/dateSelection";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {valueReferenceToExpression} from "@angular/compiler-cli/src/ngtsc/annotations/src/util";
+
 import {IDateSelection} from "../../../model/Interface/IDateSelection";
 
 
@@ -33,8 +32,9 @@ export class DatetimePickerComponent implements OnInit {
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
-    prevDay.setDate(this.selectedDay.getDate());
     this.selectedDay = prevDay;
+
+    prevDay.setDate(this.selectedDay.getDate());
     this.onRangeSelected.emit({
       dateRangeStart: prevDay.getTime(),
       dateRangeEnd: prevDay.setDate(this.selectedDay.getDate() - 1)
@@ -44,8 +44,9 @@ export class DatetimePickerComponent implements OnInit {
   dateFilter_nextDay() {
     const maxDate = new Date();
     let nextDay = new Date(this.selectedDay);
-    nextDay.setDate(this.selectedDay.getDate());
     this.selectedDay = nextDay;
+    nextDay.setDate(this.selectedDay.getDate());
+
     this.onRangeSelected.emit({
       dateRangeStart: nextDay.getTime(),
       dateRangeEnd: nextDay.setDate(this.selectedDay.getDate() + 1)
