@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Output, EventEmitter} from "@angular/core";
-import {MatDatepickerInputEvent} from "@angular/material/datepicker";
-import {DatePickerData} from "../../../model/datePickerData";
+import {DateRange, ExtractDateTypeFromSelection, MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {DateSelection} from "../../../model/dateSelection";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {valueReferenceToExpression} from "@angular/compiler-cli/src/ngtsc/annotations/src/util";
+import {IDateSelection} from "../../../model/Interface/IDateSelection";
 
 
 @Component({
@@ -14,16 +16,21 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 export class DatetimePickerComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
-  @Output() onRangeSelected = new EventEmitter<DatePickerData>();
+  // @Output() onRangeSelected = new EventEmitter<DatePickerData>();
+  @Output() onRangeSelected = new EventEmitter<IDateSelection>();
 
 
 
   collapsed!: boolean;
-  formDateRangePicker!: FormGroup;
+
   selectedDay = new Date();
+
+  startDate!: Date;
+  endDate!: Date;
+
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
@@ -50,10 +57,7 @@ export class DatetimePickerComponent implements OnInit {
   }
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
-    this.onRangeSelected.emit({
-      dateRangeStart: this.selectedDay.getTime(),
-      dateRangeEnd: this.selectedDay.getTime()
-    });
+    this.onRangeSelected.emit(DateSelection.of(this.selectedDay, this.selectedDay));
   }
 
 
@@ -61,20 +65,24 @@ export class DatetimePickerComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
 
-  rangeChange() {
-    this.onRangeSelected.emit({
-      dateRangeStart: (this.formDateRangePicker.value.dateRange.startRange),
-      dateRangeEnd: (this.formDateRangePicker.value.dateRange.endRange)
-    });
-  }
+
+
+
 
   ngOnInit(): void {
-    this.formDateRangePicker = this.fb.group({
-      dateRange: new FormGroup({
-        startRange: new FormControl(),
-        endRange: new FormControl()
-      })
-    })
+  }
+
+  startRangeChange(event: MatDatepickerInputEvent<any>) {
+    this.startDate = event.value;
+    this.endDate = null;
+    this.onRangeSelected.emit(DateSelection.of(this.startDate, this.endDate));
+  }
+
+  endRangeChange(event: MatDatepickerInputEvent<any>) {
+    this.endDate = event.value;
+    if (this.startDate != null && this.endDate != null) {
+      this.onRangeSelected.emit(DateSelection.of(this.startDate, this.endDate));
+    }
   }
 }
 

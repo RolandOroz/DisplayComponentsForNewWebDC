@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatePickerData} from "../../model/datePickerData";
+import { DateSelection} from "../../model/dateSelection";
 
 @Component({
   selector: 'app-page3',
@@ -8,14 +8,14 @@ import { DatePickerData} from "../../model/datePickerData";
 })
 export class Page3Component implements OnInit {
 
-  dateSelection = new DatePickerData(parseInt(new Date().toDateString()), parseInt(new Date().toDateString()));
+  dateSelection = new DateSelection(parseInt(new Date().toDateString()), parseInt(new Date().toDateString()));
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  datePickerData(value: DatePickerData) {
+  datePickerData(value: DateSelection) {
    this.dateSelection.dateRangeStart = value.dateRangeStart;
    this.dateSelection.dateRangeEnd = value.dateRangeEnd + (1000 * 60 * 60 * 24);
   }

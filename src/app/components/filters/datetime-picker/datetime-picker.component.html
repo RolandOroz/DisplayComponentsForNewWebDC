@@ -41,21 +41,20 @@
 
 <!-- date Range Picker-->
       <mat-list-item>
-        <form [formGroup]="formDateRangePicker" >
+
           <mat-form-field appearance="fill" class="short200" >
             <mat-label>Range: </mat-label>
 
-            <mat-date-range-input [rangePicker]="dateRangePicker" formGroupName="dateRange">
+            <mat-date-range-input [rangePicker]="dateRangePicker" >
               <input matInput
                      matStartDate
                      placeholder="Start date"
-                     formControlName="startRange"
+                     (dateInput)="this.startRangeChange($event)"
                      readonly>
               <input matInput
                      matEndDate
                      placeholder="End date"
-                     formControlName="endRange"
-                     (dateChange)="rangeChange()"
+                     (dateInput)="this.endRangeChange($event)"
                      readonly>
             </mat-date-range-input>
 
@@ -64,7 +63,7 @@
             </mat-datepicker-toggle>
             <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
           </mat-form-field>
-        </form>
+
       </mat-list-item >
 
   <br />

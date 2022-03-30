@@ -1,6 +1,6 @@
-import {DatepickerDataInterface} from "./Interface/datepickerDataInterface";
+import {IDateSelection} from "./Interface/IDateSelection";
 
-export class DatePickerData implements DatepickerDataInterface {
+export class DateSelection implements IDateSelection {
   // public start: number;
   // public end: number;
   public dateRangeStart: number;
@@ -16,6 +16,14 @@ export class DatePickerData implements DatepickerDataInterface {
     // this.end = end;
     this.dateRangeStart = dateRangeStart;
     this.dateRangeEnd = dateRangeEnd;
+  }
+
+  public static of(startDate: Date, endDate:Date): IDateSelection  {
+    let selection: IDateSelection = {
+      dateRangeStart: startDate.getTime(),
+      dateRangeEnd: endDate.getTime()
+    }
+    return selection;
   }
 
   // getDatePickerData() {

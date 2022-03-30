@@ -9,7 +9,7 @@ import { HttpClient} from "@angular/common/http";
 })
 export class SearchDataService {
 
-  searchOption=[]
+  searchOption: any=[];
 
   postUrl : string = "https://jsonplaceholder.typicode.com/posts";
   constructor(private http: HttpClient) { }

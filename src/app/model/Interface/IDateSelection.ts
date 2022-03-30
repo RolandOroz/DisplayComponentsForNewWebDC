@@ -1,5 +1,5 @@
 
-export interface DatepickerDataInterface {
+export interface IDateSelection {
   dateRangeStart: number,
   dateRangeEnd: number
 }
