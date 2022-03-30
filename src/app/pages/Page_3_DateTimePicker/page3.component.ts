@@ -17,6 +17,6 @@ export class Page3Component implements OnInit {
 
   datePickerData(value: DateSelection) {
    this.dateSelection.dateRangeStart = value.dateRangeStart;
-   this.dateSelection.dateRangeEnd = value.dateRangeEnd + (1000 * 60 * 60 * 24);
+   this.dateSelection.dateRangeEnd = value.dateRangeEnd;
   }
 }
