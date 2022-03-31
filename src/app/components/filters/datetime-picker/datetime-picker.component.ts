@@ -45,7 +45,7 @@ export class DatetimePickerComponent implements OnInit {
   dateFilter_nextDay() {
     const maxDate = new Date();
     let nextDay = new Date(this.selectedDay);
-    this.selectedDay = nextDay;
+    // this.selectedDay = nextDay;
 
     nextDay.setDate(this.selectedDay.getDate());
 
@@ -108,6 +108,7 @@ export class DatetimePickerComponent implements OnInit {
 
   startRangeChange(event: MatDatepickerInputEvent<any>) {
     this.startDate = event.value;
+
     this.endDate = null;
     this.onRangeSelected.emit(DateSelection.of(this.startDate, this.endDate));
   }
