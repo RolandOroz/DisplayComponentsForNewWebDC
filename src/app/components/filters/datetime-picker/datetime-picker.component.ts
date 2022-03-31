@@ -47,14 +47,12 @@ export class DatetimePickerComponent implements OnInit {
     let nextDay = new Date(this.selectedDay);
     // this.selectedDay = nextDay;
 
-    nextDay.setDate(this.selectedDay.getDate());
+    nextDay.setDate(this.selectedDay.getDate()+1);
 
 
     this.onRangeSelected.emit({
       dateRangeEnd: nextDay.getTime(),
       dateRangeStart: nextDay.setDate(this.selectedDay.getDate() +1),
-
-
     });
 
     this.selectedDay = nextDay;
