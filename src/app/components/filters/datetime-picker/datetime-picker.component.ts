@@ -29,7 +29,6 @@ export class DatetimePickerComponent implements OnInit {
   startDate!: Date;
   endDate!: Date;
 
-  selectedDay_2 = new DateSelection(new Date().getTime(), new Date().getTime()-1);
 
 
   dateFilter_prevDay() {
@@ -52,8 +51,9 @@ export class DatetimePickerComponent implements OnInit {
 
 
     this.onRangeSelected.emit({
-      dateRangeStart: nextDay.getTime(),
-      dateRangeEnd: nextDay.setDate(this.selectedDay.getDate()+1),
+      dateRangeEnd: nextDay.getTime(),
+      dateRangeStart: nextDay.setDate(this.selectedDay.getDate() +1),
+
 
     });
 
@@ -86,8 +86,8 @@ export class DatetimePickerComponent implements OnInit {
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(DateSelection.of(this.selectedDay, this.selectedDay));
     let singleDate = new Date(this.selectedDay)
-    this.selectedDay = singleDate;
-    singleDate.setDate(this.selectedDay.getDate()),
+
+    singleDate.setDate(this.selectedDay.getDate())
       this.onRangeSelected.emit({
         dateRangeStart: singleDate.getTime(),
         dateRangeEnd: singleDate.setDate(this.selectedDay.getDate() + 1)
