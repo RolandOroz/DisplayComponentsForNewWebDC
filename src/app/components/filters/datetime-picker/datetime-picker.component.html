@@ -29,7 +29,11 @@
         <mat-form-field appearance="fill" class="short200" >
           <mat-label>Select:</mat-label>
 <!-- USING ngModel for data binding-->
-          <input matInput [(ngModel)]="selectedDay" name="selectedDay" [matDatepicker]="picker" readonly
+          <input matInput
+                 [(ngModel)]="selectedDay"
+                 name="selectedDay"
+                 [matDatepicker]="picker"
+                 readonly
                  (dateChange)="addDateEvent('input',$event)" >
            <mat-datepicker-toggle  matSuffix [for]="picker" >
           </mat-datepicker-toggle>

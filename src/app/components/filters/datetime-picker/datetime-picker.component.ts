@@ -29,6 +29,8 @@ export class DatetimePickerComponent implements OnInit {
   startDate!: Date;
   endDate!: Date;
 
+  selectedDay_2 = new DateSelection(new Date().getTime(), new Date().getTime()-1);
+
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
@@ -36,8 +38,8 @@ export class DatetimePickerComponent implements OnInit {
 
     prevDay.setDate(this.selectedDay.getDate());
     this.onRangeSelected.emit({
-      dateRangeStart: prevDay.getTime(),
-      dateRangeEnd: prevDay.setDate(this.selectedDay.getDate() - 1)
+      dateRangeEnd: prevDay.getTime(),
+      dateRangeStart: prevDay.setDate(this.selectedDay.getDate() - 1),
     });
   }
 
@@ -45,20 +47,51 @@ export class DatetimePickerComponent implements OnInit {
     const maxDate = new Date();
     let nextDay = new Date(this.selectedDay);
     this.selectedDay = nextDay;
+
     nextDay.setDate(this.selectedDay.getDate());
+
 
     this.onRangeSelected.emit({
       dateRangeStart: nextDay.getTime(),
-      dateRangeEnd: nextDay.setDate(this.selectedDay.getDate() + 1)
+      dateRangeEnd: nextDay.setDate(this.selectedDay.getDate()+1),
+
     });
+
     this.selectedDay = nextDay;
     if (this.selectedDay >= maxDate) {
       this.selectedDay = maxDate;
     }
   }
 
+  // dateFilter_nextDay() {
+  //   const maxDate = new Date();
+  //   this.nextDay = this.selectedDay;
+  //   this.selectedDay = this.nextDay;
+  //   this.nextDay.setDate(this.selectedDay.getDate());
+  //   this.selectedDay = this.nextDay;
+  //
+  //   this.onRangeSelected.emit({
+  //     dateRangeStart:this.nextDay.setDate(this.selectedDay.getDate()),
+  //     dateRangeEnd: this.nextDay.setDate(this.selectedDay.getDate()+1),
+  //
+  //
+  //   });
+  //
+  //   this.selectedDay = this.nextDay;
+  //   if (this.selectedDay >= maxDate) {
+  //     this.selectedDay = maxDate;
+  //   }
+  // }
+
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     this.onRangeSelected.emit(DateSelection.of(this.selectedDay, this.selectedDay));
+    let singleDate = new Date(this.selectedDay)
+    this.selectedDay = singleDate;
+    singleDate.setDate(this.selectedDay.getDate()),
+      this.onRangeSelected.emit({
+        dateRangeStart: singleDate.getTime(),
+        dateRangeEnd: singleDate.setDate(this.selectedDay.getDate() + 1)
+      })
   }
 
 
