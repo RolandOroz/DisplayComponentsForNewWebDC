@@ -10,11 +10,16 @@ import { IFilterTreeItem } from "../../../model/Interface/IFilterTreeItem";
 export class FilterTreeComponent {
 
   filterTree: IFilterTreeItem= {
-    uuid: "",
-    name: ""
+    uuid: "a12",
+    name: "abc"
   };
 
-  filterTreeItems= [] = [];
+  filterTree_2: IFilterTreeItem= {
+    uuid: "b34",
+    name: "def"
+  };
+
+  filterTreeItems = [] = [this.filterTree, this.filterTree_2];
 
 }
 
