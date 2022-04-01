@@ -15,19 +15,15 @@ import {IDateSelection} from "../../../model/Interface/IDateSelection";
 
 export class DatetimePickerComponent implements OnInit {
 
+  collapsed!: boolean;
+  selectedDay = new Date();
+  startDate!: Date;
+  endDate!: Date | null;
+
   constructor() {
   }
 
   @Output() onRangeSelected = new EventEmitter<IDateSelection>();
-
-  collapsed!: boolean;
-
-  selectedDay = new Date();
-
-  startDate!: Date;
-  endDate!: Date | null;
-
-
 
   dateFilter_prevDay() {
     let prevDay = new Date(this.selectedDay);
@@ -52,7 +48,6 @@ export class DatetimePickerComponent implements OnInit {
       nextDay.setDate(this.selectedDay.getDate()),
       nextDayEnd));
   }
-
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
     let singleDate = new Date(this.selectedDay);
