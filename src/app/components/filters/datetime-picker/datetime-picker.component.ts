@@ -60,7 +60,8 @@ export class DatetimePickerComponent implements OnInit {
     let singleDateEnd = singleDate.setDate(tempSingleDate.getDate()+1);
     singleDate.setDate(this.selectedDay.getDate())
     this.onRangeSelected.emit(DateSelection.of(
-      singleDate.getTime(), singleDateEnd));
+      singleDate.getTime(),
+      singleDateEnd));
   }
 
   toggleCollapsed() {
@@ -70,19 +71,22 @@ export class DatetimePickerComponent implements OnInit {
   startRangeChange(event: MatDatepickerInputEvent<any>) {
     this.startDate = event.value;
     this.endDate = null;
-    // @ts-ignore
-    this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
+    this.onRangeSelected.emit(DateSelection.of(
+      this.startDate.getTime(),
+      this.endDate.getTime()));
   }
 
   endRangeChange(event: MatDatepickerInputEvent<any>) {
     this.endDate = event.value;
     if (this.startDate != null && this.endDate != null) {
-      this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
+      this.onRangeSelected.emit(DateSelection.of(
+        this.startDate.getTime(),
+        this.endDate.getTime()));
     }
   }
 
   today() {
-    this.selectedDay = new Date();
+    this.selectedDay =new Date(new Date().setDate(new Date().getDate()));
   }
 
   yesterday() {
