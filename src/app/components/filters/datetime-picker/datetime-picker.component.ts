@@ -25,7 +25,7 @@ export class DatetimePickerComponent implements OnInit {
   selectedDay = new Date();
 
   startDate!: Date;
-  endDate!: Date;
+  endDate!: Date | null;
 
 
 
