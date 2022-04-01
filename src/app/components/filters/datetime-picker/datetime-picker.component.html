@@ -77,16 +77,16 @@
 <!--          <mat-grid-tile>yesterday</mat-grid-tile><mat-grid-tile>{{yesterdaySearch.setDate(this.yesterdaySearch.getDate() - 1 ) | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>last week</mat-grid-tile><mat-grid-tile>{{lastWeekSearch.setDate(this.lastWeekSearch.getDate() - 7 )  | date}}</mat-grid-tile>-->
 <!--          <mat-grid-tile>last month</mat-grid-tile><mat-grid-tile>{{lastMonthSearch.setMonth(this.lastMonthSearch.getMonth() - 1)| date}}</mat-grid-tile>-->
-          <mat-grid-tile class="clickable" >today
+          <mat-grid-tile class="clickable" (click)="today()" >today
+            <span class="spacer" ></span><span matRipple class="spacer-color">0</span>
+          </mat-grid-tile>
+          <mat-grid-tile class="clickable" (click)="yesterday()">yesterday
             <span class="spacer"></span><span matRipple class="spacer-color">0</span>
           </mat-grid-tile>
-          <mat-grid-tile class="clickable" >yesterday
+          <mat-grid-tile class="clickable" (click)="lastWeek()">last week
             <span class="spacer"></span><span matRipple class="spacer-color">0</span>
           </mat-grid-tile>
-          <mat-grid-tile class="clickable" >last week
-            <span class="spacer"></span><span matRipple class="spacer-color">0</span>
-          </mat-grid-tile>
-          <mat-grid-tile class="clickable" >last month
+          <mat-grid-tile class="clickable" (click)="lastMonth()">last month
             <span class="spacer"></span><span matRipple class="spacer-color">0</span>
           </mat-grid-tile>
         </mat-grid-list>

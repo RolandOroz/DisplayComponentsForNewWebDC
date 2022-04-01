@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Output, EventEmitter} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {DateSelection} from "../../../model/dateSelection";
 
 import {IDateSelection} from "../../../model/Interface/IDateSelection";
-import { endOfTomorrow } from 'date-fns';
-import { endOfYesterday } from 'date-fns';
+
+//date fns js date library if used____as alternative to moment js
 
 @Component({
   selector: 'app-datetime-picker',
@@ -19,15 +18,11 @@ export class DatetimePickerComponent implements OnInit {
   constructor() {
   }
 
-
   @Output() onRangeSelected = new EventEmitter<IDateSelection>();
-
 
   collapsed!: boolean;
 
   selectedDay = new Date();
-  tempSelectedDay = new Date();
-
 
   startDate!: Date;
   endDate!: Date;
@@ -35,16 +30,13 @@ export class DatetimePickerComponent implements OnInit {
 
 
   dateFilter_prevDay() {
-
     let prevDay = new Date(this.selectedDay);
-    let prevDayEnd = new Date(this.selectedDay)
+    let prevDayEnd = new Date(this.selectedDay);
     this.selectedDay = prevDay;
-    let selectedDayEnd = new Date(this.selectedDay.getDate() +1 );
-    prevDay.setDate(this.selectedDay.getDate());
+    prevDay.setDate(this.selectedDay.getDate()-1);
     this.onRangeSelected.emit(DateSelection.of(
-      prevDay.setDate(this.selectedDay.getDate() - 1),
+      prevDay.setDate(this.selectedDay.getDate()),
       prevDayEnd.getTime()));
-
   }
 
   dateFilter_nextDay() {
@@ -53,44 +45,31 @@ export class DatetimePickerComponent implements OnInit {
       return;
     }
     let nextDay = new Date(this.selectedDay);
-
-    nextDay.setDate(this.selectedDay.getDate()+1);
-
-
-    this.onRangeSelected.emit({
-      dateRangeEnd: nextDay.getTime(),
-      dateRangeStart: nextDay.setDate(this.selectedDay.getDate() +1),
-    });
-
+    let nextDayEnd = this.selectedDay.setDate(nextDay.getDate()+2);
     this.selectedDay = nextDay;
-
+    nextDay.setDate(this.selectedDay.getDate()+1);
+    this.onRangeSelected.emit(DateSelection.of(
+      nextDay.setDate(this.selectedDay.getDate()),
+      nextDayEnd));
   }
 
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
-
     let singleDate = new Date(this.selectedDay);
     let tempSingleDate = new Date(this.selectedDay);
-
     let singleDateEnd = singleDate.setDate(tempSingleDate.getDate()+1);
     singleDate.setDate(this.selectedDay.getDate())
     this.onRangeSelected.emit(DateSelection.of(
       singleDate.getTime(), singleDateEnd));
   }
 
-
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
-  }
-
-
-  ngOnInit(): void {
   }
 
   startRangeChange(event: MatDatepickerInputEvent<any>) {
     this.startDate = event.value;
     this.endDate = null;
-
     this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
   }
 
@@ -99,6 +78,28 @@ export class DatetimePickerComponent implements OnInit {
     if (this.startDate != null && this.endDate != null) {
       this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
     }
+  }
+
+  today() {
+    this.selectedDay = new Date();
+  }
+
+  yesterday() {
+
+    this.selectedDay = new Date(new Date().setDate(new Date().getDate() - 1));
+  }
+
+  lastWeek() {
+
+    this.selectedDay = new Date(new Date().setDate(new Date().getDate() - 7));
+  }
+
+  lastMonth() {
+
+    this.selectedDay = new Date(new Date().setMonth(new Date().getMonth() - 1));
+  }
+
+  ngOnInit(): void {
   }
 }
 
