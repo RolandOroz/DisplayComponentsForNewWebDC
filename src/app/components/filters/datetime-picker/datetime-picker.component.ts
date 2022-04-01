@@ -104,14 +104,3 @@ export class DatetimePickerComponent implements OnInit {
 }
 
 
-
-// leave it for now commented______________Temp Archive_______________________
-// todaySearch = new Date();
-// yesterdaySearch = new Date();
-// lastWeekSearch = new Date();
-// lastMonthSearch = new Date();
-// todaySearch = new Date();
-// yesterdaySearch = new Date().setDate(this.selectedDay.getDate() - 1 )  ;
-// lastWeekSearch = new Date().setDate(this.selectedDay.getDate() - 7 );
-// lastMonthSearch = new Date().setMonth(this.selectedDay.getMonth() - 1);
-//____________________________________________________________________________
