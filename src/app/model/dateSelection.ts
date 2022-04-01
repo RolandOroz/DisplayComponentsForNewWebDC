@@ -18,10 +18,10 @@ export class DateSelection implements IDateSelection {
     this.dateRangeEnd = dateRangeEnd;
   }
 
-  public static of(startDate: Date, endDate:Date): IDateSelection  {
+  public static of(startDate: number, endDate:number): IDateSelection  {
     let selection: IDateSelection = {
-      dateRangeStart: startDate.getTime(),
-      dateRangeEnd: endDate.getTime()
+      dateRangeStart: startDate,
+      dateRangeEnd: endDate
     }
     return selection;
   }

@@ -4,7 +4,8 @@ import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {DateSelection} from "../../../model/dateSelection";
 
 import {IDateSelection} from "../../../model/Interface/IDateSelection";
-
+import { endOfTomorrow } from 'date-fns';
+import { endOfYesterday } from 'date-fns';
 
 @Component({
   selector: 'app-datetime-picker',
@@ -25,6 +26,8 @@ export class DatetimePickerComponent implements OnInit {
   collapsed!: boolean;
 
   selectedDay = new Date();
+  tempSelectedDay = new Date();
+
 
   startDate!: Date;
   endDate!: Date;
@@ -32,20 +35,24 @@ export class DatetimePickerComponent implements OnInit {
 
 
   dateFilter_prevDay() {
-    let prevDay = new Date(this.selectedDay);
-    this.selectedDay = prevDay;
 
+    let prevDay = new Date(this.selectedDay);
+    let prevDayEnd = new Date(this.selectedDay)
+    this.selectedDay = prevDay;
+    let selectedDayEnd = new Date(this.selectedDay.getDate() +1 );
     prevDay.setDate(this.selectedDay.getDate());
-    this.onRangeSelected.emit({
-      dateRangeEnd: prevDay.getTime(),
-      dateRangeStart: prevDay.setDate(this.selectedDay.getDate() - 1),
-    });
+    this.onRangeSelected.emit(DateSelection.of(
+      prevDay.setDate(this.selectedDay.getDate() - 1),
+      prevDayEnd.getTime()));
+
   }
 
   dateFilter_nextDay() {
     const maxDate = new Date();
+    if (this.selectedDay >= maxDate) {
+      return;
+    }
     let nextDay = new Date(this.selectedDay);
-    // this.selectedDay = nextDay;
 
     nextDay.setDate(this.selectedDay.getDate()+1);
 
@@ -56,40 +63,19 @@ export class DatetimePickerComponent implements OnInit {
     });
 
     this.selectedDay = nextDay;
-    if (this.selectedDay >= maxDate) {
-      this.selectedDay = maxDate;
-    }
+
   }
 
-  // dateFilter_nextDay() {
-  //   const maxDate = new Date();
-  //   this.nextDay = this.selectedDay;
-  //   this.selectedDay = this.nextDay;
-  //   this.nextDay.setDate(this.selectedDay.getDate());
-  //   this.selectedDay = this.nextDay;
-  //
-  //   this.onRangeSelected.emit({
-  //     dateRangeStart:this.nextDay.setDate(this.selectedDay.getDate()),
-  //     dateRangeEnd: this.nextDay.setDate(this.selectedDay.getDate()+1),
-  //
-  //
-  //   });
-  //
-  //   this.selectedDay = this.nextDay;
-  //   if (this.selectedDay >= maxDate) {
-  //     this.selectedDay = maxDate;
-  //   }
-  // }
 
   addDateEvent(type: string, input: MatDatepickerInputEvent<unknown, unknown | null>) {
-    this.onRangeSelected.emit(DateSelection.of(this.selectedDay, this.selectedDay));
-    let singleDate = new Date(this.selectedDay)
 
+    let singleDate = new Date(this.selectedDay);
+    let tempSingleDate = new Date(this.selectedDay);
+
+    let singleDateEnd = singleDate.setDate(tempSingleDate.getDate()+1);
     singleDate.setDate(this.selectedDay.getDate())
-      this.onRangeSelected.emit({
-        dateRangeStart: singleDate.getTime(),
-        dateRangeEnd: singleDate.setDate(this.selectedDay.getDate() + 1)
-      })
+    this.onRangeSelected.emit(DateSelection.of(
+      singleDate.getTime(), singleDateEnd));
   }
 
 
@@ -98,23 +84,20 @@ export class DatetimePickerComponent implements OnInit {
   }
 
 
-
-
-
   ngOnInit(): void {
   }
 
   startRangeChange(event: MatDatepickerInputEvent<any>) {
     this.startDate = event.value;
-
     this.endDate = null;
-    this.onRangeSelected.emit(DateSelection.of(this.startDate, this.endDate));
+
+    this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
   }
 
   endRangeChange(event: MatDatepickerInputEvent<any>) {
     this.endDate = event.value;
     if (this.startDate != null && this.endDate != null) {
-      this.onRangeSelected.emit(DateSelection.of(this.startDate, this.endDate));
+      this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
     }
   }
 }
