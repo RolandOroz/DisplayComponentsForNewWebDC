@@ -70,6 +70,7 @@ export class DatetimePickerComponent implements OnInit {
   startRangeChange(event: MatDatepickerInputEvent<any>) {
     this.startDate = event.value;
     this.endDate = null;
+    // @ts-ignore
     this.onRangeSelected.emit(DateSelection.of(this.startDate.getTime(), this.endDate.getTime()));
   }
 
