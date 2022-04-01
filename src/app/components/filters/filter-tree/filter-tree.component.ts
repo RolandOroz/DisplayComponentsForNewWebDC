@@ -9,6 +9,7 @@ import { IFilterTreeItem } from "../../../model/Interface/IFilterTreeItem";
 
 export class FilterTreeComponent {
 
+ // TODO make model and mock data for filterItems------------!!!!!!!!!
   filterTree: IFilterTreeItem= {
     uuid: "a12",
     name: "abc"
@@ -23,6 +24,7 @@ export class FilterTreeComponent {
 
 }
 
+// todo ----------------!!!!!!!!!!!
 // filter tree component
 // implement text search field (to search component data)
 // make text search field configurable to hide it where needed
