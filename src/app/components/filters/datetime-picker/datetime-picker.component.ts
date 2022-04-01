@@ -91,12 +91,26 @@ export class DatetimePickerComponent implements OnInit {
 
   lastWeek() {
 
-    this.selectedDay = new Date(new Date().setDate(new Date().getDate() - 7));
+     this.selectedDay = new Date(new Date().setDate(new Date().getDate() - 7));
+    // let lastWeek = new Date(this.selectedDay);
+    // let lastWeekEnd = new Date().getTime();
+    // this.selectedDay = new Date(new Date().setDate(new Date().getDate() - 7));
+    // lastWeek.setDate(this.selectedDay.getDate())
+    // this.onRangeSelected.emit(DateSelection.of(
+    //   lastWeek.getTime(),
+    //   lastWeekEnd));
   }
 
   lastMonth() {
-
     this.selectedDay = new Date(new Date().setMonth(new Date().getMonth() - 1));
+
+    // let lastMonth = new Date(this.selectedDay);
+    // let lastMonthEnd = new Date().getTime();
+    // this.selectedDay = new Date(new Date().setMonth(new Date().getMonth() - 1));
+    // lastMonth.setDate(this.selectedDay.getDate())
+    // this.onRangeSelected.emit(DateSelection.of(
+    //   lastMonth.getTime(),
+    //   lastMonthEnd));
   }
 
   ngOnInit(): void {
