@@ -28,7 +28,7 @@ mat-card-content {
   flex: 1 1 auto;
 }
 
-mat-list {
-  height: 60px;
-
+.arrowChange:hover {
+  rotation: revert;
 }
+

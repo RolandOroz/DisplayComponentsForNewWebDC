@@ -20,8 +20,8 @@ export class DatetimePickerComponent implements OnInit {
 
 
   selectedDay = startOfDay(new Date());
-  startDate = new Date(new Date().setHours(0,0,0,0));
-  endDate = new Date(new Date().setHours(0,0,0,0));
+  startDate = startOfDay(new Date());
+  endDate = startOfDay(new Date());
 
   constructor() {
   }

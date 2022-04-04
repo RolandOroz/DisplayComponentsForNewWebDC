@@ -22,6 +22,9 @@ export class FilterTreeComponent {
 
   filterTreeItems = [] = [this.filterTree, this.filterTree_2];
 
+  drawerToggle() {
+
+  }
 }
 
 // todo ----------------!!!!!!!!!!!
