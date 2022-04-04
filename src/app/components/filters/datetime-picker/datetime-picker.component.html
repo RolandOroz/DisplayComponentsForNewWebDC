@@ -17,7 +17,7 @@
             <mat-icon>navigate_before</mat-icon>
           </i>
 <!-- display chosen date-->
-          <i >{{ selectedDay | date}}</i>
+          <i >{{ selectedDay | date: 'dd-MM-yyyy'}}</i>
 <!-- day increment +1-->
           <i class="nextDay" (click)="dateFilter_nextDay()">
             <mat-icon>keyboard_arrow_right</mat-icon>
