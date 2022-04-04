@@ -32,3 +32,8 @@ mat-card-content {
   rotation: revert;
 }
 
+.drawer-sidenav {
+  width: 220px;
+  background-color: #eeeeee;
+
+}
