@@ -19,7 +19,7 @@ export class DatetimePickerComponent implements OnInit {
   collapsed!: boolean;
 
 
-  selectedDay = new Date(new Date().setHours(0,0,0,0));
+  selectedDay = startOfDay(new Date());
   startDate = new Date(new Date().setHours(0,0,0,0));
   endDate = new Date(new Date().setHours(0,0,0,0));
 
@@ -39,7 +39,7 @@ export class DatetimePickerComponent implements OnInit {
   }
 
   dateFilter_nextDay() {
-    const maxDate = new Date();
+    const maxDate = startOfDay(new Date());
     if (this.selectedDay >= maxDate) {
       return;
     }
