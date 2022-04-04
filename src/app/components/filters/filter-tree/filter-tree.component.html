@@ -1,57 +1,57 @@
-<mat-drawer-container class="drawer-container" >
-  <mat-drawer #drawer class="drawer-sidenav" mode="side">
-    <p>Sidenav</p>
+<!--<mat-drawer-container class="drawer-container" >-->
+<!--  <mat-drawer #drawer class="drawer-sidenav" mode="side">-->
+<!--    <p>Sidenav</p>-->
 
-  </mat-drawer>
+<!--  </mat-drawer>-->
 
-  <div class="sidenav-content">
+<!--  <div class="sidenav-content">-->
 
-    <button class="arrowChange" type="button" mat-button (click)="drawer.toggle()">
-      <mat-icon >navigate_before</mat-icon>
-    </button>
-  </div>
+<!--    <button class="arrowChange" type="button" mat-button (click)="drawer.toggle()">-->
+<!--      <mat-icon >navigate_before</mat-icon>-->
+<!--    </button>-->
+<!--  </div>-->
 
-</mat-drawer-container>
+<!--</mat-drawer-container>-->
 
 
 
-<!--<mat-list>-->
-<!--<mat-card>-->
-<!--  <mat-card-header>-->
-<!--    <mat-radio-group color="primary">-->
-<!--      <mat-list>-->
-<!--        <mat-label>Media</mat-label>-->
-<!--        <mat-radio-button class="radio-button" value="media" checked="true"></mat-radio-button>-->
-<!--      </mat-list>-->
-<!--      <span class="spacer"></span>-->
-<!--      <mat-list>-->
-<!--        <mat-label>Both</mat-label>-->
-<!--        <mat-radio-button class="radio-button" value="both"></mat-radio-button>-->
-<!--      </mat-list>-->
-<!--      <span class="spacer"></span>-->
-<!--      <mat-list>-->
-<!--        <mat-label>Engagement</mat-label>-->
-<!--        <mat-radio-button class="radio-button" value="engagement"></mat-radio-button>-->
-<!--      </mat-list>-->
-<!--      <span class="spacer"></span>-->
-<!--    </mat-radio-group>-->
-<!--  </mat-card-header>-->
+<mat-list>
+<mat-card>
+  <mat-card-header>
+    <mat-radio-group color="primary">
+      <mat-list>
+        <mat-label>Media</mat-label>
+        <mat-radio-button class="radio-button" value="media" checked="true"></mat-radio-button>
+      </mat-list>
+      <span class="spacer"></span>
+      <mat-list>
+        <mat-label>Both</mat-label>
+        <mat-radio-button class="radio-button" value="both"></mat-radio-button>
+      </mat-list>
+      <span class="spacer"></span>
+      <mat-list>
+        <mat-label>Engagement</mat-label>
+        <mat-radio-button class="radio-button" value="engagement"></mat-radio-button>
+      </mat-list>
+      <span class="spacer"></span>
+    </mat-radio-group>
+  </mat-card-header>
 
-<!--  <mat-card-content>-->
+  <mat-card-content>
 
-<!--    <mat-list-item>-->
-<!--      <app-datetime-picker></app-datetime-picker>-->
-<!--    </mat-list-item>-->
+    <mat-list-item>
+      <app-datetime-picker></app-datetime-picker>
+    </mat-list-item>
 
-<!--    <mat-list-item>-->
-<!--      <app-topics></app-topics>-->
-<!--    </mat-list-item>-->
+    <mat-list-item>
+      <app-topics></app-topics>
+    </mat-list-item>
 
-<!--    <mat-list-item>-->
-<!--      <ul>-->
-<!--        <li *ngFor="let i of filterTreeItems"><span>uuid: </span>{{i.uuid}}<span> ,name: </span>{{i.name}}</li>-->
-<!--      </ul>-->
-<!--    </mat-list-item>-->
-<!--  </mat-card-content>-->
-<!--</mat-card>-->
-<!--  </mat-list>-->
+    <mat-list-item>
+      <ul>
+        <li *ngFor="let i of filterTreeItems"><span>uuid: </span>{{i.uuid}}<span> ,name: </span>{{i.name}}</li>
+      </ul>
+    </mat-list-item>
+  </mat-card-content>
+</mat-card>
+  </mat-list>
