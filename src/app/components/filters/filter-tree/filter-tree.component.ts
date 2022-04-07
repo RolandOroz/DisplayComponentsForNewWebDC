@@ -1,7 +1,7 @@
 import {FlatTreeControl} from '@angular/cdk/tree';
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-import {IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
+import {FilterTreeItem} from "../../../model/FilterTreeItem";
 
 /**
  * Food data with nested structure.
@@ -12,27 +12,6 @@ interface FoodNode {
   children?: FoodNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
-  },
-  {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
-      },
-      {
-        name: 'Orange',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
-      },
-    ],
-  },
-];
-
-/** Flat node with expandable and level information */
 interface ExampleFlatNode {
   expandable: boolean;
   name: string;
@@ -45,26 +24,41 @@ interface ExampleFlatNode {
   styleUrls: ['./filter-tree.component.css']
 })
 
-export class FilterTreeComponent {
+export class FilterTreeComponent implements OnInit {
+  TREE_DATA: FilterTreeItem[]= [{name:'rfgwerfg', uuid: 'erwtwertwe'},{name:'sdfgfds',uuid:'sgsfdfgsfd'}];
   isShown!: boolean;
   collapsed!: boolean;
- // TODO make model and mock data for filterItems------------!!!!!!!!!
-  filterTree: IFilterTreeItem= {
-    uuid: "a12",
-    name: "abc"
-  };
+  private transformer = (node: FoodNode, level: number) => {
+    return {
+      expandable: !!node.children && node.children.length > 0,
+      name: node.name,
+      level: level,
+    };
+  }
+  treeControl = new FlatTreeControl<ExampleFlatNode>(
+    node => node.level, node => node.expandable);
+  treeFlattener = new MatTreeFlattener(
+    this.transformer, node => node.level, node => node.expandable, node => node.children);
 
-  filterTree_2: IFilterTreeItem= {
-    uuid: "b34",
-    name: "def"
-  };
+  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  constructor() {
+    this.dataSource.data = this.TREE_DATA;
+  }
+
+  ngOnInit(): void {
+
+    }
+
+  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+
   searchShow() {
     this.isShown = ! this.isShown;
   }
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
-  filterTreeItems = [] = [this.filterTree, this.filterTree_2];
+
 
   drawerToggle() {
 
