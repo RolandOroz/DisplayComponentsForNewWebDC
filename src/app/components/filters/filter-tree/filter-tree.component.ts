@@ -3,10 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 
-/**
- * Food data with nested structure.
- * Each node has a name and an optional list of children.
- */
+
 interface FilterTreeNode {
   uuid: string;
   name: string;
@@ -33,7 +30,6 @@ export class FilterTreeComponent implements OnInit {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
-
       level: level,
     };
   }
@@ -74,18 +70,4 @@ export class FilterTreeComponent implements OnInit {
 // filter tree item component
 // add "AND" "OR" "NOT" buttons to the filter tree item
 // TODO make model and mock data for filterItems------------!!!!!!!!!
-// filterTree: IFilterTreeItem= {
-//   uuid: "a12",
-//   name: "abc"
-// };
-//
-// filterTree_2: IFilterTreeItem= {
-//   uuid: "b34",
-//   name: "def"
-// };
-//
-// filterTreeItems = [] = [this.filterTree, this.filterTree_2];
-//
-// drawerToggle() {
-//
-// }
+
