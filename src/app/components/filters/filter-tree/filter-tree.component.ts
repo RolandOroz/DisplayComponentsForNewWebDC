@@ -8,6 +8,7 @@ import {FilterTreeItem} from "../../../model/FilterTreeItem";
  * Each node has a name and an optional list of children.
  */
 interface FoodNode {
+  uuid: string;
   name: string;
   children?: FoodNode[];
 }
@@ -32,6 +33,7 @@ export class FilterTreeComponent implements OnInit {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
+
       level: level,
     };
   }
