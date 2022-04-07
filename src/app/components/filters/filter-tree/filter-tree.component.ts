@@ -7,13 +7,13 @@ import {FilterTreeItem} from "../../../model/FilterTreeItem";
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
  */
-interface FoodNode {
+interface FilterTreeNode {
   uuid: string;
   name: string;
-  children?: FoodNode[];
+  children?: FilterTreeItem[];
 }
 
-interface ExampleFlatNode {
+interface FilterFlatNode {
   expandable: boolean;
   name: string;
   level: number;
@@ -26,10 +26,10 @@ interface ExampleFlatNode {
 })
 
 export class FilterTreeComponent implements OnInit {
-  TREE_DATA: FilterTreeItem[]= [{name:'rfgwerfg', uuid: 'erwtwertwe'},{name:'sdfgfds',uuid:'sgsfdfgsfd'}];
+  TREE_DATA: FilterTreeItem[]= [];
   isShown!: boolean;
   collapsed!: boolean;
-  private transformer = (node: FoodNode, level: number) => {
+  private transformer = (node: FilterTreeNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -37,7 +37,7 @@ export class FilterTreeComponent implements OnInit {
       level: level,
     };
   }
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
+  treeControl = new FlatTreeControl<FilterFlatNode>(
     node => node.level, node => node.expandable);
   treeFlattener = new MatTreeFlattener(
     this.transformer, node => node.level, node => node.expandable, node => node.children);
@@ -51,7 +51,7 @@ export class FilterTreeComponent implements OnInit {
 
     }
 
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+  hasChild = (_: number, node: FilterFlatNode) => node.expandable;
 
 
   searchShow() {
