@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleDetailsComponentPage } from './components/article-details/article-details.component';
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { ArticleListItemComponent } from './components/article-list/article-list-item/article-list-item.component';
-import { FiltersComponent } from './components/filters/filters.component';
+import { FilterTreeItemComponent } from './components/filters/FilterTreeItem.component';
 import { DatetimePickerComponent } from './components/filters/datetime-picker/datetime-picker.component';
 import { FilterTreeComponent } from './components/filters/filter-tree/filter-tree.component';
 import { SearchComponent } from './components/search/search.component';
@@ -41,6 +41,7 @@ import {MatNativeDateModule, MatRippleModule} from "@angular/material/core";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TopicsComponent } from './components/filters/topics/topics.component';
+import {MatTreeModule} from "@angular/material/tree";
 
 
 
@@ -51,7 +52,7 @@ import { TopicsComponent } from './components/filters/topics/topics.component';
     ArticleDetailsComponentPage,
     ArticleListComponent,
     ArticleListItemComponent,
-    FiltersComponent,
+    FilterTreeItemComponent,
     DatetimePickerComponent,
     FilterTreeComponent,
     SearchComponent,
@@ -95,7 +96,8 @@ import { TopicsComponent } from './components/filters/topics/topics.component';
     MatNativeDateModule,
     MatButtonToggleModule,
     MatGridListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTreeModule
 
 
   ],
