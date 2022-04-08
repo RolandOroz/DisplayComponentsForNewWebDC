@@ -24,7 +24,7 @@ interface FilterFlatNode {
 
 export class FilterTreeComponent implements OnInit {
   TREE_DATA: FilterTreeItem[]= [];
-  isShown!: boolean;
+  isSearchShown!: boolean;
   collapsed!: boolean;
   private transformer = (node: FilterTreeNode, level: number) => {
     return {
@@ -51,7 +51,7 @@ export class FilterTreeComponent implements OnInit {
 
 
   searchShow() {
-    this.isShown = ! this.isShown;
+    this.isSearchShown = ! this.isSearchShown;
   }
   toggleCollapsed() {
     this.collapsed = !this.collapsed;

@@ -9,7 +9,7 @@
   </mat-card-header>
 <!--search in component data...make component-->
 <mat-icon class="searchIcon" (click)="searchShow()">find_in_page</mat-icon>
-<app-search *ngIf="isShown"></app-search>
+<app-search *ngIf="isSearchShown"></app-search>
 
   <mat-card-content>
 <!--insert MatTree for filterTree items-->
@@ -17,7 +17,7 @@
       <mat-tree-node *matTreeNodeDef="let node">
         <button mat-icon-button disabled></button>
         {{node.name}}<button mat-icon-button disabled></button>
-        {{node.level}}
+
       </mat-tree-node>
       <!-- This is the tree node template for expandable nodes -->
       <mat-tree-node *matTreeNodeDef="let node;when: hasChild">
@@ -27,6 +27,7 @@
             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
           </mat-icon>
         </button>
+        {{node.name}}
         {{node.name}}
       </mat-tree-node>
     </mat-tree>
