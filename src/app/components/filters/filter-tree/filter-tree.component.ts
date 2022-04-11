@@ -2,6 +2,8 @@ import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
+import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
+import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
 
 
 interface FilterTreeNode {
@@ -23,7 +25,11 @@ interface FilterFlatNode {
 })
 
 export class FilterTreeComponent implements OnInit {
-  TREE_DATA: FilterTreeItem[]= [];
+
+  filterItem2= TREEITEM;
+  TREE_DATA2: FilterTreeItem[]=[TREEITEM];
+
+  TREE_DATA = TREEITEMS;
   isSearchShown!: boolean;
   collapsed!: boolean;
   private transformer = (node: FilterTreeNode, level: number) => {
