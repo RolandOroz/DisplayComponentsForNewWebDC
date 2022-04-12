@@ -12,10 +12,8 @@
 <app-search *ngIf="isSearchShown"></app-search>
 
 
-<!--insert MatTree for filterTree items-->
-    <mat-card-content *ngIf="collapsed">
 
-    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree *ngIf="collapsed" [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node">
 
         {{node.name}}
@@ -37,7 +35,6 @@
     </mat-tree>
 
 
-  </mat-card-content>
 </mat-card>
 
 
