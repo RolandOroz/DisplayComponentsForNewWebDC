@@ -3,7 +3,7 @@
   <mat-card-header>
     <mat-card-title class="spacer">filterTree component</mat-card-title>
     <span class="spacer"></span>
-    <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="drawerToggle()" >
+    <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
   </mat-card-header>
@@ -11,26 +11,31 @@
 <mat-icon class="searchIcon" (click)="searchShow()">find_in_page</mat-icon>
 <app-search *ngIf="isSearchShown"></app-search>
 
-  <mat-card-content>
+
 <!--insert MatTree for filterTree items-->
+    <mat-card-content *ngIf="collapsed">
+
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node">
-        <button mat-icon-button disabled></button>
-        {{node.name}}<button mat-icon-button disabled></button>
+
+        {{node.name}}
 
       </mat-tree-node>
+
       <!-- This is the tree node template for expandable nodes -->
-      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">
-        <button mat-icon-button matTreeNodeToggle
-                [attr.aria-label]="'toggle ' + node.name">
-          <mat-icon class="mat-icon-rtl-mirror">
-            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-          </mat-icon>
-        </button>
-        {{node.name}}
-        {{node.name}}
-      </mat-tree-node>
+<!--      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">-->
+<!--        <button mat-icon-button matTreeNodeToggle-->
+<!--                [attr.aria-label]="'toggle' + node.name">-->
+<!--          <mat-icon class="mat-icon-rtl-mirror">-->
+<!--            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
+<!--          </mat-icon>-->
+<!--        </button>-->
+<!--        {{node.name}}-->
+
+<!--      </mat-tree-node>-->
+
     </mat-tree>
+
 
   </mat-card-content>
 </mat-card>

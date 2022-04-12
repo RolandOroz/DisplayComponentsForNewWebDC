@@ -26,10 +26,14 @@ interface FilterFlatNode {
 
 export class FilterTreeComponent implements OnInit {
 
-  filterItem2= TREEITEM;
+  filterItem2: FilterTreeItem[]=[{
+    uuid: 'dsfda',
+    name: 'sadfdfdafads'
+  }];
   TREE_DATA2: FilterTreeItem[]=[TREEITEM];
-
   TREE_DATA = TREEITEMS;
+
+  //toggles
   isSearchShown!: boolean;
   collapsed!: boolean;
 
@@ -66,10 +70,6 @@ export class FilterTreeComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
 
-
-  drawerToggle() {
-
-  }
 }
 
 // todo ----------------!!!!!!!!!!!
