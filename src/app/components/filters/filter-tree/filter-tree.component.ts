@@ -32,6 +32,7 @@ export class FilterTreeComponent implements OnInit {
   TREE_DATA = TREEITEMS;
   isSearchShown!: boolean;
   collapsed!: boolean;
+
   private transformer = (node: FilterTreeNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -45,6 +46,7 @@ export class FilterTreeComponent implements OnInit {
     this.transformer, node => node.level, node => node.expandable, node => node.children);
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+
   constructor() {
     this.dataSource.data = this.TREE_DATA;
   }
@@ -59,6 +61,7 @@ export class FilterTreeComponent implements OnInit {
   searchShow() {
     this.isSearchShown = ! this.isSearchShown;
   }
+
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
