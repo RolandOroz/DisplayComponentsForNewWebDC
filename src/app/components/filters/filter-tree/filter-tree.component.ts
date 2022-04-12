@@ -30,7 +30,7 @@ export class FilterTreeComponent implements OnInit {
     uuid: 'dsfda',
     name: 'sadfdfdafads'
   }];
-  TREE_DATA2: FilterTreeItem[]=[TREEITEM];
+  TREE_DATA_SINGLE: FilterTreeItem[]=[TREEITEM];
   TREE_DATA = TREEITEMS;
 
   //toggles
@@ -52,7 +52,7 @@ export class FilterTreeComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor() {
-    this.dataSource.data = this.TREE_DATA;
+    this.dataSource.data = this.TREE_DATA_SINGLE;
   }
 
   ngOnInit(): void {

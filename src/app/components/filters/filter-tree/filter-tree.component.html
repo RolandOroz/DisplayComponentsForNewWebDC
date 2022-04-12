@@ -19,18 +19,21 @@
 
             <button  (click)="searchShow()">show/ hide search</button>
 
-            <app-search *ngIf="isSearchShown"></app-search>
+            <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
 
           </mat-card-content>
           <mat-card-content>
-            <p>Item content</p>
+
+<!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+            Item content____________________0
           </mat-card-content>
 
           <mat-card-footer>
             <mat-card-actions>
-              <button class="TreeItemFilterAndOrNot">AND</button>
-              <button class="TreeItemFilterAndOrNot">OR</button>
-              <button class="TreeItemFilterAndOrNot">NOT</button>
+              <button class="AndOrNotBtn" mat-raised-button>AND</button>
+              <button class="AndOrNotBtn" mat-raised-button>OR</button>
+              <button class="AndOrNotBtn" mat-raised-button>NOT</button>
             </mat-card-actions>
           </mat-card-footer>
         </mat-card>

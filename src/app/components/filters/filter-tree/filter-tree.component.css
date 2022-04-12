@@ -45,18 +45,25 @@ button.dataFilterCollapse {
 }
 
 mat-card-actions {
-  padding-left: 25%;
-}
-
-.TreeItemFilterAndOrNot {
-  width: 50px;
-  padding: 5px;
+  padding-left: 15%;
 }
 
 mat-card-header {
  width: 160px;
 }
 
-.FilterTree {
-  border: 1px solid black;
+.AndOrNotBtn {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  line-height: 10px;
+}
+
+mat-card-content, mat-card-title {
+  padding-top: 10px;
+}
+
+.SearchFilterTree {
+  height: 24px;
 }
