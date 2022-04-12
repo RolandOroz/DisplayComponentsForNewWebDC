@@ -1,59 +1,54 @@
-
 <mat-card class="FilterTreeItemCard">
-  <mat-card-header>
-    <mat-card-title class="spacer">filterTree component</mat-card-title>
-    <span class="spacer"></span>
 
-  </mat-card-header>
-<!--search in component data...make component-->
+  <!--search in component data...make component-->
 
 
-    <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
-      <mat-tree-node *matTreeNodeDef="let node">
-        <mat-card>
-
-          <mat-card-title >{{node.name}}</mat-card-title>
+    <mat-tree-node *matTreeNodeDef="let node">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{node.name}}</mat-card-title>
           <span class="spacer"></span>
-          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
+          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
-          <mat-card-content  *ngIf="collapsed" class="searchIcon">
+        </mat-card-header>
+        <mat-card-content *ngIf="collapsed" class="searchIcon">
 
-            <mat-icon  (click)="searchShow()">search</mat-icon>
+          <mat-icon (click)="searchShow()">search</mat-icon>
 
-            <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
+          <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
 
 
+          <!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-<!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+          <p>Item content____________________0</p>
+        </mat-card-content>
 
-            <p>Item content____________________0</p>
-          </mat-card-content>
+        <mat-card-footer *ngIf="collapsed">
+          <mat-card-actions>
+            <button class="AndOrNotBtn" mat-raised-button>AND</button>
+            <button class="AndOrNotBtn" mat-raised-button>OR</button>
+            <button class="AndOrNotBtn" mat-raised-button>NOT</button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+    </mat-tree-node>
 
-          <mat-card-footer *ngIf="collapsed">
-            <mat-card-actions>
-              <button class="AndOrNotBtn" mat-raised-button>AND</button>
-              <button class="AndOrNotBtn" mat-raised-button>OR</button>
-              <button class="AndOrNotBtn" mat-raised-button>NOT</button>
-            </mat-card-actions>
-          </mat-card-footer>
-        </mat-card>
-      </mat-tree-node>
+    <!-- This is the tree node template for expandable nodes -->
+    <!--      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">-->
+    <!--        <button mat-icon-button matTreeNodeToggle-->
+    <!--                [attr.aria-label]="'toggle' + node.name">-->
+    <!--          <mat-icon class="mat-icon-rtl-mirror">-->
+    <!--            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
+    <!--          </mat-icon>-->
+    <!--        </button>-->
+    <!--        {{node.name}}-->
 
-      <!-- This is the tree node template for expandable nodes -->
-<!--      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">-->
-<!--        <button mat-icon-button matTreeNodeToggle-->
-<!--                [attr.aria-label]="'toggle' + node.name">-->
-<!--          <mat-icon class="mat-icon-rtl-mirror">-->
-<!--            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
-<!--          </mat-icon>-->
-<!--        </button>-->
-<!--        {{node.name}}-->
+    <!--      </mat-tree-node>-->
 
-<!--      </mat-tree-node>-->
-
-    </mat-tree>
+  </mat-tree>
 
 
 </mat-card>
