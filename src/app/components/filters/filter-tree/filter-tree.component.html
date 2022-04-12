@@ -13,13 +13,14 @@
       <mat-tree-node *matTreeNodeDef="let node">
         <mat-card>
 
-          <mat-card-title>{{node.name}}</mat-card-title>
+          <mat-card-title >{{node.name}}</mat-card-title>
+          <span class="spacer"></span>
           <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
           <mat-card-content  *ngIf="collapsed" class="searchIcon">
 
-            <button  (click)="searchShow()">show/ hide search</button>
+            <mat-icon  (click)="searchShow()">search</mat-icon>
 
             <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
 
@@ -27,7 +28,7 @@
 
 <!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-            Item content____________________0
+            <p>Item content____________________0</p>
           </mat-card-content>
 
           <mat-card-footer *ngIf="collapsed">
