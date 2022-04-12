@@ -3,33 +3,34 @@
   <mat-card-header>
     <mat-card-title class="spacer">filterTree component</mat-card-title>
     <span class="spacer"></span>
-    <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
-      <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
+
   </mat-card-header>
 <!--search in component data...make component-->
 
 
-    <mat-tree class="FilterTree" *ngIf="collapsed" [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
       <mat-tree-node *matTreeNodeDef="let node">
         <mat-card>
+
           <mat-card-title>{{node.name}}</mat-card-title>
-          <mat-card-content class="searchIcon">
+          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()" >
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-card-content  *ngIf="collapsed" class="searchIcon">
 
             <button  (click)="searchShow()">show/ hide search</button>
 
             <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
 
-          </mat-card-content>
-          <mat-card-content>
+
 
 <!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
             Item content____________________0
           </mat-card-content>
 
-          <mat-card-footer>
+          <mat-card-footer *ngIf="collapsed">
             <mat-card-actions>
               <button class="AndOrNotBtn" mat-raised-button>AND</button>
               <button class="AndOrNotBtn" mat-raised-button>OR</button>
