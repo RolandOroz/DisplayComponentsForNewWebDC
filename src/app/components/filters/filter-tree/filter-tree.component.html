@@ -1,5 +1,5 @@
 
-<mat-card>
+<mat-card class="FilterTreeItemCard">
   <mat-card-header>
     <mat-card-title class="spacer">filterTree component</mat-card-title>
     <span class="spacer"></span>
@@ -8,16 +8,32 @@
     </button>
   </mat-card-header>
 <!--search in component data...make component-->
-<mat-icon class="searchIcon" (click)="searchShow()">find_in_page</mat-icon>
-<app-search *ngIf="isSearchShown"></app-search>
 
 
+    <mat-tree class="FilterTree" *ngIf="collapsed" [dataSource]="dataSource" [treeControl]="treeControl">
 
-    <mat-tree *ngIf="collapsed" [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node">
+        <mat-card>
+          <mat-card-title>{{node.name}}</mat-card-title>
+          <mat-card-content class="searchIcon">
 
-        {{node.name}}
+            <button  (click)="searchShow()">show/ hide search</button>
 
+            <app-search *ngIf="isSearchShown"></app-search>
+
+          </mat-card-content>
+          <mat-card-content>
+            <p>Item content</p>
+          </mat-card-content>
+
+          <mat-card-footer>
+            <mat-card-actions>
+              <button class="TreeItemFilterAndOrNot">AND</button>
+              <button class="TreeItemFilterAndOrNot">OR</button>
+              <button class="TreeItemFilterAndOrNot">NOT</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </mat-card>
       </mat-tree-node>
 
       <!-- This is the tree node template for expandable nodes -->

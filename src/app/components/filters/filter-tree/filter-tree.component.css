@@ -5,17 +5,15 @@ mat-radio-group {
 }
 
 mat-radio-button{
-
   display: block;
-
 }
 
 mat-card {
   margin: 0;
   padding: 0;
-
   width: 252px;
 }
+
 mat-card-content {
   width: 220px;
   height: 50px;
@@ -24,6 +22,7 @@ mat-card-content {
 .short200 {
   width: 200px;
 }
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -35,12 +34,29 @@ mat-card-content {
 .drawer-sidenav {
   width: 220px;
   background-color: #eeeeee;
-
 }
+
 button.dataFilterCollapse {
   border: 1px solid #e0e0e0;
   border-radius: 5px;
   height: 24px;
   text-align: center;
   line-height: 10px;
+}
+
+mat-card-actions {
+  padding-left: 25%;
+}
+
+.TreeItemFilterAndOrNot {
+  width: 50px;
+  padding: 5px;
+}
+
+mat-card-header {
+ width: 160px;
+}
+
+.FilterTree {
+  border: 1px solid black;
 }
