@@ -1,56 +1,103 @@
 <mat-card class="FilterTreeItemCard">
 
-  <!--search in component data...make component-->
+  <mat-card-header>
+  <mat-card-title>Topics</mat-card-title>
+  <span class="spacer"></span>
+  <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+  </mat-card-header>
 
+  <mat-card-content *ngIf="collapsed" class="searchIcon">
+    <div>
+      <mat-icon (click)="searchShow()">search</mat-icon>
+      <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
+    </div>
+    <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
-  <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node">
 
-    <mat-tree-node *matTreeNodeDef="let node">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{node.name}}</mat-card-title>
-          <span class="spacer"></span>
-          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </button>
-        </mat-card-header>
-        <mat-card-content *ngIf="collapsed" class="searchIcon">
+            <!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-          <mat-icon (click)="searchShow()">search</mat-icon>
+            <span class="spacer">{{node.name}}</span>
 
-          <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>
+<!--todo          toggle between OR and AND-->
+<!--todo          buttons shows on mouseOver-->
 
+        <mat-button-toggle>{{node.andFT}}</mat-button-toggle>
+        <mat-button-toggle>{{node.orFT}}</mat-button-toggle>
+        <mat-button-toggle>{{node.notFT}}</mat-button-toggle>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <!--      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">-->
+      <!--        <button mat-icon-button matTreeNodeToggle-->
+      <!--                [attr.aria-label]="'toggle' + node.name">-->
+      <!--          <mat-icon class="mat-icon-rtl-mirror">-->
+      <!--            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
+      <!--          </mat-icon>-->
+      <!--        </button>-->
+      <!--        {{node.name}}-->
+      <!--      </mat-tree-node>-->
 
-          <!--TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    </mat-tree>
 
-          <p>Item content____________________0</p>
-        </mat-card-content>
-
-        <mat-card-footer *ngIf="collapsed">
-          <mat-card-actions>
-            <button class="AndOrNotBtn" mat-raised-button>AND</button>
-            <button class="AndOrNotBtn" mat-raised-button>OR</button>
-            <button class="AndOrNotBtn" mat-raised-button>NOT</button>
-          </mat-card-actions>
-        </mat-card-footer>
-      </mat-card>
-    </mat-tree-node>
-
-    <!-- This is the tree node template for expandable nodes -->
-    <!--      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">-->
-    <!--        <button mat-icon-button matTreeNodeToggle-->
-    <!--                [attr.aria-label]="'toggle' + node.name">-->
-    <!--          <mat-icon class="mat-icon-rtl-mirror">-->
-    <!--            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
-    <!--          </mat-icon>-->
-    <!--        </button>-->
-    <!--        {{node.name}}-->
-
-    <!--      </mat-tree-node>-->
-
-  </mat-tree>
-
+  </mat-card-content>
 
 </mat-card>
 
 
+
+<!--<mat-card class="FilterTreeItemCard">-->
+
+<!--  &lt;!&ndash;search in component data...make component&ndash;&gt;-->
+
+
+<!--  <mat-tree class="FilterTree" <mat-card class="FilterTreeItemCard">[dataSource]="dataSource" [treeControl]="treeControl">-->
+<!--    &lt;!&ndash  &ndash;&gt;-->
+<!--    <mat-tree-node *matTreeNodeDef="let node">-->
+<!--      <mat-card>-->
+<!--        <mat-card-header>-->
+<!--          <mat-card-title>{{node.name}}</mat-card-title>-->
+<!--          <span class="spacer"></span>-->
+<!--          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">-->
+<!--            <mat-icon>keyboard_arrow_down</mat-icon>-->
+<!--          </button>-->
+<!--        </mat-card-header>-->
+<!--        <mat-card-content *ngIf="collapsed" class="searchIcon">-->
+
+<!--          <mat-icon (click)="searchShow()">search</mat-icon>-->
+
+<!--          <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>-->
+
+
+<!--          &lt;!&ndash;TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&ndash;&gt;-->
+
+<!--          <p>Item content____________________0</p>-->
+<!--        </mat-card-content>-->
+
+<!--        <mat-card-footer *ngIf="collapsed">-->
+<!--          <mat-card-actions>-->
+<!--            <button class="AndOrNotBtn" mat-raised-button>AND</button>-->
+<!--            <button class="AndOrNotBtn" mat-raised-button>OR</button>-->
+<!--            <button class="AndOrNotBtn" mat-raised-button>NOT</button>-->
+<!--          </mat-card-actions>-->
+<!--        </mat-card-footer>-->
+<!--      </mat-card>-->
+<!--    </mat-tree-node>-->
+
+<!--    &lt;!&ndash; This is the tree node template for expandable nodes &ndash;&gt;-->
+<!--    &lt;!&ndash;      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <button mat-icon-button matTreeNodeToggle&ndash;&gt;-->
+<!--    &lt;!&ndash;                [attr.aria-label]="'toggle' + node.name">&ndash;&gt;-->
+<!--    &lt;!&ndash;          <mat-icon class="mat-icon-rtl-mirror">&ndash;&gt;-->
+<!--    &lt;!&ndash;            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}&ndash;&gt;-->
+<!--    &lt;!&ndash;          </mat-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </button>&ndash;&gt;-->
+<!--    &lt;!&ndash;        {{node.name}}&ndash;&gt;-->
+
+<!--    &lt;!&ndash;      </mat-tree-node>&ndash;&gt;-->
+
+<!--  </mat-tree>-->
+
+
+<!--</mat-card>-->

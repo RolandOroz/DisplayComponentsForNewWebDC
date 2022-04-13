@@ -1,17 +1,22 @@
-import {FlatTreeControl} from '@angular/cdk/tree';
+import { NestedTreeControl} from '@angular/cdk/tree';
 import {Component, OnInit} from '@angular/core';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
 
-
+//TODO create separate interface
 interface FilterTreeNode {
+
   uuid: string;
   name: string;
+  andFT: boolean;
+  orFT: boolean;
+  notFT: boolean;
   children?: FilterTreeItem[];
 }
 
+//TODO create separate interface
 interface FilterFlatNode {
   expandable: boolean;
   name: string;
@@ -28,7 +33,10 @@ export class FilterTreeComponent implements OnInit {
 
   filterItem2: FilterTreeItem[]=[{
     uuid: 'dsfda',
-    name: 'sadfdfdafads'
+    name: 'sadfdfdafads',
+    andFT: true,
+    orFT: false,
+    notFT: true
   }];
   TREE_DATA_SINGLE: FilterTreeItem[]=[TREEITEM];
   TREE_DATA = TREEITEMS;
@@ -44,15 +52,12 @@ export class FilterTreeComponent implements OnInit {
       level: level,
     };
   }
-  treeControl = new FlatTreeControl<FilterFlatNode>(
-    node => node.level, node => node.expandable);
-  treeFlattener = new MatTreeFlattener(
-    this.transformer, node => node.level, node => node.expandable, node => node.children);
 
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  treeControl = new NestedTreeControl<FilterTreeNode>( node => node.children);
+  dataSource = new MatTreeNestedDataSource<FilterTreeNode>();
 
   constructor() {
-    this.dataSource.data = this.TREE_DATA_SINGLE;
+    this.dataSource.data = this.TREE_DATA;
   }
 
   ngOnInit(): void {
