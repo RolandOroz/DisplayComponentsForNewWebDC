@@ -1,5 +1,4 @@
 mat-radio-group {
-  width: 220px;
   display: flex;
   margin: 20px 0;
 }
@@ -11,15 +10,6 @@ mat-radio-button{
 mat-card {
   margin: 0;
   padding: 0;
-  width: 252px;
-}
-
-mat-card-content {
-  width: 220px;
-}
-
-.short200 {
-  width: 200px;
 }
 
 .spacer {
@@ -65,9 +55,20 @@ button.AndOrNotBtn {
 }
 
 button.searchFilter {
-  margin-left: 188px;
   border-radius: 5px;
   color: #bc5123;
   margin-bottom: 20px;
 }
 
+.AndOrNotBtnHide {
+  display: none;
+
+}
+.AndOrNotBtnHover:hover + .AndOrNotBtnHide {
+  display: block;
+
+}
+
+.AndOrNotBtnHide:hover {
+  display: block;
+}

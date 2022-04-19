@@ -1,6 +1,6 @@
 mat-card{
   border-radius: 5px;
-  width: 220px;
+  /*width: 220px;*/
   font-family: glyphicons-basic-regular, sans-serif;
   font-size: 12px;
 }
@@ -27,32 +27,26 @@ mat-card{
 mat-card-content {
   margin: 0;
   padding: 0;
-  width: 220px;
   line-height: 1.9em;
   font-size: 12px;
 }
 
 mat-grid-list{
- width: 220px;
+  width: 100%;
   padding: 0;
   margin: 10px;
  }
-
-
-mat-card-header {
-  width: 204px;
-}
 
 input {
   text-align: justify;
   font-size: 12px;
   font-family: glyphicons-basic-regular, sans-serif;
-
 }
+
 mat-grid-tile {
-  width: 80px;
   text-align: center;
 }
+
 mat-grid-tile:hover {
   float: right;
   cursor: pointer;
@@ -63,13 +57,13 @@ mat-grid-tile:hover {
 .short200 {
   font-size: 12px;
   height: 25px;
-  width: 188px;
+  width: 100%;
   text-align: left;
 }
 
 .dateFilterFirstBanner {
   height: 25px;
-  width: 218px !important;
+  width: 100%;
   line-height: 0.9em;
   font-size: 12px;
   border: 1px solid #e0e0e0;

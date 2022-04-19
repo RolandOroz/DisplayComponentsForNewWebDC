@@ -19,5 +19,4 @@ export class ArticleListComponent implements OnInit {
   ngOnInit(): void {
     this.articles = this.dataService.getArticles();
   }
-
 }
