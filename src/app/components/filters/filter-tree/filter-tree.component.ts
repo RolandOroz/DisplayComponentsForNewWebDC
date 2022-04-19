@@ -57,7 +57,6 @@ export class FilterTreeComponent implements IFilterTreeItem{
 
   name: string;
   uuid: string;
-
 }
 
 // todo ----------------!!!!!!!!!!!
