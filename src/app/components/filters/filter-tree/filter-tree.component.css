@@ -40,8 +40,8 @@ button.dataFilterCollapse {
   line-height: 10px;
 }
 
-mat-card-actions {
-
+mat-card-title {
+  padding-top: 10px;
 }
 
 mat-card-header {
@@ -63,10 +63,17 @@ mat-card-content, mat-card-title {
 
 .SearchFilterTree {
   height: 24px;
+  padding-left: 10px;
 }
 
 .filterItems {
   justify-content: space-between;
 }
 
+button.searchFilter {
+  margin-left: 188px;
+  border-radius: 5px;
+  color: #bc5123;
+  margin-bottom: 20px;
+}
 
