@@ -1,5 +1,5 @@
 import { NestedTreeControl} from '@angular/cdk/tree';
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
@@ -29,7 +29,7 @@ interface FilterFlatNode {
   styleUrls: ['./filter-tree.component.css']
 })
 
-export class FilterTreeComponent implements OnInit {
+export class FilterTreeComponent {
 
   filterItem2: FilterTreeItem[]=[{
     uuid: 'dsfda',
@@ -45,14 +45,6 @@ export class FilterTreeComponent implements OnInit {
   isSearchShown!: boolean;
   collapsed!: boolean;
 
-  private transformer = (node: FilterTreeNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
-  }
-
   treeControl = new NestedTreeControl<FilterTreeNode>( node => node.children);
   dataSource = new MatTreeNestedDataSource<FilterTreeNode>();
 
@@ -60,9 +52,6 @@ export class FilterTreeComponent implements OnInit {
     this.dataSource.data = this.TREE_DATA;
   }
 
-  ngOnInit(): void {
-
-    }
 
   hasChild = (_: number, node: FilterFlatNode) => node.expandable;
 
