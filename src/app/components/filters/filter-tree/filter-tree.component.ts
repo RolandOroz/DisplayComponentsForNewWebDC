@@ -4,23 +4,17 @@ import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
+import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
 
-//TODO create separate interface
+// TODO create separate interface
 interface FilterTreeNode {
 
   uuid: string;
   name: string;
-  andFT: boolean;
-  orFT: boolean;
-  notFT: boolean;
+  // andFT: boolean;
+  // orFT: boolean;
+  // notFT: boolean;
   children?: FilterTreeItem[];
-}
-
-//TODO create separate interface
-interface FilterFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
 }
 
 @Component({
@@ -29,14 +23,14 @@ interface FilterFlatNode {
   styleUrls: ['./filter-tree.component.css']
 })
 
-export class FilterTreeComponent {
+export class FilterTreeComponent implements IFilterTreeItem{
 
   filterItem2: FilterTreeItem[]=[{
     uuid: 'dsfda',
     name: 'sadfdfdafads',
-    andFT: true,
-    orFT: false,
-    notFT: true
+    // andFT: true,
+    // orFT: false,
+    // notFT: true
   }];
   TREE_DATA_SINGLE: FilterTreeItem[]=[TREEITEM];
   TREE_DATA = TREEITEMS;
@@ -53,9 +47,6 @@ export class FilterTreeComponent {
   }
 
 
-  hasChild = (_: number, node: FilterFlatNode) => node.expandable;
-
-
   searchShow() {
     this.isSearchShown = ! this.isSearchShown;
   }
@@ -63,6 +54,9 @@ export class FilterTreeComponent {
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
+
+  name: string;
+  uuid: string;
 
 }
 
