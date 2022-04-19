@@ -69,8 +69,4 @@ mat-card-content, mat-card-title {
   justify-content: space-between;
 }
 
-mat-button-toggle {
-  width: 90px;
-  font-size: small;
-}
 
