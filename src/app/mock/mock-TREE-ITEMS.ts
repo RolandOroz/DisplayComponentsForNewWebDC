@@ -1,7 +1,5 @@
 import {FilterTreeItem} from "../model/FilterTreeItem";
 
-
-
 export const TREEITEMS: FilterTreeItem[] = [
   {
     uuid: 'uuid02',

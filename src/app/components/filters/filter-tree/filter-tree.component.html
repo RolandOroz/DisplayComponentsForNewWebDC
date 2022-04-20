@@ -14,6 +14,7 @@
       <button mat-raised-button class="searchFilter" (click)="searchShow()"><mat-icon >search</mat-icon></button>
       <app-search *ngIf="isSearchShown"></app-search>
     </div>
+
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
       <mat-tree-node *matTreeNodeDef="let node">
