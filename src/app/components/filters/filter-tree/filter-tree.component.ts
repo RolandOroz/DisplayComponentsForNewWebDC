@@ -1,5 +1,5 @@
 import { NestedTreeControl} from '@angular/cdk/tree';
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
@@ -24,11 +24,14 @@ interface FilterTreeNode {
 })
 
 export class FilterTreeComponent implements IFilterTreeItem{
+
+  @Input() items: FilterTreeItem[] = [];
+
   name: string;
   uuid: string;
 
   filterItem!: FilterTreeItem[];
-  filterItems!: SFilterItemsService;
+
   TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
 
 //toggles

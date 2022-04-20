@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ArticleInterface} from "../../model/Interface/articleInterface";
 
 @Component({
   selector: 'app-page1',

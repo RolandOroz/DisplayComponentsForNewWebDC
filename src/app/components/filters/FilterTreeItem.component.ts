@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TREEITEMS} from "../../mock/mock-TREE-ITEMS";
 
 interface FilterTreeItem {
   name: string;
@@ -11,11 +12,15 @@ interface FilterTreeItem {
   styleUrls: ['./FilterTreeItem.component.css']
 })
 export class FilterTreeItemComponent implements OnInit {
-  dataSource: any;
+
+  dataSource = TREEITEMS;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getData(): FilterTreeItem[] {
+    return this.dataSource;
+  }
 }
