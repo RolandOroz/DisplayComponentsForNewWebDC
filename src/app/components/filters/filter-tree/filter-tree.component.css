@@ -60,15 +60,4 @@ button.searchFilter {
   margin-bottom: 20px;
 }
 
-.AndOrNotBtnHide {
-  display: none;
 
-}
-.AndOrNotBtnHover:hover + .AndOrNotBtnHide {
-  display: block;
-
-}
-
-.AndOrNotBtnHide:hover {
-  display: block;
-}

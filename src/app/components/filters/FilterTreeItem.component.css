@@ -5,3 +5,16 @@ mat-button-toggle {
   font-size: smaller;
   padding-bottom: 25px;
 }
+
+.AndOrNotBtnHide {
+  display: none;
+
+}
+.AndOrNotBtnHover:hover + .AndOrNotBtnHide {
+  display: block;
+
+}
+
+.AndOrNotBtnHide:hover {
+  display: block;
+}

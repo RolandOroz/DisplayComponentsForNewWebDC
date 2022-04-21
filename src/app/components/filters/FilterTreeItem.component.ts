@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {TREEITEMS} from "../../mock/mock-TREE-ITEMS";
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 
-interface FilterTreeItem {
-  name: string;
-  children?: FilterTreeItem[];
-}
+import {FilterTreeItem} from "../../model/FilterTreeItem";
 
 @Component({
   selector: 'app-filterTreeItem',
@@ -13,14 +9,15 @@ interface FilterTreeItem {
 })
 export class FilterTreeItemComponent implements OnInit {
 
-  dataSource = TREEITEMS;
+  @Input() item?: FilterTreeItem;
 
   constructor() { }
+
+  ngOnChanges(changes: SimpleChanges) {
+
+  }
 
   ngOnInit(): void {
   }
 
-  getData(): FilterTreeItem[] {
-    return this.dataSource;
-  }
 }
