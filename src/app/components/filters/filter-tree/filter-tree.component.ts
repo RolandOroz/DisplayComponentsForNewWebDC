@@ -1,5 +1,5 @@
 import { NestedTreeControl} from '@angular/cdk/tree';
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
@@ -24,7 +24,7 @@ interface FilterTreeNode {
   providers: [ SFilterItemService]
 })
 
-export class FilterTreeComponent implements IFilterTreeItem{
+export class FilterTreeComponent implements OnChanges {
 
   @Input() items: FilterTreeItem;
 
@@ -45,8 +45,10 @@ export class FilterTreeComponent implements IFilterTreeItem{
   constructor(private dataService: SFilterItemsService) {
      this.dataSource.data = this.TREE_DATA;
   }
-
+//TODO create onChange   ------------------------------------------------------------!!!!1
   ngOnChanges(changes: SimpleChanges) {
+
+    console.log([this.items]);
 
   }
 

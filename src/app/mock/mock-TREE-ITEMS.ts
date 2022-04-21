@@ -35,5 +35,12 @@ export const TREEITEMS: FilterTreeItem[] = [
     // andFT: true,
     // orFT: false,
     // notFT: true
-  }
+  },
+  {
+    uuid: 'uuid07',
+    name: 'item7',
+    // andFT: true,
+    // orFT: false,
+    // notFT: true
+  },
 ]
