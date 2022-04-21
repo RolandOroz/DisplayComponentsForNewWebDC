@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {FilterTreeItem} from "../../model/FilterTreeItem";
 
@@ -13,9 +13,7 @@ export class FilterTreeItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges) {
 
-  }
 
   ngOnInit(): void {
   }

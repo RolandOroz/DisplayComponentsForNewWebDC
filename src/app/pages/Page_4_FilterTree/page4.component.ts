@@ -10,7 +10,6 @@ export class Page4Component implements OnInit {
 
   @Input() items: FilterTreeItem[] = [];
 
-
   constructor() { }
 
   ngOnInit(): void {

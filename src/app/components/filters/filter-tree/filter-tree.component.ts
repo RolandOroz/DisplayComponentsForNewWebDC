@@ -1,10 +1,11 @@
 import { NestedTreeControl} from '@angular/cdk/tree';
-import {Component, Input} from '@angular/core';
+import {Component, Input, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {SFilterItemsService} from "../../../services/sfilter-items.service";
+
 
 // TODO create separate interface
 interface FilterTreeNode {
@@ -25,7 +26,7 @@ interface FilterTreeNode {
 
 export class FilterTreeComponent implements IFilterTreeItem{
 
-  @Input() items: FilterTreeItem[] = [];
+  @Input() items: FilterTreeItem;
 
   name: string;
   uuid: string;
@@ -43,6 +44,10 @@ export class FilterTreeComponent implements IFilterTreeItem{
 
   constructor(private dataService: SFilterItemsService) {
      this.dataSource.data = this.TREE_DATA;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+
   }
 
   searchShow() {

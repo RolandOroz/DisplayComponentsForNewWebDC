@@ -18,7 +18,7 @@
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
       <mat-tree-node *matTreeNodeDef="let node">
-            <app-filterTreeItem [item]=""></app-filterTreeItem>
+            <app-filterTreeItem [item]="node"></app-filterTreeItem>
       </mat-tree-node>
 
     </mat-tree>
