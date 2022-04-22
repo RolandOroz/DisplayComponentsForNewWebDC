@@ -1,8 +1,7 @@
-import { NestedTreeControl} from '@angular/cdk/tree';
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {NestedTreeControl} from '@angular/cdk/tree';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
-import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {SFilterItemsService} from "../../../services/sfilter-items.service";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
@@ -22,7 +21,9 @@ interface FilterTreeNode {
   selector: 'app-filter-tree',
   templateUrl: './filter-tree.component.html',
   styleUrls: ['./filter-tree.component.css'],
-  providers: [ SFilterItemService]
+  providers: [ SFilterItemService],
+  //TEST
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class FilterTreeComponent implements OnChanges {
@@ -63,7 +64,7 @@ export class FilterTreeComponent implements OnChanges {
   }
 // TODO Only for TESTING!!
   changeFilterTreeItemArray() {
-    this.filterTreeItemArray[0] = {...this.filterTreeItemArray[0], name: 'TEST', uuid: '11'};
+    this.filterTreeItemArray[0] = {...this.filterTreeItemArray[0], name: 'TEST', uuid:'888'};
     console.log(this.filterTreeItemArray);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 
 import {FilterTreeItem} from "../../model/FilterTreeItem";
 
@@ -7,15 +7,15 @@ import {FilterTreeItem} from "../../model/FilterTreeItem";
   templateUrl: './FilterTreeItem.component.html',
   styleUrls: ['./FilterTreeItem.component.css']
 })
-export class FilterTreeItemComponent implements OnInit {
+export class FilterTreeItemComponent {
 
   @Input() item?: FilterTreeItem;
 
   constructor() { }
 
-
-
-  ngOnInit(): void {
+  filterTreeItemCheckRender(): boolean {
+    console.log('FilterTreeItemCheckRender');
+    return true;
   }
 
 }
