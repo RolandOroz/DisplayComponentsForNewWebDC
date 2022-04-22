@@ -3,6 +3,7 @@ mat-button-toggle {
   height: 20px;
   width: 50px;
   font-size: smaller;
+  color: #bc5123;
   padding-bottom: 25px;
 }
 
@@ -17,4 +18,11 @@ mat-button-toggle {
 
 .AndOrNotBtnHide:hover {
   display: block;
+}
+
+button.AndOrNotBtn {
+  border-radius: 5px;
+  height: 25px;
+  text-align: center;
+  line-height: 10px;
 }

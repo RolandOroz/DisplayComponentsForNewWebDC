@@ -5,6 +5,7 @@ import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import { IFilterTreeItem} from "../../../model/Interface/IFilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {SFilterItemsService} from "../../../services/sfilter-items.service";
+import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
 
 
 // TODO create separate interface
@@ -30,7 +31,7 @@ export class FilterTreeComponent implements OnChanges {
 
   name: string;
   uuid: string;
-
+  filterTreeItemArray = TREEITEMS;
   filterItem!: FilterTreeItem[];
 
   TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
@@ -47,8 +48,9 @@ export class FilterTreeComponent implements OnChanges {
   }
 //TODO create onChange   ------------------------------------------------------------!!!!1
   ngOnChanges(changes: SimpleChanges) {
+    const inputValue = changes['items'];
 
-    console.log([this.items]);
+    console.log(inputValue);
 
   }
 
@@ -59,13 +61,19 @@ export class FilterTreeComponent implements OnChanges {
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
+// TODO Only for TESTING!!
+  changeFilterTreeItemArray() {
+    this.filterTreeItemArray[0] = {...this.filterTreeItemArray[0], name: 'TEST', uuid: '11'};
+    console.log(this.filterTreeItemArray);
+  }
 }
 
 // todo ----------------!!!!!!!!!!!
+
 // filter tree component
 // implement text search field (to search component data)
 // make text search field configurable to hide it where needed
 // filter tree item component
 // add "AND" "OR" "NOT" buttons to the filter tree item
-// TODO make model and mock data for filterItems------------!!!!!!!!!
+
 

@@ -38,13 +38,6 @@ mat-card-header {
  justify-content: space-between;
 }
 
-button.AndOrNotBtn {
-  border-radius: 5px;
-  height: 30px;
-  text-align: center;
-  line-height: 10px;
-}
-
 .SearchFilterTree {
   height: 24px;
   padding-left: 10px;
@@ -58,4 +51,8 @@ button.searchFilter {
   border-radius: 5px;
   color: #bc5123;
   margin-bottom: 20px;
+}
+
+mat-tree-node{
+  padding-left: 5px;
 }
