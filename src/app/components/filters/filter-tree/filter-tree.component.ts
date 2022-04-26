@@ -1,10 +1,11 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {SFilterItemsService} from "../../../services/sfilter-items.service";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
+import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
 
 
 // TODO create separate interface
@@ -22,20 +23,24 @@ interface FilterTreeNode {
   templateUrl: './filter-tree.component.html',
   styleUrls: ['./filter-tree.component.css'],
   providers: [ SFilterItemService],
-  //TEST
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class FilterTreeComponent implements OnChanges {
 
   @Input() items: FilterTreeItem;
+  @Output() itemsS: FilterTreeItem[] = TREEITEMS;
 
   name: string;
   uuid: string;
-  filterTreeItemArray = TREEITEMS;
+
   filterItem!: FilterTreeItem[];
 
+  public filterTreeItemArray: FilterTreeItem[];
+  searchText: string;
+
   TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
+
+
 
 //toggles
   isSearchShown!: boolean;
@@ -47,12 +52,12 @@ export class FilterTreeComponent implements OnChanges {
   constructor(private dataService: SFilterItemsService) {
      this.dataSource.data = this.TREE_DATA;
   }
+
 //TODO create onChange   ------------------------------------------------------------!!!!1
   ngOnChanges(changes: SimpleChanges) {
     const inputValue = changes['items'];
 
     console.log(inputValue);
-
   }
 
   searchShow() {
@@ -62,11 +67,7 @@ export class FilterTreeComponent implements OnChanges {
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
-// TODO Only for TESTING!!
-  changeFilterTreeItemArray() {
-    this.filterTreeItemArray[0] = {...this.filterTreeItemArray[0], name: 'TEST', uuid:'888'};
-    console.log(this.filterTreeItemArray);
-  }
+
 }
 
 // todo ----------------!!!!!!!!!!!

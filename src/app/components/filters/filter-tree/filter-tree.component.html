@@ -22,11 +22,24 @@
       </mat-tree-node>
 
     </mat-tree>
-
   </mat-card-content>
-
 </mat-card>
-<div><button (click)="changeFilterTreeItemArray()">ChangeArray</button></div>
+
+<!--TODO TEST TEST TEST TEST TEST  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+<section> <h5>TEST Dynamic search TEST</h5><input name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search" size="50" >
+  <article>
+    <br />
+  <h6> Results </h6>
+  <ul>
+    <li *ngFor="let item of itemsS | SearchPipe: searchText">
+      <span><strong>{{item.name}}</strong></span>
+      <br />
+      <span>{{item.uuid}}</span>
+    </li>
+  </ul>
+</article>
+</section>
 
 <!--<mat-card class="FilterTreeItemCard">-->
 

@@ -10,12 +10,9 @@ import {FilterTreeItem} from "../../model/FilterTreeItem";
 export class FilterTreeItemComponent {
 
   @Input() item?: FilterTreeItem;
+  @Input() items?: FilterTreeItem[];
 
   constructor() { }
 
-  filterTreeItemCheckRender(): boolean {
-    console.log('FilterTreeItemCheckRender');
-    return true;
-  }
 
 }

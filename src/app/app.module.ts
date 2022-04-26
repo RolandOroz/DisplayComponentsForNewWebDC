@@ -42,6 +42,7 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TopicsComponent } from './components/filters/topics/topics.component';
 import {MatTreeModule} from "@angular/material/tree";
+import { SearchPipe } from './search.pipe';
 
 
 
@@ -66,6 +67,7 @@ import {MatTreeModule} from "@angular/material/tree";
     Page4Component,
     Page5Component,
     TopicsComponent,
+    SearchPipe,
 
   ],
   imports: [

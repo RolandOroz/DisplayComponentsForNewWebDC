@@ -1,0 +1,23 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import {FilterTreeItem} from "./model/FilterTreeItem";
+
+@Pipe({
+  name: 'SearchPipe'
+})
+export class SearchPipe implements PipeTransform {
+  transform(items: FilterTreeItem[], searchText?: string): any {
+
+    if (!items) {
+      return [];
+    }
+    if (!searchText) {
+      return items;
+    }
+    searchText = searchText.toLowerCase();
+    debugger;
+
+    return items.filter(val => {
+      return JSON.stringify(val).toLowerCase().startsWith(searchText);
+    });
+  }
+}
