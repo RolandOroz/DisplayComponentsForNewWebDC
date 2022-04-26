@@ -30,9 +30,15 @@
 <section> <h5>TEST Dynamic search TEST</h5><input name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search" size="50" >
   <article>
     <br />
-  <h6> Results </h6>
+  <h6> Ng2SearchPipe Library</h6>
   <ul>
-    <li *ngFor="let item of itemsS | SearchPipe: searchText">
+<!--    usin ng2SearchPipe library !!!-->
+    <li *ngFor="let item of filterTreeItemArray | filter: searchText">
+      <span><strong style="color:red">{{item.name}}</strong></span>
+
+      <!--    using custom pipe-->
+    <li *ngFor="let item of filterTreeItemArray | SearchPipe: searchText">
+
       <span><strong>{{item.name}}</strong></span>
       <br />
       <span>{{item.uuid}}</span>

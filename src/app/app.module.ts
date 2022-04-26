@@ -43,9 +43,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { TopicsComponent } from './components/filters/topics/topics.component';
 import {MatTreeModule} from "@angular/material/tree";
 import { SearchPipe } from './search.pipe';
-
-
-
+import { Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 @NgModule({
@@ -69,6 +67,7 @@ import { SearchPipe } from './search.pipe';
     TopicsComponent,
     SearchPipe,
 
+
   ],
   imports: [
     BrowserModule,
@@ -76,10 +75,7 @@ import { SearchPipe } from './search.pipe';
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'app-home', component: HomeComponent},
-      // { path: 'app-page1', component: Page1Component },
-      // { path: 'app-page2', component: Page2Component },
-      // { path: 'app-page3', component: Page3Component }
+      {path: 'app-home', component: HomeComponent}
     ]),
     MatListModule,
     MatToolbarModule,
@@ -100,7 +96,8 @@ import { SearchPipe } from './search.pipe';
     MatButtonToggleModule,
     MatGridListModule,
     MatRippleModule,
-    MatTreeModule
+    MatTreeModule,
+    Ng2SearchPipeModule
 
 
   ],

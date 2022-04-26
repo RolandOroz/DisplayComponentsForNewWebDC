@@ -28,14 +28,13 @@ interface FilterTreeNode {
 export class FilterTreeComponent implements OnChanges {
 
   @Input() items: FilterTreeItem;
-  @Output() itemsS: FilterTreeItem[] = TREEITEMS;
 
   name: string;
   uuid: string;
 
   filterItem!: FilterTreeItem[];
 
-  public filterTreeItemArray: FilterTreeItem[];
+  public filterTreeItemArray= TREEITEMS;
   searchText: string;
 
   TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
