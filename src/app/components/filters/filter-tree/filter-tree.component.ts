@@ -5,16 +5,13 @@ import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {SFilterItemsService} from "../../../services/sfilter-items.service";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
-import {TREEITEM} from "../../../mock/mock-TREE-ITEM";
+
 
 
 // TODO create separate interface
 interface FilterTreeNode {
   uuid: string;
   name: string;
-  // andFT: boolean;
-  // orFT: boolean;
-  // notFT: boolean;
   children?: FilterTreeItem[];
 }
 
@@ -52,13 +49,6 @@ export class FilterTreeComponent implements OnChanges {
      this.dataSource.data = this.TREE_DATA;
   }
 
-//TODO create onChange   ------------------------------------------------------------!!!!1
-  ngOnChanges(changes: SimpleChanges) {
-    const inputValue = changes['items'];
-
-    console.log(inputValue);
-  }
-
   searchShow() {
     this.isSearchShown = ! this.isSearchShown;
   }
@@ -67,14 +57,10 @@ export class FilterTreeComponent implements OnChanges {
     this.collapsed = !this.collapsed;
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+
 }
 
-// todo ----------------!!!!!!!!!!!
-
-// filter tree component
-// implement text search field (to search component data)
-// make text search field configurable to hide it where needed
-// filter tree item component
-// add "AND" "OR" "NOT" buttons to the filter tree item
 
 

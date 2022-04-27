@@ -43,7 +43,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { TopicsComponent } from './components/filters/topics/topics.component';
 import {MatTreeModule} from "@angular/material/tree";
 import { SearchPipe } from './search.pipe';
-import { Ng2SearchPipeModule} from "ng2-search-filter";
+
 
 
 @NgModule({
@@ -97,9 +97,6 @@ import { Ng2SearchPipeModule} from "ng2-search-filter";
     MatGridListModule,
     MatRippleModule,
     MatTreeModule,
-    Ng2SearchPipeModule
-
-
   ],
   exports: [
     MatRadioModule,

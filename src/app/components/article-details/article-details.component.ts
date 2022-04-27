@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Article} from "../../model/article";
 import {ArticleDataService} from "../../mock/article-data.service";
+
 
 @Component({
   selector: 'app-article-details',
@@ -8,13 +9,11 @@ import {ArticleDataService} from "../../mock/article-data.service";
   styleUrls: ['./article-details.component.css'],
   providers: [ArticleDataService]
 })
-export class ArticleDetailsComponentPage implements OnInit{
+export class ArticleDetailsComponentPage {
 
-  article!: Article;
+  article: Article;
 
-  constructor(private dataService: ArticleDataService) { }
-
-  ngOnInit(): void {
+  constructor(private dataService: ArticleDataService) {
      this.article = this.dataService.getArticle()
   }
 }

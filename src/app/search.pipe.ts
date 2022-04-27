@@ -14,8 +14,6 @@ export class SearchPipe implements PipeTransform {
       return items;
     }
     searchText = searchText.toLowerCase();
-    debugger;
-
     return items.filter(val => {
       return val.name.toString().toLowerCase().startsWith(searchText);
     });

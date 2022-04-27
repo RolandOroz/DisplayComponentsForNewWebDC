@@ -1,20 +1,14 @@
-
 <mat-card class="FilterTreeItemCard">
-
   <mat-card-header>
     <mat-card-title>Topics</mat-card-title>
     <span class="spacer"></span>
-<!--    <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">-->
-<!--      <mat-icon>keyboard_arrow_down</mat-icon>-->
-<!--    </button>-->
   </mat-card-header>
 
   <mat-card-content class="searchIcon">
     <div>
       <button mat-raised-button class="searchFilter" (click)="searchShow()"><mat-icon>search</mat-icon></button>
-      <app-search *ngIf="isSearchShown" [(ngModel)]="searchText"></app-search>
+      <input class="searchFilterTree" *ngIf="isSearchShown" name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search" size="50" >
     </div>
-
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
       <mat-tree-node *matTreeNodeDef="let node">
@@ -29,79 +23,20 @@
   </mat-card-content>
 </mat-card>
 
-<!--TODO TEST TEST TEST TEST TEST  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-<section> <h5>TEST Dynamic search TEST</h5><input name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search" size="50" >
+<!--Show search-->
+<section>
   <article>
     <br />
-  <h6> Ng2SearchPipe Library</h6>
+  <h6> Show search: </h6>
   <ul>
-<!--    using ng2SearchPipe library !!!-->
-    <li *ngFor="let item of filterTreeItemArray | filter: searchText">
-      <span><strong style="color:red">{{item.name}}</strong></span>
-
       <!--    using custom pipe-->
     <li *ngFor="let item of filterTreeItemArray | SearchPipe: searchText">
-
       <span><strong>{{item.name}}</strong></span>
       <br />
-      <span>{{item.uuid}}</span>
+
     </li>
   </ul>
 </article>
 </section>
 
-<!--<mat-card class="FilterTreeItemCard">-->
-
-<!--  &lt;!&ndash;search in component data...make component&ndash;&gt;-->
-
-
-<!--  <mat-tree class="FilterTree" <mat-card class="FilterTreeItemCard">[dataSource]="dataSource" [treeControl]="treeControl">-->
-<!--    &lt;!&ndash  &ndash;&gt;-->
-<!--    <mat-tree-node *matTreeNodeDef="let node">-->
-<!--      <mat-card>-->
-<!--        <mat-card-header>-->
-<!--          <mat-card-title>{{node.name}}</mat-card-title>-->
-<!--          <span class="spacer"></span>-->
-<!--          <button mat-raised-button mat-icon-button class="dataFilterCollapse" (click)="toggleCollapsed()">-->
-<!--            <mat-icon>keyboard_arrow_down</mat-icon>-->
-<!--          </button>-->
-<!--        </mat-card-header>-->
-<!--        <mat-card-content *ngIf="collapsed" class="searchIcon">-->
-
-<!--          <mat-icon (click)="searchShow()">search</mat-icon>-->
-
-<!--          <app-search class="SearchFilterTree" *ngIf="isSearchShown"></app-search>-->
-
-
-<!--          &lt;!&ndash;TODO make clickable and add event      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&ndash;&gt;-->
-
-<!--          <p>Item content____________________0</p>-->
-<!--        </mat-card-content>-->
-
-<!--        <mat-card-footer *ngIf="collapsed">-->
-<!--          <mat-card-actions>-->
-<!--            <button class="AndOrNotBtn" mat-raised-button>AND</button>-->
-<!--            <button class="AndOrNotBtn" mat-raised-button>OR</button>-->
-<!--            <button class="AndOrNotBtn" mat-raised-button>NOT</button>-->
-<!--          </mat-card-actions>-->
-<!--        </mat-card-footer>-->
-<!--      </mat-card>-->
-<!--    </mat-tree-node>-->
-
-<!--    &lt;!&ndash; This is the tree node template for expandable nodes &ndash;&gt;-->
-<!--    &lt;!&ndash;      <mat-tree-node *matTreeNodeDef="let node;when: hasChild">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <button mat-icon-button matTreeNodeToggle&ndash;&gt;-->
-<!--    &lt;!&ndash;                [attr.aria-label]="'toggle' + node.name">&ndash;&gt;-->
-<!--    &lt;!&ndash;          <mat-icon class="mat-icon-rtl-mirror">&ndash;&gt;-->
-<!--    &lt;!&ndash;            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}&ndash;&gt;-->
-<!--    &lt;!&ndash;          </mat-icon>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </button>&ndash;&gt;-->
-<!--    &lt;!&ndash;        {{node.name}}&ndash;&gt;-->
-
-<!--    &lt;!&ndash;      </mat-tree-node>&ndash;&gt;-->
-
-<!--  </mat-tree>-->
-
-
-<!--</mat-card>-->
