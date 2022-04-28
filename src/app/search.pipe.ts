@@ -5,8 +5,7 @@ import {FilterTreeItem} from "./model/FilterTreeItem";
   name: 'SearchPipe'
 })
 export class SearchPipe implements PipeTransform {
-  transform(items: FilterTreeItem[], searchText?: string): any {
-
+  transform(items: FilterTreeItem[], searchText: string): any {
     if (!items) {
       return [];
     }

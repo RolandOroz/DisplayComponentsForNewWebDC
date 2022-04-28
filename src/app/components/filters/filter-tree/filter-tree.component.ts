@@ -1,5 +1,5 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import {ChangeDetectionStrategy, Component, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import { Component, Injectable, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
@@ -22,6 +22,7 @@ interface FilterTreeNode {
   providers: [ SFilterItemService],
 })
 
+@Injectable()
 export class FilterTreeComponent implements OnChanges {
 
   @Input() items: FilterTreeItem;
