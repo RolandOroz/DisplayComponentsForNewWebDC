@@ -7,7 +7,10 @@
   <mat-card-content class="searchIcon">
     <div>
       <button mat-raised-button class="searchFilter" (click)="searchShow()"><mat-icon>search</mat-icon></button>
-      <input class="searchFilterTree" *ngIf="isSearchShown" name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search" size="50" >
+
+        <input class="customWidthWrapper" *ngIf="isSearchShown" name="searchText" [(ngModel)]="searchText" type="text"  placeholder="Search">
+
+
     </div>
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
 
