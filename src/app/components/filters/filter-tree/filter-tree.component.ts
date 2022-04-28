@@ -25,17 +25,19 @@ interface FilterTreeNode {
 export class FilterTreeComponent implements OnChanges {
 
   @Input() items: FilterTreeItem;
+  @Input() itemsSearch: FilterTreeItem;
 
   name: string;
   uuid: string;
 
   filterItem!: FilterTreeItem[];
 
+// show search
   public filterTreeItemArray= TREEITEMS;
+
   searchText: string;
 
   TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
-
 
 
 //toggles
@@ -58,6 +60,7 @@ export class FilterTreeComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
   }
 
 }
