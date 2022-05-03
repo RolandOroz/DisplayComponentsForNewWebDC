@@ -3,7 +3,6 @@ import {Component, Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@a
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
-import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
 
 
 interface FilterTreeNode {
@@ -24,8 +23,6 @@ export class FilterTreeComponent implements OnInit, OnChanges {
 
   @Input() items: FilterTreeItem[];
   @Input() itemsSearch: FilterTreeItem;
-
-  originalData = TREEITEMS;
 
 
   searchText: string = '';
@@ -58,15 +55,14 @@ export class FilterTreeComponent implements OnInit, OnChanges {
 
   ngOnInit() {
 
-    this.dataSource.data = this.originalData;
-    this.items = this.originalData;
+    this.dataSource.data = this.items;
   }
 
   onSearchEvent(evt: any) {
     let temp: string;
     temp = evt.target.value;
     this.searchText = temp;
-    this.dataSource.data = this.originalData.filter(val => {
+    this.dataSource.data = this.items.filter(val => {
       return val.name.toString().toLowerCase().startsWith(this.searchText);
     });
 
