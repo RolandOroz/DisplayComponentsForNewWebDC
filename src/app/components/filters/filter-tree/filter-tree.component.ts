@@ -6,7 +6,6 @@ import {SFilterItemService} from "../../../services/sfilter-item.service";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
 
 
-// TODO create separate interface
 interface FilterTreeNode {
   uuid: string;
   name: string;
@@ -17,32 +16,27 @@ interface FilterTreeNode {
   selector: 'app-filter-tree',
   templateUrl: './filter-tree.component.html',
   styleUrls: ['./filter-tree.component.css'],
-  providers: [ SFilterItemService],
+  providers: [SFilterItemService],
 })
 
 @Injectable()
 export class FilterTreeComponent implements OnInit, OnChanges {
 
-  @Input() items: FilterTreeItem;
+  @Input() items: FilterTreeItem[];
   @Input() itemsSearch: FilterTreeItem;
 
-  name: string;
-  uuid: string;
-
-  filterItem!: FilterTreeItem[];
-  originalData =  TREEITEMS;
+  originalData = TREEITEMS;
 
 
   searchText: string = '';
   newVal: string;
 
 
-
 //toggles
   isSearchShown!: boolean;
   collapsed!: boolean;
 
-  treeControl = new NestedTreeControl<FilterTreeNode>( node => node.children);
+  treeControl = new NestedTreeControl<FilterTreeNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FilterTreeNode>();
 
 
@@ -50,7 +44,7 @@ export class FilterTreeComponent implements OnInit, OnChanges {
   }
 
   searchShow() {
-    this.isSearchShown = ! this.isSearchShown;
+    this.isSearchShown = !this.isSearchShown;
   }
 
   toggleCollapsed() {
@@ -63,15 +57,16 @@ export class FilterTreeComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.dataSource.data = this.originalData;
 
+    this.dataSource.data = this.originalData;
+    this.items = this.originalData;
   }
 
   onSearchEvent(evt: any) {
-  let temp: string;
-  temp = evt.target.value;
-  this.searchText = temp;
-    this.originalData.filter(val => {
+    let temp: string;
+    temp = evt.target.value;
+    this.searchText = temp;
+    this.dataSource.data = this.originalData.filter(val => {
       return val.name.toString().toLowerCase().startsWith(this.searchText);
     });
 

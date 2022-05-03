@@ -11,14 +11,14 @@ export const TREEITEMS: FilterTreeItem[] = [
   },
   {
     uuid: 'uuid04',
-    name: 'item4',
+    name: 'grav4',
   },
   {
     uuid: 'uuid05',
-    name: 'item5',
+    name: 'fall5',
   },
   {
     uuid: 'uuid06',
-    name: 'item6',
+    name: 'deb6',
   }
 ]
