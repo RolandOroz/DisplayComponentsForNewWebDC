@@ -1,5 +1,5 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import {Component, Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
@@ -19,11 +19,10 @@ interface FilterTreeNode {
 })
 
 @Injectable()
-export class FilterTreeComponent implements OnInit, OnChanges {
+export class FilterTreeComponent implements OnInit {
 
   @Input() items: FilterTreeItem[];
   @Input() itemsSearch: FilterTreeItem;
-
 
   searchText: string = '';
   newVal: string;
@@ -33,9 +32,9 @@ export class FilterTreeComponent implements OnInit, OnChanges {
   isSearchShown!: boolean;
   collapsed!: boolean;
 
+  //tree
   treeControl = new NestedTreeControl<FilterTreeNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FilterTreeNode>();
-
 
   constructor() {
   }
@@ -48,13 +47,7 @@ export class FilterTreeComponent implements OnInit, OnChanges {
     this.collapsed = !this.collapsed;
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-
-  }
-
   ngOnInit() {
-
     this.dataSource.data = this.items;
   }
 

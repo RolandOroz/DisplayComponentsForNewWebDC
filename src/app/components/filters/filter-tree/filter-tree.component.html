@@ -7,16 +7,16 @@
   <mat-card-content class="searchIcon">
 
     <div>
-      <mat-icon>search</mat-icon>
-        <input class="customWidthWrapper"
+      <button mat-raised-button class="searchFilter" (click)="searchShow()">
+        <mat-icon>search</mat-icon>
+      </button>
+        <input *ngIf="isSearchShown" class="customWidthWrapper"
                name="searchText"
                type="text"
                placeholder="Search"
                (keyup)="onSearchEvent($event)">
     </div>
-
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
-
       <mat-tree-node *matTreeNodeDef="let node">
             <ul>
               <li>
@@ -24,8 +24,9 @@
               </li>
             </ul>
       </mat-tree-node>
-
     </mat-tree>
+
   </mat-card-content>
+
 </mat-card>
 

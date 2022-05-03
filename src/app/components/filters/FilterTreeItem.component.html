@@ -2,12 +2,10 @@
 <span>{{item.name}}</span>
 </div>
 <div class="AndOrNotBtnHide">
-  <mat-button-toggle>AND</mat-button-toggle>
-
-
-  <mat-button-toggle>OR</mat-button-toggle>
-
-
-  <mat-button-toggle>NOT</mat-button-toggle>
+  <mat-button-toggle-group class="And-Or-Button">
+    <mat-button-toggle>AND</mat-button-toggle>
+    <mat-button-toggle>OR</mat-button-toggle>
+  </mat-button-toggle-group>
+    <mat-button-toggle class="Not-Button">NOT</mat-button-toggle>
 </div>
-<!--TEST-->
+
