@@ -1,11 +1,9 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import { Component, Injectable, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Injectable, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {FilterTreeItem} from "../../../model/FilterTreeItem";
 import {SFilterItemService} from "../../../services/sfilter-item.service";
-import {SFilterItemsService} from "../../../services/sfilter-items.service";
 import {TREEITEMS} from "../../../mock/mock-TREE-ITEMS";
-
 
 
 // TODO create separate interface
@@ -23,7 +21,7 @@ interface FilterTreeNode {
 })
 
 @Injectable()
-export class FilterTreeComponent implements OnChanges {
+export class FilterTreeComponent implements OnInit, OnChanges {
 
   @Input() items: FilterTreeItem;
   @Input() itemsSearch: FilterTreeItem;
@@ -32,13 +30,12 @@ export class FilterTreeComponent implements OnChanges {
   uuid: string;
 
   filterItem!: FilterTreeItem[];
+  originalData =  TREEITEMS;
 
-// show search
-  public filterTreeItemArray= TREEITEMS;
 
-  searchText: string;
+  searchText: string = '';
+  newVal: string;
 
-  TREE_DATA = this.filterItem = this.dataService.getFilterTreeItems();
 
 
 //toggles
@@ -48,8 +45,8 @@ export class FilterTreeComponent implements OnChanges {
   treeControl = new NestedTreeControl<FilterTreeNode>( node => node.children);
   dataSource = new MatTreeNestedDataSource<FilterTreeNode>();
 
-  constructor(private dataService: SFilterItemsService) {
-     this.dataSource.data = this.TREE_DATA;
+
+  constructor() {
   }
 
   searchShow() {
@@ -61,9 +58,24 @@ export class FilterTreeComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
 
   }
 
+  ngOnInit() {
+    this.dataSource.data = this.originalData;
+
+  }
+
+  onSearchEvent(evt: any) {
+  let temp: string;
+  temp = evt.target.value;
+  this.searchText = temp;
+    this.originalData.filter(val => {
+      return val.name.toString().toLowerCase().startsWith(this.searchText);
+    });
+
+  }
 }
 
 

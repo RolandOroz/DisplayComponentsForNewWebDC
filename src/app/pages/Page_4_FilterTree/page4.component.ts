@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FilterTreeItem} from "../../model/FilterTreeItem";
+import {TREEITEMS} from "../../mock/mock-TREE-ITEMS";
 
 @Component({
   selector: 'app-page4',
@@ -8,7 +9,7 @@ import {FilterTreeItem} from "../../model/FilterTreeItem";
 })
 export class Page4Component implements OnInit {
 
-  @Input() items: FilterTreeItem[] = [];
+  @Input() items: FilterTreeItem[] = TREEITEMS;
 
   constructor() { }
 

@@ -7,11 +7,12 @@
   <mat-card-content class="searchIcon">
 
     <div>
-      <button mat-raised-button class="searchFilter" (click)="searchShow()"><mat-icon>search</mat-icon></button>
-        <input class="customWidthWrapper" *ngIf="isSearchShown"
-               name="searchText" [(ngModel)]="searchText"
+      <mat-icon>search</mat-icon>
+        <input class="customWidthWrapper"
+               name="searchText"
                type="text"
-               placeholder="Search" >
+               placeholder="Search"
+               (keyup)="onSearchEvent($event)">
     </div>
 
     <mat-tree class="FilterTree" [dataSource]="dataSource" [treeControl]="treeControl">
@@ -19,7 +20,7 @@
       <mat-tree-node *matTreeNodeDef="let node">
             <ul>
               <li>
-                <app-filterTreeItem [item]="node | SearchPipe: searchText"></app-filterTreeItem>
+                <app-filterTreeItem [item]="node"></app-filterTreeItem>
               </li>
             </ul>
       </mat-tree-node>
@@ -29,19 +30,5 @@
 </mat-card>
 
 
-<!--Show search-->
-<section>
-  <article>
-    <br />
-  <h6> Show search: </h6>
-  <ul>
-      <!--    using custom pipe-->
-    <li *ngFor="let item of filterTreeItemArray | SearchPipe: searchText">
-      <span><strong>{{item.name}}</strong></span>
-      <br />
 
-    </li>
-  </ul>
-</article>
-</section>
-
+<div>{{searchText}}</div>
