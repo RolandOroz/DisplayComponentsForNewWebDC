@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatePickerDataService } from "../../services/date-picker-data.service";
 
 @Component({
-  selector: 'app-search',
+  selector: 'cpmt-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
