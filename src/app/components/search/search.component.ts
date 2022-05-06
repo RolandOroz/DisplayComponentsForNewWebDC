@@ -15,5 +15,4 @@ export class SearchComponent implements OnInit{
   ngOnInit(): void {
     this.pickerData = this.datePickerDataService.getPickerData();
   }
-
 }

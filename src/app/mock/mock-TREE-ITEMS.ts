@@ -19,6 +19,6 @@ export const TREEITEMS: FilterTreeItem[] = [
   },
   {
     uuid: 'uuid06',
-    name: 'deb6',
+    name: 'de6',
   }
 ]
